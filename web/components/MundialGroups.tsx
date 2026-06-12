@@ -4,29 +4,20 @@ import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { groupMatches } from "@/lib/match-order";
-import type { DrawnMatch, KnockoutDraw } from "@/lib/draw";
+import type { KnockoutDraw } from "@/lib/draw";
 import type { TeamStats } from "@/lib/standings";
 import { DRAFT_KEY } from "@/lib/storage-keys";
 import { ES, GROUP_CODES, type GroupCode } from "@/lib/teams";
-import { PhaseAtmosphere, TrophyVisual } from "@/components/VisualBackdrop";
+import { PhaseAtmosphere } from "@/components/VisualBackdrop";
+import { KnockoutBracket, roundNames, type RoundKey } from "@/components/KnockoutBracket";
 import type { Match, Prode, Score } from "@/lib/types";
-
-type RoundKey = "r32" | "r16" | "qf" | "sf" | "final";
 
 type Screen =
   | { kind: "group"; group: GroupCode; label: string; phase: "Grupos" }
   | { kind: "thirds"; label: string; phase: "Grupos" }
-  | { kind: "round"; round: RoundKey; label: string; phase: string; matches: DrawnMatch[] };
+  | { kind: "round"; round: RoundKey; label: string; phase: string };
 
 const phaseLabels = ["Grupos", "16avos", "8vos", "4tos", "Semis", "Final"];
-
-const roundNames: Record<RoundKey, { label: string; phase: string }> = {
-  r32: { label: "Dieciseisavos de final", phase: "16avos" },
-  r16: { label: "Octavos de final", phase: "8vos" },
-  qf: { label: "Cuartos de final", phase: "4tos" },
-  sf: { label: "Semifinales", phase: "Semis" },
-  final: { label: "Final", phase: "Final" },
-};
 
 const screenVariants = {
   initial: { opacity: 0, y: 26, scale: 0.985 },
@@ -60,11 +51,7 @@ function phaseIndex(screen: Screen) {
   return Math.max(0, phaseLabels.indexOf(screen.phase));
 }
 
-function roundMatches(knockout: KnockoutDraw, round: RoundKey) {
-  return knockout[round];
-}
-
-function buildScreens(knockout: KnockoutDraw): Screen[] {
+function buildScreens(): Screen[] {
   return [
     ...GROUP_CODES.map((group) => ({
       kind: "group" as const,
@@ -78,7 +65,6 @@ function buildScreens(knockout: KnockoutDraw): Screen[] {
       round,
       label: roundNames[round].label,
       phase: roundNames[round].phase,
-      matches: roundMatches(knockout, round),
     })),
   ];
 }
@@ -198,74 +184,6 @@ function ThirdsScreen({
   );
 }
 
-function RoundScreen({
-  label,
-  phase,
-  matches,
-  champion,
-  reducedMotion,
-}: {
-  label: string;
-  phase: string;
-  matches: DrawnMatch[];
-  champion: string;
-  reducedMotion: boolean;
-}) {
-  const isFinal = phase === "Final";
-
-  return (
-    <div className={`phase-page phase-page--round ${isFinal ? "phase-page--final" : ""}`}>
-      <div className="phase-copy">
-        <span className="phase-kicker">{phase}</span>
-        <h2>{isFinal ? `${teamName(champion)} levanta la copa` : label}</h2>
-        <p>
-          Eliminatoria sorteada desde tu bracket pronosticado. Mismo link, mismo destino.
-        </p>
-      </div>
-
-      <div className="round-board" data-count={matches.length}>
-        {matches.map((match, index) => (
-          <motion.article
-            className="duel"
-            key={match.n}
-            initial={reducedMotion ? false : { opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: reducedMotion ? 0 : index * 0.045, duration: 0.34 }}
-          >
-            <header>
-              <span>#{match.n}</span>
-              <em>{match.p}% ganador</em>
-            </header>
-            <div className="duel-line">
-              <strong className={match.winner === match.home ? "is-winner" : ""}>
-                {teamName(match.home)}
-              </strong>
-              <b>{match.score}</b>
-              <strong className={match.winner === match.away ? "is-winner" : ""}>
-                {teamName(match.away)}
-              </strong>
-            </div>
-            <footer>{teamName(match.winner)} avanza</footer>
-          </motion.article>
-        ))}
-      </div>
-
-      {isFinal ? (
-        <motion.div
-          className="champion-mark"
-          initial={reducedMotion ? false : { opacity: 0, scale: 0.92 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: reducedMotion ? 0 : 0.45, duration: 0.42 }}
-        >
-          <TrophyVisual />
-          <span>Campeón</span>
-          <strong>{teamName(champion)}</strong>
-        </motion.div>
-      ) : null}
-    </div>
-  );
-}
-
 export function MundialGroups({
   prode,
   matches,
@@ -285,7 +203,7 @@ export function MundialGroups({
 }) {
   const reducedMotion = useReducedMotionPreference();
   const groupedMatches = useMemo(() => groupMatches(matches), [matches]);
-  const screens = useMemo(() => buildScreens(knockout), [knockout]);
+  const screens = useMemo(() => buildScreens(), []);
   const [screenIndex, setScreenIndex] = useState(0);
   const [autoplay, setAutoplay] = useState(false);
   const current = screens[screenIndex] ?? screens[0];
@@ -370,7 +288,7 @@ export function MundialGroups({
       <section className="world-stage" aria-live="polite">
         <AnimatePresence mode="wait">
           <motion.div
-            key={`${current.kind}-${current.label}`}
+            key={current.kind === "round" ? "knockout-bracket" : `${current.kind}-${current.label}`}
             variants={screenVariants}
             initial={reducedMotion ? false : "initial"}
             animate="enter"
@@ -399,11 +317,9 @@ export function MundialGroups({
             ) : null}
 
             {current.kind === "round" ? (
-              <RoundScreen
-                label={current.label}
-                phase={current.phase}
-                matches={current.matches}
-                champion={knockout.champion}
+              <KnockoutBracket
+                knockout={knockout}
+                revealedRound={current.round}
                 reducedMotion={reducedMotion}
               />
             ) : null}

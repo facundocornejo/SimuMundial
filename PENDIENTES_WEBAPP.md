@@ -456,17 +456,18 @@ Pendiente:
 
 Esto haria mas facil revisar, testear y mejorar visualmente cada parte sin romper la ruta completa.
 
-### 4. Mejorar el bracket visual
+### 4. Mejorar el bracket visual — HECHO (2026-06-12, Claude)
 
-El cuadro actual es funcional, responsive y deterministico, pero todavia no replica del todo la referencia `CUADRO.jpg`.
+Rediseño completo de las eliminatorias en `web/components/KnockoutBracket.tsx`:
 
-Pendiente:
-
-- desktop con SVG de dos alas
-- conectores punteados reales
-- lineas que se encienden por cruce
-- layout mas fiel: 73-80 izquierda, 81-88 derecha, final al centro
-- mobile vertical fase por fase
+- Desktop: cuadro de dos alas estilo `CUADRO.jpg` con CSS Grid de 17 columnas x 16 filas (sin SVG medido: conectores con pseudo-elementos punteados, geometria deterministica).
+- Las alas se derivan del arbol `homeFrom`/`awayFrom` de `bracket.ts` (subarbol de SF 101 a la izquierda, SF 102 a la derecha), nada hardcodeado.
+- Lineas que se encienden en dorado cruce por cruce, con chips de fase (8vos/4tos/Semis/Final) que pasan a dorado.
+- Copa al centro (atenuada hasta la final) y `champion-mark` en el centro en la final.
+- El bracket persiste entre rondas (key compartida en AnimatePresence) y revela cada ronda con stagger; ganador con overlay dorado, perdedor atenuado, ronda siguiente "nombrada", futuras como placeholder.
+- Mobile (<=1080px): lista vertical de la ronda activa, mismo DOM filtrado por CSS.
+- `RoundScreen` y el CSS de `.duel`/`.round-board` eliminados; `MundialGroups.tsx` quedo mas chico (avance parcial de la mejora #3: el knockout ya es componente propio).
+- Verificado: tsc limpio, vitest 9, Playwright 16/16, screenshots desktop/mobile revisados (script auxiliar `web/e2e/shots.mjs`).
 
 ### 5. Agregar pruebas Playwright
 
