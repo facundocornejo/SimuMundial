@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 790" role="img" aria-label="Bracket abstracto deportivo">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="50%" r="56%">
+      <stop offset="0" stop-color="#e7b84b" stop-opacity=".24"/>
+      <stop offset=".42" stop-color="#1d5b3d" stop-opacity=".18"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1440" height="790" fill="#050911"/>
+  <rect width="1440" height="790" fill="url(#glow)"/>
+  <g fill="none" stroke="#e7b84b" stroke-opacity=".42" stroke-width="5">
+    <path d="M154 160 H360 V250 H520"/>
+    <path d="M154 340 H360 V250"/>
+    <path d="M154 530 H360 V620 H520"/>
+    <path d="M154 710 H360 V620"/>
+    <path d="M1286 160 H1080 V250 H920"/>
+    <path d="M1286 340 H1080 V250"/>
+    <path d="M1286 530 H1080 V620 H920"/>
+    <path d="M1286 710 H1080 V620"/>
+    <path d="M520 250 H676 V395 H720"/>
+    <path d="M520 620 H676 V395"/>
+    <path d="M920 250 H764 V395 H720"/>
+    <path d="M920 620 H764 V395"/>
+  </g>
+  <g fill="#111b27" stroke="#e8edf8" stroke-opacity=".16">
+    <rect x="96" y="128" width="148" height="64" rx="10"/>
+    <rect x="96" y="308" width="148" height="64" rx="10"/>
+    <rect x="96" y="498" width="148" height="64" rx="10"/>
+    <rect x="96" y="678" width="148" height="64" rx="10"/>
+    <rect x="1196" y="128" width="148" height="64" rx="10"/>
+    <rect x="1196" y="308" width="148" height="64" rx="10"/>
+    <rect x="1196" y="498" width="148" height="64" rx="10"/>
+    <rect x="1196" y="678" width="148" height="64" rx="10"/>
+    <rect x="650" y="340" width="140" height="110" rx="16"/>
+  </g>
+  <circle cx="720" cy="395" r="76" fill="#e7b84b" opacity=".12"/>
+  <circle cx="720" cy="395" r="8" fill="#c83b34"/>
+</svg>

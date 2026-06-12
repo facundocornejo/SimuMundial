@@ -5,6 +5,17 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
   title: "Prode Mundial 2026",
   description: "Armá, revelá y compartí tu Mundial 2026.",
+  openGraph: {
+    title: "Prode Mundial 2026",
+    description: "Armá, revelá y compartí tu Mundial 2026.",
+    images: ["/api/og"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Prode Mundial 2026",
+    description: "Armá, revelá y compartí tu Mundial 2026.",
+    images: ["/api/og"],
+  },
 };
 
 export default function RootLayout({

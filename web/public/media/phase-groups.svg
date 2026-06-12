@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 768" role="img" aria-label="Cancha y fichas tacticas abstractas">
+  <defs>
+    <linearGradient id="grass" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#123c27"/>
+      <stop offset=".52" stop-color="#092317"/>
+      <stop offset="1" stop-color="#04100c"/>
+    </linearGradient>
+  </defs>
+  <rect width="1440" height="768" fill="url(#grass)"/>
+  <g stroke="#e8f2dc" stroke-opacity=".16" stroke-width="3">
+    <path d="M0 96 H1440 M0 224 H1440 M0 352 H1440 M0 480 H1440 M0 608 H1440"/>
+    <path d="M160 0 V768 M384 0 V768 M608 0 V768 M832 0 V768 M1056 0 V768 M1280 0 V768"/>
+  </g>
+  <circle cx="720" cy="384" r="112" fill="none" stroke="#e8f2dc" stroke-opacity=".18" stroke-width="4"/>
+  <g fill="#e7b84b" opacity=".72">
+    <circle cx="372" cy="240" r="22"/>
+    <circle cx="480" cy="428" r="22"/>
+    <circle cx="690" cy="196" r="22"/>
+    <circle cx="882" cy="542" r="22"/>
+    <circle cx="1060" cy="308" r="22"/>
+  </g>
+  <g fill="#e8edf8" opacity=".45">
+    <rect x="210" y="620" width="184" height="18" rx="9"/>
+    <rect x="410" y="620" width="90" height="18" rx="9"/>
+    <rect x="952" y="126" width="210" height="18" rx="9"/>
+  </g>
+  <rect width="1440" height="768" fill="#020605" opacity=".28"/>
+</svg>

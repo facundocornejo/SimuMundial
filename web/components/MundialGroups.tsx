@@ -8,6 +8,7 @@ import type { DrawnMatch, KnockoutDraw } from "@/lib/draw";
 import type { TeamStats } from "@/lib/standings";
 import { DRAFT_KEY } from "@/lib/storage-keys";
 import { ES, GROUP_CODES, type GroupCode } from "@/lib/teams";
+import { PhaseAtmosphere, TrophyVisual } from "@/components/VisualBackdrop";
 import type { Match, Prode, Score } from "@/lib/types";
 
 type RoundKey = "r32" | "r16" | "qf" | "sf" | "final";
@@ -256,6 +257,7 @@ function RoundScreen({
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: reducedMotion ? 0 : 0.45, duration: 0.42 }}
         >
+          <TrophyVisual />
           <span>Campeón</span>
           <strong>{teamName(champion)}</strong>
         </motion.div>
@@ -289,6 +291,11 @@ export function MundialGroups({
   const current = screens[screenIndex] ?? screens[0];
   const activePhase = phaseIndex(current);
   const finalScreenActive = current.kind === "round" && current.round === "final";
+  const atmosphereKind = current.kind === "group" || current.kind === "thirds"
+    ? "groups"
+    : finalScreenActive
+      ? "final"
+      : "knockout";
 
   useEffect(() => {
     if (reducedMotion) {
@@ -345,6 +352,7 @@ export function MundialGroups({
 
   return (
     <main className="world-shell">
+      <PhaseAtmosphere kind={atmosphereKind} />
       <header className="world-header">
         <div>
           <p className="eyebrow">Mundial pronosticado de {prode.player}</p>

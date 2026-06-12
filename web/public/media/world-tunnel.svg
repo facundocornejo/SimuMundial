@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 960" role="img" aria-label="Tunel de estadio abstracto">
+  <defs>
+    <linearGradient id="floor" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#10151b"/>
+      <stop offset=".58" stop-color="#070b0f"/>
+      <stop offset="1" stop-color="#020304"/>
+    </linearGradient>
+    <radialGradient id="exit" cx="50%" cy="35%" r="42%">
+      <stop offset="0" stop-color="#d5f6aa" stop-opacity=".72"/>
+      <stop offset=".35" stop-color="#2f8a4b" stop-opacity=".34"/>
+      <stop offset="1" stop-color="#2f8a4b" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1440" height="960" fill="#05080c"/>
+  <path d="M0 0 H1440 L1030 960 H410 Z" fill="#111923"/>
+  <path d="M468 0 H972 L834 960 H606 Z" fill="#07100f"/>
+  <path d="M590 222 H850 L792 520 H648 Z" fill="#c9f6b5" opacity=".28"/>
+  <path d="M0 960 L590 222 H850 L1440 960 Z" fill="url(#floor)"/>
+  <path d="M590 222 H850 L1440 960 H0 Z" fill="url(#exit)"/>
+  <g stroke="#f0c467" stroke-opacity=".38" stroke-width="4">
+    <path d="M344 106 L566 882"/>
+    <path d="M1096 106 L874 882"/>
+  </g>
+  <g fill="#f0c467" opacity=".68">
+    <circle cx="342" cy="110" r="18"/>
+    <circle cx="1098" cy="110" r="18"/>
+    <circle cx="444" cy="466" r="10"/>
+    <circle cx="996" cy="466" r="10"/>
+  </g>
+  <path d="M606 780 C678 738 762 738 834 780" fill="none" stroke="#e8edf8" stroke-opacity=".16" stroke-width="3"/>
+</svg>

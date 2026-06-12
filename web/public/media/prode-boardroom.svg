@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 960" role="img" aria-label="Mesa tactica abstracta">
+  <defs>
+    <linearGradient id="desk" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#12221d"/>
+      <stop offset=".48" stop-color="#071114"/>
+      <stop offset="1" stop-color="#030608"/>
+    </linearGradient>
+    <radialGradient id="lamp" cx="50%" cy="26%" r="58%">
+      <stop offset="0" stop-color="#f1bd59" stop-opacity=".28"/>
+      <stop offset=".45" stop-color="#2e6b49" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1440" height="960" fill="url(#desk)"/>
+  <rect x="122" y="126" width="1196" height="708" rx="26" fill="#061713" stroke="#d6e7d2" stroke-opacity=".13"/>
+  <rect x="192" y="196" width="1056" height="568" rx="10" fill="#0a2b1c" opacity=".86"/>
+  <path d="M720 196 V764 M192 480 H1248" stroke="#e8f2dc" stroke-opacity=".18" stroke-width="3"/>
+  <circle cx="720" cy="480" r="92" fill="none" stroke="#e8f2dc" stroke-opacity=".14" stroke-width="3"/>
+  <rect x="192" y="332" width="84" height="296" fill="none" stroke="#e8f2dc" stroke-opacity=".12" stroke-width="3"/>
+  <rect x="1164" y="332" width="84" height="296" fill="none" stroke="#e8f2dc" stroke-opacity=".12" stroke-width="3"/>
+  <g fill="#e7b84b" opacity=".75">
+    <circle cx="448" cy="350" r="13"/>
+    <circle cx="534" cy="438" r="13"/>
+    <circle cx="394" cy="596" r="13"/>
+    <circle cx="982" cy="370" r="13"/>
+    <circle cx="1050" cy="534" r="13"/>
+    <circle cx="904" cy="640" r="13"/>
+  </g>
+  <g fill="#e8edf8" opacity=".55">
+    <rect x="320" y="790" width="132" height="22" rx="11"/>
+    <rect x="470" y="790" width="86" height="22" rx="11"/>
+    <rect x="890" y="150" width="162" height="20" rx="10"/>
+    <rect x="1070" y="150" width="76" height="20" rx="10"/>
+  </g>
+  <circle cx="1218" cy="210" r="10" fill="#c83b34" opacity=".78"/>
+  <rect width="1440" height="960" fill="url(#lamp)"/>
+</svg>

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { SAVED_KEY } from "@/lib/storage-keys";
+import { HeroMedia, VisualBackdrop } from "@/components/VisualBackdrop";
 
 type SavedProde = {
   id: string;
@@ -36,6 +37,8 @@ export function HomeClient() {
 
   return (
     <main className="home-shell">
+      <VisualBackdrop variant="home" />
+      <HeroMedia />
       <section className="home-hero">
         <div className="home-copy">
           <p className="eyebrow">Prode Mundial 2026</p>

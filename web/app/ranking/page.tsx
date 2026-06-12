@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { VisualBackdrop } from "@/components/VisualBackdrop";
 import { buildR32 } from "@/lib/bracket";
 import { getFixture, getModelPicks, getProfiles, getStoredProdes } from "@/lib/data.server";
 import { rngFromProde, runKnockout } from "@/lib/draw";
@@ -48,6 +49,7 @@ export default async function RankingPage() {
 
   return (
     <main className="ranking-shell">
+      <VisualBackdrop variant="ranking" />
       <header className="ranking-header">
         <div>
           <p className="eyebrow">Ranking</p>

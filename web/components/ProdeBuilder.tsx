@@ -8,6 +8,7 @@ import { clampGoal, normalizeImportedProde, validateProde } from "@/lib/prode-va
 import { groupMatches, orderedMatchIds } from "@/lib/match-order";
 import { scoreProde } from "@/lib/scoring";
 import { DRAFT_KEY, SAVED_KEY } from "@/lib/storage-keys";
+import { VisualBackdrop } from "@/components/VisualBackdrop";
 import type { Match, Prode, Score } from "@/lib/types";
 
 type Prediction = {
@@ -287,6 +288,7 @@ export function ProdeBuilder({
 
   return (
     <main className="prode-shell">
+      <VisualBackdrop variant="prode" />
       <header className="prode-header">
         <div>
           <p className="eyebrow">Carga del prode</p>

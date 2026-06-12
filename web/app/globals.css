@@ -1,13 +1,20 @@
 :root {
-  --bg: #0a1020;
-  --card: #121b33;
-  --line: #22304f;
-  --text: #e8edf8;
-  --muted: #aeb9d3;
-  --cyan: #22d3ee;
-  --violet: #6366f1;
-  --gold: #fbbf24;
-  --ok: #34d399;
+  --bg: #050911;
+  --card: rgb(13 20 28 / 0.82);
+  --panel: #101821;
+  --field: #06100d;
+  --line: rgb(218 230 214 / 0.16);
+  --text: #edf4e7;
+  --muted: #aeb9a8;
+  --cyan: #d8a641;
+  --violet: #1d6b46;
+  --gold: #e7b84b;
+  --ok: #54c181;
+  --signal: #c83b34;
+  --shadow: rgb(0 0 0 / 0.42);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --display-font: Bahnschrift, "Aptos Display", "Arial Narrow", Impact, sans-serif;
+  --body-font: Aptos, "Segoe UI", ui-sans-serif, system-ui, sans-serif;
 }
 
 * {
@@ -23,7 +30,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--body-font);
 }
 
 button,
@@ -46,7 +53,7 @@ a {
 }
 
 h1 {
-  font-family: Sora, Inter, ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--display-font);
   font-size: clamp(2.4rem, 8vw, 5.8rem);
   line-height: 0.95;
   letter-spacing: 0;
@@ -1152,5 +1159,450 @@ p {
   .final-actions {
     bottom: 124px;
     grid-template-columns: 1fr;
+  }
+}
+
+/* Broadcast premium visual pass */
+.home-shell,
+.prode-shell,
+.ranking-shell,
+.world-shell {
+  isolation: isolate;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.visual-backdrop,
+.phase-atmosphere {
+  background-image:
+    linear-gradient(90deg, rgb(3 6 9 / 0.9) 0%, rgb(3 6 9 / 0.62) 46%, rgb(3 6 9 / 0.38) 100%),
+    radial-gradient(circle at 78% 18%, rgb(231 184 75 / 0.18), transparent 34%),
+    var(--visual-media);
+  background-position: center;
+  background-size: cover;
+  inset: 0;
+  pointer-events: none;
+  position: fixed;
+  z-index: -2;
+}
+
+.visual-backdrop::after,
+.phase-atmosphere::after {
+  background-image:
+    linear-gradient(rgb(237 244 231 / 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(237 244 231 / 0.035) 1px, transparent 1px);
+  background-size: 56px 56px;
+  content: "";
+  inset: 0;
+  mask-image: linear-gradient(to bottom, black, transparent 78%);
+  position: absolute;
+}
+
+.home-shell {
+  display: grid;
+  min-height: 100dvh;
+  padding: clamp(18px, 4vw, 52px);
+}
+
+.home-hero {
+  align-items: end;
+  min-height: calc(100dvh - clamp(36px, 8vw, 104px));
+  position: relative;
+  z-index: 1;
+}
+
+.home-copy {
+  align-self: end;
+  max-width: 760px;
+  padding-bottom: clamp(10px, 5vh, 54px);
+}
+
+.home-copy h1,
+.world-header h1,
+.phase-copy h2,
+.ranking-header h1,
+.prode-header h1,
+.teams-line strong,
+.group-block h2,
+.champion-mark strong {
+  font-family: var(--display-font);
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.home-copy h1 {
+  font-size: clamp(3.4rem, 10vw, 8.8rem);
+  max-width: 10ch;
+  text-wrap: balance;
+}
+
+.home-copy p {
+  color: rgb(237 244 231 / 0.82);
+  font-size: clamp(1rem, 1.4vw, 1.18rem);
+  max-width: 54ch;
+}
+
+.hero-media {
+  aspect-ratio: 1.35;
+  background-image:
+    linear-gradient(180deg, rgb(3 6 9 / 0.05), rgb(3 6 9 / 0.48)),
+    var(--visual-media);
+  background-position: center;
+  background-size: cover;
+  border: 1px solid rgb(237 244 231 / 0.18);
+  border-radius: 8px;
+  bottom: clamp(40px, 8vh, 92px);
+  box-shadow: 0 28px 90px var(--shadow);
+  max-width: 520px;
+  opacity: 0.9;
+  overflow: hidden;
+  position: absolute;
+  right: clamp(20px, 5vw, 86px);
+  transform: perspective(1100px) rotateY(-9deg) rotateX(2deg);
+  width: min(40vw, 520px);
+  z-index: 0;
+}
+
+.hero-media__frame {
+  border: 1px solid rgb(231 184 75 / 0.34);
+  border-radius: 6px;
+  inset: 12px;
+  position: absolute;
+}
+
+.hero-media__scan {
+  animation: signalSweep 4.8s var(--ease-out) infinite;
+  background: linear-gradient(90deg, transparent, rgb(231 184 75 / 0.26), transparent);
+  height: 100%;
+  opacity: 0.7;
+  position: absolute;
+  transform: translateX(-130%);
+  width: 38%;
+}
+
+.saved-panel,
+.builder-tools,
+.match-card,
+.group-block,
+.completion-card,
+.ranking-table,
+.ledger-row,
+.table-stack li,
+.thirds-race li,
+.duel {
+  background: rgb(8 15 20 / 0.86);
+  border-color: rgb(237 244 231 / 0.13);
+  box-shadow: 0 18px 54px rgb(0 0 0 / 0.24);
+}
+
+.saved-panel {
+  align-self: end;
+  background:
+    linear-gradient(180deg, rgb(11 20 25 / 0.96), rgb(6 11 15 / 0.94));
+  max-width: 420px;
+  position: relative;
+  z-index: 1;
+}
+
+.panel-heading span,
+.completion-card strong,
+.duel-line b,
+.ledger-row strong {
+  color: var(--gold);
+}
+
+.button,
+.file-button,
+.segmented button,
+.quick-grid button,
+.manual-score button {
+  transition:
+    background 220ms var(--ease-out),
+    border-color 220ms var(--ease-out),
+    color 220ms var(--ease-out),
+    opacity 220ms var(--ease-out),
+    transform 220ms var(--ease-out);
+}
+
+.button--primary {
+  background: var(--gold);
+  border-color: rgb(255 226 145 / 0.84);
+  color: #10110d;
+}
+
+.button--secondary,
+.button--ghost,
+.file-button {
+  background: rgb(8 15 20 / 0.74);
+  border-color: rgb(237 244 231 / 0.16);
+}
+
+.button:not(:disabled):hover,
+.file-button:hover,
+.saved-list a:hover,
+.quick-grid button:hover {
+  transform: translateY(-2px);
+}
+
+.button:focus-visible,
+.file-button:focus-visible,
+input:focus-visible,
+.segmented button:focus-visible,
+.quick-grid button:focus-visible,
+.manual-score button:focus-visible,
+.saved-list a:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.prode-shell,
+.ranking-shell {
+  padding: clamp(18px, 3.4vw, 44px);
+}
+
+.prode-shell .visual-backdrop,
+.ranking-shell .visual-backdrop {
+  opacity: 0.62;
+}
+
+.prode-header,
+.builder-layout,
+.ranking-header,
+.ranking-table {
+  position: relative;
+  z-index: 1;
+}
+
+.progress-meter {
+  background: rgb(5 12 11 / 0.92);
+  border-color: rgb(237 244 231 / 0.14);
+}
+
+.progress-meter span {
+  background: linear-gradient(90deg, var(--gold), #54c181);
+}
+
+.field input,
+.sheet-row input,
+.quick-grid button,
+.segmented,
+.result-context,
+.inline-confirm {
+  background: rgb(4 10 10 / 0.88);
+  border-color: rgb(237 244 231 / 0.12);
+}
+
+.segmented .is-active,
+.quick-grid .is-active,
+.manual-score button:hover {
+  background: #1f7a45;
+}
+
+.source-badge {
+  background: #1f7a45;
+}
+
+.model-badge {
+  background: #3b4b33;
+}
+
+.real-badge {
+  background: var(--gold);
+}
+
+.group-A,
+.group-E,
+.group-I { background: #9f3a2f; color: var(--text); }
+.group-B,
+.group-F,
+.group-J { background: #1f7a45; color: var(--text); }
+.group-C,
+.group-G,
+.group-K { background: #d8a641; color: #11130f; }
+.group-D,
+.group-H,
+.group-L { background: #43515b; color: var(--text); }
+
+.sheet-view {
+  position: relative;
+  z-index: 1;
+}
+
+.sheet-row {
+  background: rgb(3 8 9 / 0.36);
+  border: 1px solid rgb(237 244 231 / 0.08);
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.phase-atmosphere {
+  animation: broadcastPan 14s var(--ease-out) infinite alternate;
+  opacity: 0.58;
+}
+
+.phase-atmosphere--groups {
+  background-image:
+    linear-gradient(90deg, rgb(3 6 9 / 0.88), rgb(3 6 9 / 0.56)),
+    radial-gradient(circle at 72% 28%, rgb(31 122 69 / 0.24), transparent 36%),
+    var(--visual-media);
+}
+
+.phase-atmosphere--knockout,
+.phase-atmosphere--final {
+  background-image:
+    linear-gradient(90deg, rgb(3 6 9 / 0.9), rgb(3 6 9 / 0.48)),
+    radial-gradient(circle at 50% 48%, rgb(231 184 75 / 0.18), transparent 32%),
+    var(--visual-media);
+}
+
+.world-shell {
+  background:
+    radial-gradient(circle at 8% 10%, rgb(200 59 52 / 0.08), transparent 26%),
+    linear-gradient(135deg, #050911 0%, #08100f 50%, #11150d 100%);
+}
+
+.phase-rail {
+  background: rgb(5 10 13 / 0.84);
+  border-color: rgb(237 244 231 / 0.12);
+}
+
+.phase-rail .is-active {
+  background: var(--gold);
+  color: #10110d;
+}
+
+.phase-rail .is-done {
+  background: rgb(31 122 69 / 0.2);
+  color: #d6ecd2;
+}
+
+.phase-page {
+  position: relative;
+  z-index: 1;
+}
+
+.table-caption,
+.phase-kicker {
+  color: var(--gold);
+}
+
+.duel::after {
+  background: var(--gold);
+}
+
+.duel .is-winner {
+  color: #7ee0a2;
+}
+
+.champion-mark {
+  background:
+    linear-gradient(135deg, rgb(231 184 75 / 0.92), rgb(154 97 28 / 0.94));
+  color: #0d0e09;
+  overflow: hidden;
+  position: relative;
+}
+
+.trophy-visual {
+  aspect-ratio: 1;
+  border-radius: 8px;
+  display: grid;
+  max-width: min(340px, 72vw);
+  overflow: hidden;
+  place-items: center;
+  width: 100%;
+}
+
+.trophy-visual img {
+  display: block;
+  filter: drop-shadow(0 22px 42px rgb(0 0 0 / 0.35));
+  width: 100%;
+}
+
+.final-actions,
+.sticky-controls {
+  background: rgb(5 10 13 / 0.9);
+  border-color: rgb(231 184 75 / 0.24);
+}
+
+.ranking-shell .visual-backdrop {
+  background-position: center top;
+}
+
+.ranking-header {
+  border-bottom: 1px solid rgb(237 244 231 / 0.12);
+  padding-bottom: 20px;
+}
+
+.ranking-table {
+  background: rgb(5 10 13 / 0.72);
+}
+
+.ranking-row {
+  background: rgb(8 15 20 / 0.78);
+  border-top-color: rgb(237 244 231 / 0.1);
+}
+
+.ranking-row--head {
+  background: rgb(231 184 75 / 0.13);
+  color: #dfcf9b;
+}
+
+.ranking-row a {
+  color: var(--gold);
+}
+
+@keyframes signalSweep {
+  0%, 24% { transform: translateX(-130%); }
+  58%, 100% { transform: translateX(320%); }
+}
+
+@keyframes broadcastPan {
+  from { transform: scale(1.02) translate3d(-8px, 0, 0); }
+  to { transform: scale(1.07) translate3d(8px, -6px, 0); }
+}
+
+@media (max-width: 860px) {
+  .hero-media {
+    bottom: 36px;
+    max-width: none;
+    opacity: 0.42;
+    right: -18vw;
+    width: 78vw;
+  }
+
+  .home-hero {
+    align-items: end;
+    min-height: calc(100dvh - 36px);
+  }
+
+  .saved-panel {
+    max-width: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .home-copy h1 {
+    font-size: clamp(3.2rem, 18vw, 5.2rem);
+  }
+
+  .hero-media {
+    display: none;
+  }
+
+  .home-shell,
+  .prode-shell,
+  .ranking-shell {
+    padding: 14px;
+  }
+
+  .final-actions {
+    bottom: 132px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-media__scan,
+  .phase-atmosphere {
+    animation: none;
   }
 }

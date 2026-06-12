@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 960" role="img" aria-label="Trofeo generico abstracto">
+  <defs>
+    <linearGradient id="gold" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#fff2b8"/>
+      <stop offset=".34" stop-color="#e7b84b"/>
+      <stop offset=".72" stop-color="#9f681d"/>
+      <stop offset="1" stop-color="#f4d379"/>
+    </linearGradient>
+    <radialGradient id="back" cx="50%" cy="42%" r="58%">
+      <stop offset="0" stop-color="#e7b84b" stop-opacity=".32"/>
+      <stop offset=".48" stop-color="#123c27" stop-opacity=".2"/>
+      <stop offset="1" stop-color="#030609" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="960" height="960" fill="#05080c"/>
+  <rect width="960" height="960" fill="url(#back)"/>
+  <path d="M332 190 C332 134 628 134 628 190 C612 370 560 462 512 520 L512 642 H448 V520 C400 462 348 370 332 190Z" fill="url(#gold)"/>
+  <path d="M332 218 C240 238 206 304 222 390 C238 478 326 508 388 502" fill="none" stroke="url(#gold)" stroke-width="44" stroke-linecap="round"/>
+  <path d="M628 218 C720 238 754 304 738 390 C722 478 634 508 572 502" fill="none" stroke="url(#gold)" stroke-width="44" stroke-linecap="round"/>
+  <rect x="410" y="636" width="140" height="76" rx="16" fill="url(#gold)"/>
+  <path d="M330 740 H630 L674 836 H286 Z" fill="#151b22" stroke="#e7b84b" stroke-opacity=".5" stroke-width="5"/>
+  <ellipse cx="480" cy="842" rx="250" ry="36" fill="#000" opacity=".38"/>
+  <path d="M386 174 C438 154 522 150 584 174" fill="none" stroke="#fff7c9" stroke-opacity=".45" stroke-width="8" stroke-linecap="round"/>
+</svg>

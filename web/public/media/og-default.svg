@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Fondo social deportivo abstracto">
+  <defs>
+    <radialGradient id="stadium" cx="78%" cy="20%" r="65%">
+      <stop offset="0" stop-color="#e7b84b" stop-opacity=".32"/>
+      <stop offset=".4" stop-color="#133d28" stop-opacity=".26"/>
+      <stop offset="1" stop-color="#03070d" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#050911"/>
+  <rect width="1200" height="630" fill="url(#stadium)"/>
+  <path d="M0 410 C310 330 850 336 1200 420 L1200 630 L0 630 Z" fill="#082015"/>
+  <g stroke="#e7b84b" stroke-opacity=".38" stroke-width="4" fill="none">
+    <path d="M760 140 H900 V220 H1018"/>
+    <path d="M760 300 H900 V220"/>
+    <path d="M1018 220 H1108 V315"/>
+    <path d="M760 440 H900 V360 H1018"/>
+    <path d="M760 560 H900 V360"/>
+  </g>
+  <g opacity=".62">
+    <circle cx="970" cy="92" r="76" fill="#f5d17b" opacity=".18"/>
+    <circle cx="1050" cy="120" r="50" fill="#f5d17b" opacity=".2"/>
+  </g>
+  <rect x="60" y="72" width="560" height="390" rx="22" fill="#071019" opacity=".48" stroke="#e8edf8" stroke-opacity=".12"/>
+  <circle cx="1090" cy="88" r="8" fill="#c83b34"/>
+</svg>

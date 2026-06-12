@@ -2,6 +2,52 @@
 
 Estado al cierre de esta pasada: los 5 sprints del plan base quedaron implementados en codigo. Esta actualizacion agrega correcciones de reinicio, coherencia de resultados, validacion fuerte, SEO y headers de seguridad.
 
+## Actualizacion: visual premium broadcast
+
+Hecho en esta pasada:
+
+- Se aplico una direccion visual `broadcast premium mundialista`, original y sin marca FIFA.
+- Se agregaron assets locales livianos en `web/public/media/`:
+  - `hero-stadium.svg`
+  - `prode-boardroom.svg`
+  - `world-tunnel.svg`
+  - `phase-groups.svg`
+  - `phase-knockout.svg`
+  - `trophy-generic.svg`
+  - `og-default.svg`
+- Se generaron tambien 7 PNG cinematicos con la herramienta de imagen como fuente creativa. El entorno de Codex no permitio copiarlos como binarios a `B:\mundial` (`PermissionError`/`EPERM`), por eso la app quedo integrada con SVGs propios servidos desde `public`.
+- Se agrego `web/components/VisualBackdrop.tsx` con:
+  - `VisualBackdrop`
+  - `HeroMedia`
+  - `PhaseAtmosphere`
+  - `TrophyVisual`
+- `/` ahora tiene hero full-bleed con atmosfera de estadio, copy encima y panel local tipo sidebar de transmision.
+- `/prode` mantiene la carga eficiente, pero suma fondo tactico y superficies mas sobrias.
+- `/mundial` ahora tiene fondos por fase, barrido de luz, motion liviano y visual propio de copa en la final.
+- `/ranking` se ajusto hacia scoreboard premium.
+- `/api/og` usa el fondo social nuevo y elimina el emoji de copa del render OG.
+- Se cambio el sistema visual:
+  - tinta/nocturno
+  - verdes cancha
+  - ambar de reflectores
+  - blanco tiza
+  - rojo senal puntual
+- Se reemplazo el look cyan/purpura generico por tokens mas deportivos.
+- Se agregaron animaciones CSS livianas con `transform` y `opacity`, respetando `prefers-reduced-motion`.
+- Se actualizaron metadata/manifest para el nuevo color de marca e imagen OG dinamica.
+
+Verificado en esta pasada:
+
+- `npm run test`: OK, 9 tests verdes.
+- `tsc --project web/tsconfig.json --noEmit --incremental false`: OK, sin errores.
+- `npm run build`: bloqueado por permisos del entorno al escribir `web/.next/trace`.
+
+Pendiente visual futuro:
+
+- Si queres usar los PNG 3D generados reales en vez de los SVG livianos, copiarlos manualmente desde `C:\Users\facu\.codex\generated_images\019eba33-8d2d-7423-bdbc-662fd93137f4\` a `web/public/media/` y convertirlos a WebP.
+- Three.js real queda para fase 2, solo si la version actual ya esta estable en mobile.
+- Video loops quedan para fase 2; por ahora motion web liviano evita peso y problemas de autoplay.
+
 ## Actualizacion 2026-06-12 (Claude, fuera del sandbox de Codex)
 
 Se destrabaron todos los pendientes por bloqueo de entorno, salvo el deploy:

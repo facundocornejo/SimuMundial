@@ -7,7 +7,7 @@ export default function manifest(): MetadataRoute.Manifest {
     description: "Carga, revela y comparte tu pronostico del Mundial 2026.",
     start_url: "/",
     display: "standalone",
-    background_color: "#080d16",
+    background_color: "#050911",
     theme_color: "#e7b84b",
     lang: "es-AR",
   };

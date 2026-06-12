@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 854" role="img" aria-label="Estadio nocturno abstracto">
+  <defs>
+    <radialGradient id="sky" cx="50%" cy="0%" r="75%">
+      <stop offset="0" stop-color="#19312a"/>
+      <stop offset=".42" stop-color="#08131b"/>
+      <stop offset="1" stop-color="#04080c"/>
+    </radialGradient>
+    <linearGradient id="pitch" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#143b27"/>
+      <stop offset=".58" stop-color="#071f17"/>
+      <stop offset="1" stop-color="#03100d"/>
+    </linearGradient>
+    <radialGradient id="light" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#ffe7a4" stop-opacity=".9"/>
+      <stop offset=".28" stop-color="#d8a641" stop-opacity=".36"/>
+      <stop offset="1" stop-color="#d8a641" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="18"/></filter>
+  </defs>
+  <rect width="1600" height="854" fill="url(#sky)"/>
+  <ellipse cx="1270" cy="180" rx="430" ry="180" fill="#d8a641" opacity=".09" filter="url(#blur)"/>
+  <path d="M0 548 C380 458 1040 466 1600 560 L1600 854 L0 854 Z" fill="url(#pitch)"/>
+  <path d="M118 616 C510 538 1048 542 1492 624" fill="none" stroke="#e8f3df" stroke-opacity=".28" stroke-width="3"/>
+  <path d="M288 736 C612 660 1000 664 1324 740" fill="none" stroke="#e8f3df" stroke-opacity=".18" stroke-width="2"/>
+  <g opacity=".62">
+    <circle cx="1180" cy="86" r="170" fill="url(#light)"/>
+    <circle cx="1410" cy="126" r="130" fill="url(#light)"/>
+    <circle cx="1015" cy="128" r="120" fill="url(#light)"/>
+  </g>
+  <g stroke="#f7d37b" stroke-width="2" stroke-opacity=".18">
+    <path d="M1170 96 L850 540"/>
+    <path d="M1406 132 L994 570"/>
+    <path d="M1008 132 L770 528"/>
+  </g>
+  <g fill="#111821" opacity=".86">
+    <path d="M0 514 C384 424 1130 436 1600 520 L1600 572 C1108 500 410 490 0 572 Z"/>
+    <rect x="0" y="500" width="1600" height="28"/>
+  </g>
+  <g fill="#e8edf8" opacity=".08">
+    <rect x="620" y="493" width="22" height="6"/>
+    <rect x="666" y="489" width="30" height="6"/>
+    <rect x="714" y="486" width="24" height="6"/>
+    <rect x="760" y="484" width="32" height="6"/>
+    <rect x="808" y="482" width="24" height="6"/>
+    <rect x="854" y="482" width="36" height="6"/>
+  </g>
+  <rect width="1600" height="854" fill="#020405" opacity=".24"/>
+</svg>
