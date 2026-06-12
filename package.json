@@ -10,6 +10,7 @@
     "build": "npm --workspace web run build",
     "start": "npm --workspace web run start",
     "test": "npm --workspace web run test",
+    "test:e2e": "npm --workspace web run test:e2e",
     "lint": "npm --workspace web run lint",
     "web:dev": "npm --workspace web run dev",
     "web:build": "npm --workspace web run build",
