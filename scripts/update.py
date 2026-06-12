@@ -7,12 +7,15 @@ Uso:
   python scripts/update.py --no-html       # sin regenerar el HTML
 """
 import json
+import shutil
 import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
+PRODE = ROOT / "prode"
+WEB_DATA = ROOT / "web" / "data"
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -59,6 +62,16 @@ def validate():
     print("  Validacion OK: 72 partidos, ternas=100, 48 Elo, sims consistentes")
 
 
+def copy_web_data():
+    WEB_DATA.mkdir(parents=True, exist_ok=True)
+    (WEB_DATA / "prodes").mkdir(parents=True, exist_ok=True)
+    for name in ("fixture.json", "team_profiles.json", "predictions.json", "model_picks.json"):
+        shutil.copy2(DATA / name, WEB_DATA / name)
+    for src in PRODE.glob("*.json"):
+        shutil.copy2(src, WEB_DATA / "prodes" / src.name)
+    print("  Datos copiados a web/data")
+
+
 def main():
     args = sys.argv[1:]
     import fetch_fixture, fetch_history, fetch_rankings
@@ -77,7 +90,8 @@ def main():
         run("8/9 Formulario prode", generate_prode.main)
         run("9/9 El juego", game.main)
     validate()
-    print("\nPipeline completo. Abri mundial2026.html para ver el resultado.")
+    run("10/10 Datos web app", copy_web_data)
+    print("\nPipeline completo. Abri mundial2026.html o corré la web app para ver el resultado.")
     return 0
 
 

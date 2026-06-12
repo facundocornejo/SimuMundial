@@ -1,0 +1,3942 @@
+{
+ "history_matches_used": 49405,
+ "wc2026_applied": 2,
+ "profiles": {
+  "Algeria": {
+   "elo": 1883.1,
+   "group": "J",
+   "form_last10": [
+    7,
+    2,
+    1
+   ],
+   "avg_gf_2y": 2.4,
+   "avg_gc_2y": 0.533,
+   "matches_2y": 30,
+   "last10": [
+    {
+     "date": "2025-12-12",
+     "opp": "United Arab Emirates",
+     "score": "1-1"
+    },
+    {
+     "date": "2025-12-24",
+     "opp": "Sudan",
+     "score": "3-0"
+    },
+    {
+     "date": "2025-12-28",
+     "opp": "Burkina Faso",
+     "score": "1-0"
+    },
+    {
+     "date": "2025-12-31",
+     "opp": "Equatorial Guinea",
+     "score": "3-1"
+    },
+    {
+     "date": "2026-01-06",
+     "opp": "DR Congo",
+     "score": "1-0"
+    },
+    {
+     "date": "2026-01-10",
+     "opp": "Nigeria",
+     "score": "0-2"
+    },
+    {
+     "date": "2026-03-27",
+     "opp": "Guatemala",
+     "score": "7-0"
+    },
+    {
+     "date": "2026-03-31",
+     "opp": "Uruguay",
+     "score": "0-0"
+    },
+    {
+     "date": "2026-06-03",
+     "opp": "Netherlands",
+     "score": "1-0"
+    },
+    {
+     "date": "2026-06-10",
+     "opp": "Bolivia",
+     "score": "4-0"
+    }
+   ],
+   "h2h_group": {
+    "Argentina": [
+     0,
+     0,
+     1
+    ],
+    "Austria": [
+     0,
+     0,
+     1
+    ],
+    "Jordan": [
+     1,
+     1,
+     0
+    ]
+   },
+   "fifa_rank": null
+  },
+  "Argentina": {
+   "elo": 2187.0,
+   "group": "J",
+   "form_last10": [
+    8,
+    1,
+    1
+   ],
+   "avg_gf_2y": 2.192,
+   "avg_gc_2y": 0.423,
+   "matches_2y": 26,
+   "last10": [
+    {
+     "date": "2025-06-10",
+     "opp": "Colombia",
+     "score": "1-1"
+    },
+    {
+     "date": "2025-09-04",
+     "opp": "Venezuela",
+     "score": "3-0"
+    },
+    {
+     "date": "2025-09-09",
+     "opp": "Ecuador",
+     "score": "0-1"
+    },
+    {
+     "date": "2025-10-10",
+     "opp": "Venezuela",
+     "score": "1-0"
+    },
+    {
+     "date": "2025-10-14",
+     "opp": "Puerto Rico",
+     "score": "6-0"
+    },
+    {
+     "date": "2025-11-14",
+     "opp": "Angola",
+     "score": "2-0"
+    },
+    {
+     "date": "2026-03-27",
+     "opp": "Mauritania",
+     "score": "2-1"
+    },
+    {
+     "date": "2026-03-31",
+     "opp": "Zambia",
+     "score": "5-0"
+    },
+    {
+     "date": "2026-06-06",
+     "opp": "Honduras",
+     "score": "2-0"
+    },
+    {
+     "date": "2026-06-09",
+     "opp": "Iceland",
+     "score": "3-0"
+    }
+   ],
+   "h2h_group": {
+    "Algeria": [
+     1,
+     0,
+     0
+    ],
+    "Austria": [
+     1,
+     1,
+     0
+    ],
+    "Jordan": [
+     0,
+     0,
+     0
+    ]
+   },
+   "fifa_rank": 1
+  },
+  "Australia": {
+   "elo": 1902.2,
+   "group": "D",
+   "form_last10": [
+    5,
+    1,
+    4
+   ],
+   "avg_gf_2y": 1.45,
+   "avg_gc_2y": 0.85,
+   "matches_2y": 20,
+   "last10": [
+    {
+     "date": "2025-09-05",
+     "opp": "New Zealand",
+     "score": "1-0"
+    },
+    {
+     "date": "2025-09-09",
+     "opp": "New Zealand",
+     "score": "3-1"
+    },
+    {
+     "date": "2025-10-10",
+     "opp": "Canada",
+     "score": "1-0"
+    },
+    {
+     "date": "2025-10-14",
+     "opp": "United States",
+     "score": "1-2"
+    },
+    {
+     "date": "2025-11-14",
+     "opp": "Venezuela",
+     "score": "0-1"
+    },
+    {
+     "date": "2025-11-18",
+     "opp": "Colombia",
+     "score": "0-3"
+    },
+    {
+     "date": "2026-03-27",
+     "opp": "Cameroon",
+     "score": "1-0"
+    },
+    {
+     "date": "2026-03-31",
+     "opp": "Curaçao",
+     "score": "5-1"
+    },
+    {
+     "date": "2026-05-30",
+     "opp": "Mexico",
+     "score": "0-1"
+    },
+    {
+     "date": "2026-06-06",
+     "opp": "Switzerland",
+     "score": "1-1"
+    }
+   ],
+   "h2h_group": {
+    "Paraguay": [
+     2,
+     3,
+     0
+    ],
+    "Turkey": [
+     0,
+     0,
+     2
+    ],
+    "United States": [
+     1,
+     1,
+     2
+    ]
+   },
+   "fifa_rank": null
+  },
+  "Austria": {
+   "elo": 1886.8,
+   "group": "J",
+   "form_last10": [
+    8,
+    1,
+    1
+   ],
+   "avg_gf_2y": 2.217,
+   "avg_gc_2y": 0.826,
+   "matches_2y": 23,
+   "last10": [
+    {
+     "date": "2025-06-10",
+     "opp": "San Marino",
+     "score": "4-0"
+    },
+    {
+     "date": "2025-09-06",
+     "opp": "Cyprus",
+     "score": "1-0"
+    },
+    {
+     "date": "2025-09-09",
+     "opp": "Bosnia and Herzegovina",
+     "score": "2-1"
+    },
+    {
+     "date": "2025-10-09",
+     "opp": "San Marino",
+     "score": "10-0"
+    },
+    {
+     "date": "2025-10-12",
+     "opp": "Romania",
+     "score": "0-1"
+    },
+    {
+     "date": "2025-11-15",
+     "opp": "Cyprus",
+     "score": "2-0"
+    },
+    {
+     "date": "2025-11-18",
+     "opp": "Bosnia and Herzegovina",
+     "score": "1-1"
+    },
+    {
+     "date": "2026-03-27",
+     "opp": "Ghana",
+     "score": "5-1"
+    },
+    {
+     "date": "2026-03-31",
+     "opp": "South Korea",
+     "score": "1-0"
+    },
+    {
+     "date": "2026-06-01",
+     "opp": "Tunisia",
+     "score": "1-0"
+    }
+   ],
+   "h2h_group": {
+    "Algeria": [
+     1,
+     0,
+     0
+    ],
+    "Argentina": [
+     0,
+     1,
+     1
+    ],
+    "Jordan": [
+     0,
+     0,
+     0
+    ]
+   },
+   "fifa_rank": null
+  },
+  "Belgium": {
+   "elo": 1944.3,
+   "group": "G",
+   "form_last10": [
+    7,
+    3,
+    0
+   ],
+   "avg_gf_2y": 2.25,
+   "avg_gc_2y": 1.0,
+   "matches_2y": 24,
+   "last10": [
+    {
+     "date": "2025-09-04",
+     "opp": "Liechtenstein",
+     "score": "6-0"
+    },
+    {
+     "date": "2025-09-07",
+     "opp": "Kazakhstan",
+     "score": "6-0"
+    },
+    {
+     "date": "2025-10-10",
+     "opp": "North Macedonia",
+     "score": "0-0"
+    },
+    {
+     "date": "2025-10-13",
+     "opp": "Wales",
+     "score": "4-2"
+    },
+    {
+     "date": "2025-11-15",
+     "opp": "Kazakhstan",
+     "score": "1-1"
+    },
+    {
+     "date": "2025-11-18",
+     "opp": "Liechtenstein",
+     "score": "7-0"
+    },
+    {
+     "date": "2026-03-28",
+     "opp": "United States",
+     "score": "5-2"
+    },
+    {
+     "date": "2026-03-31",
+     "opp": "Mexico",
+     "score": "1-1"
+    },
+    {
+     "date": "2026-06-02",
+     "opp": "Croatia",
+     "score": "2-0"
+    },
+    {
+     "date": "2026-06-06",
+     "opp": "Tunisia",
+     "score": "5-0"
+    }
+   ],
+   "h2h_group": {
+    "Egypt": [
+     1,
+     0,
+     3
+    ],
+    "Iran": [
+     0,
+     0,
+     0
+    ],
+    "New Zealand": [
+     0,
+     0,
+     0
+    ]
+   },
+   "fifa_rank": 4
+  },
+  "Bosnia and Herzegovina": {
+   "elo": 1656.3,
+   "group": "B",
+   "form_last10": [
+    3,
+    6,
+    1
+   ],
+   "avg_gf_2y": 1.45,
+   "avg_gc_2y": 1.5,
+   "matches_2y": 20,
+   "last10": [
+    {
+     "date": "2025-09-06",
+     "opp": "San Marino",
+     "score": "6-0"
+    },
+    {
+     "date": "2025-09-09",
+     "opp": "Austria",
+     "score": "1-2"
+    },
+    {
+     "date": "2025-10-09",
+     "opp": "Cyprus",
+     "score": "2-2"
+    },
+    {
+     "date": "2025-10-12",
+     "opp": "Malta",
+     "score": "4-1"
+    },
+    {
+     "date": "2025-11-15",
+     "opp": "Romania",
+     "score": "3-1"
+    },
+    {
+     "date": "2025-11-18",
+     "opp": "Austria",
+     "score": "1-1"
+    },
+    {
+     "date": "2026-03-26",
+     "opp": "Wales",
+     "score": "1-1"
+    },
+    {
+     "date": "2026-03-31",
+     "opp": "Italy",
+     "score": "1-1"
+    },
+    {
+     "date": "2026-05-29",
+     "opp": "North Macedonia",
+     "score": "0-0"
+    },
+    {
+     "date": "2026-06-06",
+     "opp": "Panama",
+     "score": "1-1"
+    }
+   ],
+   "h2h_group": {
+    "Canada": [
+     0,
+     0,
+     0
+    ],
+    "Qatar": [
+     0,
+     1,
+     1
+    ],
+    "Switzerland": [
+     1,
+     0,
+     0
+    ]
+   },
+   "fifa_rank": null
+  },
+  "Brazil": {
+   "elo": 2065.6,
+   "group": "C",
+   "form_last10": [
+    6,
+    1,
+    3
+   ],
+   "avg_gf_2y": 1.76,
+   "avg_gc_2y": 0.92,
+   "matches_2y": 25,
+   "last10": [
+    {
+     "date": "2025-09-04",
+     "opp": "Chile",
+     "score": "3-0"
+    },
+    {
+     "date": "2025-09-09",
+     "opp": "Bolivia",
+     "score": "0-1"
+    },
+    {
+     "date": "2025-10-10",
+     "opp": "South Korea",
+     "score": "5-0"
+    },
+    {
+     "date": "2025-10-14",
+     "opp": "Japan",
+     "score": "2-3"
+    },
+    {
+     "date": "2025-11-15",
+     "opp": "Senegal",
+     "score": "2-0"
+    },
+    {
+     "date": "2025-11-18",
+     "opp": "Tunisia",
+     "score": "1-1"
+    },
+    {
+     "date": "2026-03-26",
+     "opp": "France",
+     "score": "1-2"
+    },
+    {
+     "date": "2026-03-31",
+     "opp": "Croatia",
+     "score": "3-1"
+    },
+    {
+     "date": "2026-05-31",
+     "opp": "Panama",
+     "score": "6-2"
+    },
+    {
+     "date": "2026-06-06",
+     "opp": "Egypt",
+     "score": "2-1"
+    }
+   ],
+   "h2h_group": {
+    "Haiti": [
+     3,
+     0,
+     0
+    ],
+    "Morocco": [
+     2,
+     0,
+     1
+    ],
+    "Scotland": [
+     8,
+     2,
+     0
+    ]
+   },
+   "fifa_rank": 1
+  },
+  "Canada": {
+   "elo": 1903.7,
+   "group": "B",
+   "form_last10": [
+    4,
+    5,
+    1
+   ],
+   "avg_gf_2y": 1.345,
+   "avg_gc_2y": 0.69,
+   "matches_2y": 29,
+   "last10": [
+    {
+     "date": "2025-09-05",
+     "opp": "Romania",
+     "score": "3-0"
+    },
+    {
+     "date": "2025-09-09",
+     "opp": "Wales",
+     "score": "1-0"
+    },
+    {
+     "date": "2025-10-10",
+     "opp": "Australia",
+     "score": "0-1"
+    },
+    {
+     "date": "2025-10-14",
+     "opp": "Colombia",
+     "score": "0-0"
+    },
+    {
+     "date": "2025-11-13",
+     "opp": "Ecuador",
+     "score": "0-0"
+    },
+    {
+     "date": "2025-11-18",
+     "opp": "Venezuela",
+     "score": "2-0"
+    },
+    {
+     "date": "2026-03-28",
+     "opp": "Iceland",
+     "score": "2-2"
+    },
+    {
+     "date": "2026-03-31",
+     "opp": "Tunisia",
+     "score": "0-0"
+    },
+    {
+     "date": "2026-06-01",
+     "opp": "Uzbekistan",
+     "score": "2-0"
+    },
+    {
+     "date": "2026-06-05",
+     "opp": "Republic of Ireland",
+     "score": "1-1"
+    }
+   ],
+   "h2h_group": {
+    "Bosnia and Herzegovina": [
+     0,
+     0,
+     0
+    ],
+    "Qatar": [
+     1,
+     0,
+     0
+    ],
+    "Switzerland": [
+     1,
+     0,
+     0
+    ]
+   },
+   "fifa_rank": null
+  },
+  "Cape Verde": {
+   "elo": 1651.6,
+   "group": "H",
+   "form_last10": [
+    4,
+    4,
+    2
+   ],
+   "avg_gf_2y": 1.286,
+   "avg_gc_2y": 1.048,
+   "matches_2y": 21,
+   "last10": [
+    {
+     "date": "2025-09-04",
+     "opp": "Mauritius",
+     "score": "2-0"
+    },
+    {
+     "date": "2025-09-09",
+     "opp": "Cameroon",
+     "score": "1-0"
+    },
+    {
+     "date": "2025-10-08",
+     "opp": "Libya",
+     "score": "3-3"
+    },
+    {
+     "date": "2025-10-13",
+     "opp": "Eswatini",
+     "score": "3-0"
+    },
+    {
+     "date": "2025-11-13",
+     "opp": "Iran",
+     "score": "0-0"
+    },
+    {
+     "date": "2025-11-17",
+     "opp": "Egypt",
+     "score": "1-1"
+    },
+    {
+     "date": "2026-03-27",
+     "opp": "Chile",
+     "score": "2-4"
+    },
+    {
+     "date": "2026-03-30",
+     "opp": "Finland",
+     "score": "1-1"
+    },
+    {
+     "date": "2026-05-31",
+     "opp": "Serbia",
+     "score": "3-0"
+    },
+    {
+     "date": "2026-06-06",
+     "opp": "Bermuda",
+     "score": "0-3"
+    }
+   ],
+   "h2h_group": {
+    "Saudi Arabia": [
+     0,
+     0,
+     0
+    ],
+    "Spain": [
+     0,
+     0,
+     0
+    ],
+    "Uruguay": [
+     0,
+     0,
+     0
+    ]
+   },
+   "fifa_rank": null
+  },
+  "Colombia": {
+   "elo": 2061.6,
+   "group": "K",
+   "form_last10": [
+    7,
+    1,
+    2
+   ],
+   "avg_gf_2y": 1.963,
+   "avg_gc_2y": 0.926,
+   "matches_2y": 27,
+   "last10": [
+    {
+     "date": "2025-09-04",
+     "opp": "Bolivia",
+     "score": "3-0"
+    },
+    {
+     "date": "2025-09-09",
+     "opp": "Venezuela",
+     "score": "6-3"
+    },
+    {
+     "date": "2025-10-11",
+     "opp": "Mexico",
+     "score": "4-0"
+    },
+    {
+     "date": "2025-10-14",
+     "opp": "Canada",
+     "score": "0-0"
+    },
+    {
+     "date": "2025-11-15",
+     "opp": "New Zealand",
+     "score": "2-1"
+    },
+    {
+     "date": "2025-11-18",
+     "opp": "Australia",
+     "score": "3-0"
+    },
+    {
+     "date": "2026-03-26",
+     "opp": "Croatia",
+     "score": "1-2"
+    },
+    {
+     "date": "2026-03-29",
+     "opp": "France",
+     "score": "1-3"
+    },
+    {
+     "date": "2026-06-01",
+     "opp": "Costa Rica",
+     "score": "3-1"
+    },
+    {
+     "date": "2026-06-07",
+     "opp": "Jordan",
+     "score": "2-0"
+    }
+   ],
+   "h2h_group": {
+    "DR Congo": [
+     0,
+     0,
+     0
+    ],
+    "Portugal": [
+     0,
+     0,
+     0
+    ],
+    "Uzbekistan": [
+     0,
+     0,
+     0
+    ]
+   },
+   "fifa_rank": 13
+  },
+  "Croatia": {
+   "elo": 1973.4,
+   "group": "L",
+   "form_last10": [
+    7,
+    1,
+    2
+   ],
+   "avg_gf_2y": 1.913,
+   "avg_gc_2y": 1.174,
+   "matches_2y": 23,
+   "last10": [
+    {
+     "date": "2025-09-05",
+     "opp": "Faroe Islands",
+     "score": "1-0"
+    },
+    {
+     "date": "2025-09-08",
+     "opp": "Montenegro",
+     "score": "4-0"
+    },
+    {
+     "date": "2025-10-09",
+     "opp": "Czech Republic",
+     "score": "0-0"
+    },
+    {
+     "date": "2025-10-12",
+     "opp": "Gibraltar",
+     "score": "3-0"
+    },
+    {
+     "date": "2025-11-14",
+     "opp": "Faroe Islands",
+     "score": "3-1"
+    },
+    {
+     "date": "2025-11-17",
+     "opp": "Montenegro",
+     "score": "3-2"
+    },
+    {
+     "date": "2026-03-26",
+     "opp": "Colombia",
+     "score": "2-1"
+    },
+    {
+     "date": "2026-03-31",
+     "opp": "Brazil",
+     "score": "1-3"
+    },
+    {
+     "date": "2026-06-02",
+     "opp": "Belgium",
+     "score": "0-2"
+    },
+    {
+     "date": "2026-06-07",
+     "opp": "Slovenia",
+     "score": "2-1"
+    }
+   ],
+   "h2h_group": {
+    "England": [
+     3,
+     2,
+     6
+    ],
+    "Ghana": [
+     0,
+     0,
+     0
+    ],
+    "Panama": [
+     0,
+     0,
+     0
+    ]
+   },
+   "fifa_rank": 11
+  },
+  "Curaçao": {
+   "elo": 1609.4,
+   "group": "E",
+   "form_last10": [
+    4,
+    3,
+    3
+   ],
+   "avg_gf_2y": 2.045,
+   "avg_gc_2y": 1.045,
+   "matches_2y": 22,
+   "last10": [
+    {
+     "date": "2025-09-05",
+     "opp": "Trinidad and Tobago",
+     "score": "0-0"
+    },
+    {
+     "date": "2025-09-09",
+     "opp": "Bermuda",
+     "score": "3-2"
+    },
+    {
+     "date": "2025-10-10",
+     "opp": "Jamaica",
+     "score": "2-0"
+    },
+    {
+     "date": "2025-10-14",
+     "opp": "Trinidad and Tobago",
+     "score": "1-1"
+    },
+    {
+     "date": "2025-11-13",
+     "opp": "Bermuda",
+     "score": "7-0"
+    },
+    {
+     "date": "2025-11-18",
+     "opp": "Jamaica",
+     "score": "0-0"
+    },
+    {
+     "date": "2026-03-27",
+     "opp": "China",
+     "score": "0-2"
+    },
+    {
+     "date": "2026-03-31",
+     "opp": "Australia",
+     "score": "1-5"
+    },
+    {
+     "date": "2026-05-30",
+     "opp": "Scotland",
+     "score": "1-4"
+    },
+    {
+     "date": "2026-06-06",
+     "opp": "Aruba",
+     "score": "4-0"
+    }
+   ],
+   "h2h_group": {
+    "Ecuador": [
+     0,
+     0,
+     0
+    ],
+    "Germany": [
+     0,
+     0,
+     0
+    ],
+    "Ivory Coast": [
+     0,
+     0,
+     0
+    ]
+   },
+   "fifa_rank": null
+  },
+  "Czech Republic": {
+   "elo": 1785.5,
+   "group": "A",
+   "form_last10": [
+    4,
+    4,
+    2
+   ],
+   "avg_gf_2y": 1.833,
+   "avg_gc_2y": 1.25,
+   "matches_2y": 24,
+   "last10": [
+    {
+     "date": "2025-09-08",
+     "opp": "Saudi Arabia",
+     "score": "1-1"
+    },
+    {
+     "date": "2025-10-09",
+     "opp": "Croatia",
+     "score": "0-0"
+    },
+    {
+     "date": "2025-10-12",
+     "opp": "Faroe Islands",
+     "score": "1-2"
+    },
+    {
+     "date": "2025-11-13",
+     "opp": "San Marino",
+     "score": "1-0"
+    },
+    {
+     "date": "2025-11-17",
+     "opp": "Gibraltar",
+     "score": "6-0"
+    },
+    {
+     "date": "2026-03-26",
+     "opp": "Republic of Ireland",
+     "score": "2-2"
+    },
+    {
+     "date": "2026-03-31",
+     "opp": "Denmark",
+     "score": "2-2"
+    },
+    {
+     "date": "2026-05-31",
+     "opp": "Kosovo",
+     "score": "2-1"
+    },
+    {
+     "date": "2026-06-04",
+     "opp": "Guatemala",
+     "score": "5-1"
+    },
+    {
+     "date": "2026-06-11",
+     "opp": "South Korea",
+     "score": "1-2"
+    }
+   ],
+   "h2h_group": {
+    "Mexico": [
+     1,
+     0,
+     0
+    ],
+    "South Africa": [
+     0,
+     1,
+     0
+    ],
+    "South Korea": [
+     1,
+     1,
+     2
+    ]
+   },
+   "fifa_rank": null
+  },
+  "DR Congo": {
+   "elo": 1761.5,
+   "group": "K",
+   "form_last10": [
+    5,
+    3,
+    2
+   ],
+   "avg_gf_2y": 1.375,
+   "avg_gc_2y": 0.542,
+   "matches_2y": 24,
+   "last10": [
+    {
+     "date": "2025-11-13",
+     "opp": "Cameroon",
+     "score": "1-0"
+    },
+    {
+     "date": "2025-11-16",
+     "opp": "Nigeria",
+     "score": "1-1"
+    },
+    {
+     "date": "2025-12-23",
+     "opp": "Benin",
+     "score": "1-0"
+    },
+    {
+     "date": "2025-12-27",
+     "opp": "Senegal",
+     "score": "1-1"
+    },
+    {
+     "date": "2025-12-30",
+     "opp": "Botswana",
+     "score": "3-0"
+    },
+    {
+     "date": "2026-01-06",
+     "opp": "Algeria",
+     "score": "0-1"
+    },
+    {
+     "date": "2026-03-25",
+     "opp": "Bermuda",
+     "score": "2-0"
+    },
+    {
+     "date": "2026-03-31",
+     "opp": "Jamaica",
+     "score": "1-0"
+    },
+    {
+     "date": "2026-06-03",
+     "opp": "Denmark",
+     "score": "0-0"
+    },
+    {
+     "date": "2026-06-09",
+     "opp": "Chile",
+     "score": "1-2"
+    }
+   ],
+   "h2h_group": {
+    "Colombia": [
+     0,
+     0,
+     0
+    ],
+    "Portugal": [
+     0,
+     0,
+     0
+    ],
+    "Uzbekistan": [
+     0,
+     0,
+     0
+    ]
+   },
+   "fifa_rank": null
+  },
+  "Ecuador": {
+   "elo": 2025.7,
+   "group": "E",
+   "form_last10": [
+    4,
+    6,
+    0
+   ],
+   "avg_gf_2y": 1.154,
+   "avg_gc_2y": 0.5,
+   "matches_2y": 26,
+   "last10": [
+    {
+     "date": "2025-09-04",
+     "opp": "Paraguay",
+     "score": "0-0"
+    },
+    {
+     "date": "2025-09-09",
+     "opp": "Argentina",
+     "score": "1-0"
+    },
+    {
+     "date": "2025-10-10",
+     "opp": "United States",
+     "score": "1-1"
+    },
+    {
+     "date": "2025-10-14",
+     "opp": "Mexico",
+     "score": "1-1"
+    },
+    {
+     "date": "2025-11-13",
+     "opp": "Canada",
+     "score": "0-0"
+    },
+    {
+     "date": "2025-11-18",
+     "opp": "New Zealand",
+     "score": "2-0"
+    },
+    {
+     "date": "2026-03-27",
+     "opp": "Morocco",
+     "score": "1-1"
+    },
+    {
+     "date": "2026-03-31",
+     "opp": "Netherlands",
+     "score": "1-1"
+    },
+    {
+     "date": "2026-05-30",
+     "opp": "Saudi Arabia",
+     "score": "2-1"
+    },
+    {
+     "date": "2026-06-07",
+     "opp": "Guatemala",
+     "score": "3-0"
+    }
+   ],
+   "h2h_group": {
+    "Curaçao": [
+     0,
+     0,
+     0
+    ],
+    "Germany": [
+     0,
+     0,
+     2
+    ],
+    "Ivory Coast": [
+     0,
+     0,
+     0
+    ]
+   },
+   "fifa_rank": null
+  },
+  "Egypt": {
+   "elo": 1809.1,
+   "group": "G",
+   "form_last10": [
+    5,
+    3,
+    2
+   ],
+   "avg_gf_2y": 1.393,
+   "avg_gc_2y": 0.607,
+   "matches_2y": 28,
+   "last10": [
+    {
+     "date": "2025-12-26",
+     "opp": "South Africa",
+     "score": "1-0"
+    },
+    {
+     "date": "2025-12-29",
+     "opp": "Angola",
+     "score": "0-0"
+    },
+    {
+     "date": "2026-01-05",
+     "opp": "Benin",
+     "score": "3-1"
+    },
+    {
+     "date": "2026-01-10",
+     "opp": "Ivory Coast",
+     "score": "3-2"
+    },
+    {
+     "date": "2026-01-14",
+     "opp": "Senegal",
+     "score": "0-1"
+    },
+    {
+     "date": "2026-01-17",
+     "opp": "Nigeria",
+     "score": "0-0"
+    },
+    {
+     "date": "2026-03-27",
+     "opp": "Saudi Arabia",
+     "score": "4-0"
+    },
+    {
+     "date": "2026-03-31",
+     "opp": "Spain",
+     "score": "0-0"
+    },
+    {
+     "date": "2026-05-28",
+     "opp": "Russia",
+     "score": "1-0"
+    },
+    {
+     "date": "2026-06-06",
+     "opp": "Brazil",
+     "score": "1-2"
+    }
+   ],
+   "h2h_group": {
+    "Belgium": [
+     3,
+     0,
+     1
+    ],
+    "Iran": [
+     0,
+     1,
+     0
+    ],
+    "New Zealand": [
+     2,
+     1,
+     0
+    ]
+   },
+   "fifa_rank": null
+  },
+  "England": {
+   "elo": 2094.7,
+   "group": "L",
+   "form_last10": [
+    8,
+    1,
+    1
+   ],
+   "avg_gf_2y": 2.037,
+   "avg_gc_2y": 0.519,
+   "matches_2y": 27,
+   "last10": [
+    {
+     "date": "2025-09-06",
+     "opp": "Andorra",
+     "score": "2-0"
+    },
+    {
+     "date": "2025-09-09",
+     "opp": "Serbia",
+     "score": "5-0"
+    },
+    {
+     "date": "2025-10-09",
+     "opp": "Wales",
+     "score": "3-0"
+    },
+    {
+     "date": "2025-10-14",
+     "opp": "Latvia",
+     "score": "5-0"
+    },
+    {
+     "date": "2025-11-13",
+     "opp": "Serbia",
+     "score": "2-0"
+    },
+    {
+     "date": "2025-11-16",
+     "opp": "Albania",
+     "score": "2-0"
+    },
+    {
+     "date": "2026-03-27",
+     "opp": "Uruguay",
+     "score": "1-1"
+    },
+    {
+     "date": "2026-03-31",
+     "opp": "Japan",
+     "score": "0-1"
+    },
+    {
+     "date": "2026-06-06",
+     "opp": "New Zealand",
+     "score": "1-0"
+    },
+    {
+     "date": "2026-06-10",
+     "opp": "Costa Rica",
+     "score": "3-0"
+    }
+   ],
+   "h2h_group": {
+    "Croatia": [
+     6,
+     2,
+     3
+    ],
+    "Ghana": [
+     0,
+     1,
+     0
+    ],
+    "Panama": [
+     1,
+     0,
+     0
+    ]
+   },
+   "fifa_rank": 4
+  },
+  "France": {
+   "elo": 2127.5,
+   "group": "I",
+   "form_last10": [
+    8,
+    1,
+    1
+   ],
+   "avg_gf_2y": 1.885,
+   "avg_gc_2y": 0.962,
+   "matches_2y": 26,
+   "last10": [
+    {
+     "date": "2025-09-05",
+     "opp": "Ukraine",
+     "score": "2-0"
+    },
+    {
+     "date": "2025-09-09",
+     "opp": "Iceland",
+     "score": "2-1"
+    },
+    {
+     "date": "2025-10-10",
+     "opp": "Azerbaijan",
+     "score": "3-0"
+    },
+    {
+     "date": "2025-10-13",
+     "opp": "Iceland",
+     "score": "2-2"
+    },
+    {
+     "date": "2025-11-13",
+     "opp": "Ukraine",
+     "score": "4-0"
+    },
+    {
+     "date": "2025-11-16",
+     "opp": "Azerbaijan",
+     "score": "3-1"
+    },
+    {
+     "date": "2026-03-26",
+     "opp": "Brazil",
+     "score": "2-1"
+    },
+    {
+     "date": "2026-03-29",
+     "opp": "Colombia",
+     "score": "3-1"
+    },
+    {
+     "date": "2026-06-04",
+     "opp": "Ivory Coast",
+     "score": "1-2"
+    },
+    {
+     "date": "2026-06-08",
+     "opp": "Northern Ireland",
+     "score": "3-1"
+    }
+   ],
+   "h2h_group": {
+    "Iraq": [
+     0,
+     0,
+     0
+    ],
+    "Norway": [
+     7,
+     4,
+     5
+    ],
+    "Senegal": [
+     0,
+     0,
+     2
+    ]
+   },
+   "fifa_rank": 3
+  },
+  "Germany": {
+   "elo": 2005.1,
+   "group": "E",
+   "form_last10": [
+    9,
+    0,
+    1
+   ],
+   "avg_gf_2y": 2.52,
+   "avg_gc_2y": 0.96,
+   "matches_2y": 25,
+   "last10": [
+    {
+     "date": "2025-09-04",
+     "opp": "Slovakia",
+     "score": "0-2"
+    },
+    {
+     "date": "2025-09-07",
+     "opp": "Northern Ireland",
+     "score": "3-1"
+    },
+    {
+     "date": "2025-10-10",
+     "opp": "Luxembourg",
+     "score": "4-0"
+    },
+    {
+     "date": "2025-10-13",
+     "opp": "Northern Ireland",
+     "score": "1-0"
+    },
+    {
+     "date": "2025-11-14",
+     "opp": "Luxembourg",
+     "score": "2-0"
+    },
+    {
+     "date": "2025-11-17",
+     "opp": "Slovakia",
+     "score": "6-0"
+    },
+    {
+     "date": "2026-03-27",
+     "opp": "Switzerland",
+     "score": "4-3"
+    },
+    {
+     "date": "2026-03-30",
+     "opp": "Ghana",
+     "score": "2-1"
+    },
+    {
+     "date": "2026-05-31",
+     "opp": "Finland",
+     "score": "4-0"
+    },
+    {
+     "date": "2026-06-06",
+     "opp": "United States",
+     "score": "2-1"
+    }
+   ],
+   "h2h_group": {
+    "Curaçao": [
+     0,
+     0,
+     0
+    ],
+    "Ecuador": [
+     2,
+     0,
+     0
+    ],
+    "Ivory Coast": [
+     0,
+     1,
+     0
+    ]
+   },
+   "fifa_rank": 5
+  },
+  "Ghana": {
+   "elo": 1624.9,
+   "group": "L",
+   "form_last10": [
+    3,
+    2,
+    5
+   ],
+   "avg_gf_2y": 1.35,
+   "avg_gc_2y": 1.15,
+   "matches_2y": 20,
+   "last10": [
+    {
+     "date": "2025-09-04",
+     "opp": "Chad",
+     "score": "1-1"
+    },
+    {
+     "date": "2025-09-08",
+     "opp": "Mali",
+     "score": "1-0"
+    },
+    {
+     "date": "2025-10-08",
+     "opp": "Central African Republic",
+     "score": "5-0"
+    },
+    {
+     "date": "2025-10-12",
+     "opp": "Comoros",
+     "score": "1-0"
+    },
+    {
+     "date": "2025-11-14",
+     "opp": "Japan",
+     "score": "0-2"
+    },
+    {
+     "date": "2025-11-18",
+     "opp": "South Korea",
+     "score": "0-1"
+    },
+    {
+     "date": "2026-03-27",
+     "opp": "Austria",
+     "score": "1-5"
+    },
+    {
+     "date": "2026-03-30",
+     "opp": "Germany",
+     "score": "1-2"
+    },
+    {
+     "date": "2026-05-22",
+     "opp": "Mexico",
+     "score": "0-2"
+    },
+    {
+     "date": "2026-06-02",
+     "opp": "Wales",
+     "score": "1-1"
+    }
+   ],
+   "h2h_group": {
+    "Croatia": [
+     0,
+     0,
+     0
+    ],
+    "England": [
+     0,
+     1,
+     0
+    ],
+    "Panama": [
+     0,
+     0,
+     0
+    ]
+   },
+   "fifa_rank": null
+  },
+  "Haiti": {
+   "elo": 1710.6,
+   "group": "C",
+   "form_last10": [
+    4,
+    3,
+    3
+   ],
+   "avg_gf_2y": 2.5,
+   "avg_gc_2y": 1.091,
+   "matches_2y": 22,
+   "last10": [
+    {
+     "date": "2025-09-05",
+     "opp": "Honduras",
+     "score": "0-0"
+    },
+    {
+     "date": "2025-09-09",
+     "opp": "Costa Rica",
+     "score": "3-3"
+    },
+    {
+     "date": "2025-10-09",
+     "opp": "Nicaragua",
+     "score": "3-0"
+    },
+    {
+     "date": "2025-10-13",
+     "opp": "Honduras",
+     "score": "0-3"
+    },
+    {
+     "date": "2025-11-13",
+     "opp": "Costa Rica",
+     "score": "1-0"
+    },
+    {
+     "date": "2025-11-18",
+     "opp": "Nicaragua",
+     "score": "2-0"
+    },
+    {
+     "date": "2026-03-28",
+     "opp": "Tunisia",
+     "score": "0-1"
+    },
+    {
+     "date": "2026-03-31",
+     "opp": "Iceland",
+     "score": "1-1"
+    },
+    {
+     "date": "2026-06-02",
+     "opp": "New Zealand",
+     "score": "4-0"
+    },
+    {
+     "date": "2026-06-05",
+     "opp": "Peru",
+     "score": "1-2"
+    }
+   ],
+   "h2h_group": {
+    "Brazil": [
+     0,
+     0,
+     3
+    ],
+    "Morocco": [
+     0,
+     0,
+     0
+    ],
+    "Scotland": [
+     0,
+     0,
+     0
+    ]
+   },
+   "fifa_rank": null
+  },
+  "Iran": {
+   "elo": 1895.5,
+   "group": "G",
+   "form_last10": [
+    5,
+    2,
+    3
+   ],
+   "avg_gf_2y": 1.833,
+   "avg_gc_2y": 0.722,
+   "matches_2y": 18,
+   "last10": [
+    {
+     "date": "2025-06-05",
+     "opp": "Qatar",
+     "score": "0-1"
+    },
+    {
+     "date": "2025-06-10",
+     "opp": "North Korea",
+     "score": "3-0"
+    },
+    {
+     "date": "2025-10-10",
+     "opp": "Russia",
+     "score": "1-2"
+    },
+    {
+     "date": "2025-10-14",
+     "opp": "Tanzania",
+     "score": "2-0"
+    },
+    {
+     "date": "2025-11-13",
+     "opp": "Cape Verde",
+     "score": "0-0"
+    },
+    {
+     "date": "2025-11-18",
+     "opp": "Uzbekistan",
+     "score": "0-0"
+    },
+    {
+     "date": "2026-03-27",
+     "opp": "Nigeria",
+     "score": "1-2"
+    },
+    {
+     "date": "2026-03-31",
+     "opp": "Costa Rica",
+     "score": "5-0"
+    },
+    {
+     "date": "2026-05-29",
+     "opp": "Gambia",
+     "score": "3-1"
+    },
+    {
+     "date": "2026-06-04",
+     "opp": "Mali",
+     "score": "2-0"
+    }
+   ],
+   "h2h_group": {
+    "Belgium": [
+     0,
+     0,
+     0
+    ],
+    "Egypt": [
+     0,
+     1,
+     0
+    ],
+    "New Zealand": [
+     1,
+     1,
+     0
+    ]
+   },
+   "fifa_rank": 20
+  },
+  "Iraq": {
+   "elo": 1738.6,
+   "group": "I",
+   "form_last10": [
+    5,
+    2,
+    3
+   ],
+   "avg_gf_2y": 0.963,
+   "avg_gc_2y": 0.926,
+   "matches_2y": 27,
+   "last10": [
+    {
+     "date": "2025-11-13",
+     "opp": "United Arab Emirates",
+     "score": "1-1"
+    },
+    {
+     "date": "2025-11-18",
+     "opp": "United Arab Emirates",
+     "score": "2-1"
+    },
+    {
+     "date": "2025-12-03",
+     "opp": "Bahrain",
+     "score": "2-1"
+    },
+    {
+     "date": "2025-12-06",
+     "opp": "Sudan",
+     "score": "2-0"
+    },
+    {
+     "date": "2025-12-09",
+     "opp": "Algeria",
+     "score": "0-2"
+    },
+    {
+     "date": "2025-12-12",
+     "opp": "Jordan",
+     "score": "0-1"
+    },
+    {
+     "date": "2026-03-31",
+     "opp": "Bolivia",
+     "score": "2-1"
+    },
+    {
+     "date": "2026-05-29",
+     "opp": "Andorra",
+     "score": "1-0"
+    },
+    {
+     "date": "2026-06-04",
+     "opp": "Spain",
+     "score": "1-1"
+    },
+    {
+     "date": "2026-06-09",
+     "opp": "Venezuela",
+     "score": "0-2"
+    }
+   ],
+   "h2h_group": {
+    "France": [
+     0,
+     0,
+     0
+    ],
+    "Norway": [
+     0,
+     0,
+     0
+    ],
+    "Senegal": [
+     0,
+     0,
+     0
+    ]
+   },
+   "fifa_rank": null
+  },
+  "Ivory Coast": {
+   "elo": 1815.7,
+   "group": "E",
+   "form_last10": [
+    7,
+    1,
+    2
+   ],
+   "avg_gf_2y": 1.833,
+   "avg_gc_2y": 0.5,
+   "matches_2y": 24,
+   "last10": [
+    {
+     "date": "2025-11-14",
+     "opp": "Saudi Arabia",
+     "score": "0-1"
+    },
+    {
+     "date": "2025-11-18",
+     "opp": "Oman",
+     "score": "2-0"
+    },
+    {
+     "date": "2025-12-24",
+     "opp": "Mozambique",
+     "score": "1-0"
+    },
+    {
+     "date": "2025-12-28",
+     "opp": "Cameroon",
+     "score": "1-1"
+    },
+    {
+     "date": "2025-12-31",
+     "opp": "Gabon",
+     "score": "3-2"
+    },
+    {
+     "date": "2026-01-06",
+     "opp": "Burkina Faso",
+     "score": "3-0"
+    },
+    {
+     "date": "2026-01-10",
+     "opp": "Egypt",
+     "score": "2-3"
+    },
+    {
+     "date": "2026-03-28",
+     "opp": "South Korea",
+     "score": "4-0"
+    },
+    {
+     "date": "2026-03-31",
+     "opp": "Scotland",
+     "score": "1-0"
+    },
+    {
+     "date": "2026-06-04",
+     "opp": "France",
+     "score": "2-1"
+    }
+   ],
+   "h2h_group": {
+    "Curaçao": [
+     0,
+     0,
+     0
+    ],
+    "Ecuador": [
+     0,
+     0,
+     0
+    ],
+    "Germany": [
+     0,
+     1,
+     0
+    ]
+   },
+   "fifa_rank": null
+  },
+  "Japan": {
+   "elo": 1995.8,
+   "group": "F",
+   "form_last10": [
+    7,
+    2,
+    1
+   ],
+   "avg_gf_2y": 2.263,
+   "avg_gc_2y": 0.474,
+   "matches_2y": 19,
+   "last10": [
+    {
+     "date": "2025-06-10",
+     "opp": "Indonesia",
+     "score": "6-0"
+    },
+    {
+     "date": "2025-09-06",
+     "opp": "Mexico",
+     "score": "0-0"
+    },
+    {
+     "date": "2025-09-09",
+     "opp": "United States",
+     "score": "0-2"
+    },
+    {
+     "date": "2025-10-10",
+     "opp": "Paraguay",
+     "score": "2-2"
+    },
+    {
+     "date": "2025-10-14",
+     "opp": "Brazil",
+     "score": "3-2"
+    },
+    {
+     "date": "2025-11-14",
+     "opp": "Ghana",
+     "score": "2-0"
+    },
+    {
+     "date": "2025-11-18",
+     "opp": "Bolivia",
+     "score": "3-0"
+    },
+    {
+     "date": "2026-03-28",
+     "opp": "Scotland",
+     "score": "1-0"
+    },
+    {
+     "date": "2026-03-31",
+     "opp": "England",
+     "score": "1-0"
+    },
+    {
+     "date": "2026-05-31",
+     "opp": "Iceland",
+     "score": "1-0"
+    }
+   ],
+   "h2h_group": {
+    "Netherlands": [
+     0,
+     1,
+     2
+    ],
+    "Sweden": [
+     0,
+     3,
+     1
+    ],
+    "Tunisia": [
+     4,
+     0,
+     1
+    ]
+   },
+   "fifa_rank": 18
+  },
+  "Jordan": {
+   "elo": 1774.9,
+   "group": "J",
+   "form_last10": [
+    5,
+    2,
+    3
+   ],
+   "avg_gf_2y": 1.452,
+   "avg_gc_2y": 1.226,
+   "matches_2y": 31,
+   "last10": [
+    {
+     "date": "2025-12-03",
+     "opp": "United Arab Emirates",
+     "score": "2-1"
+    },
+    {
+     "date": "2025-12-06",
+     "opp": "Kuwait",
+     "score": "3-1"
+    },
+    {
+     "date": "2025-12-09",
+     "opp": "Egypt",
+     "score": "3-0"
+    },
+    {
+     "date": "2025-12-12",
+     "opp": "Iraq",
+     "score": "1-0"
+    },
+    {
+     "date": "2025-12-15",
+     "opp": "Saudi Arabia",
+     "score": "1-0"
+    },
+    {
+     "date": "2025-12-18",
+     "opp": "Morocco",
+     "score": "2-3"
+    },
+    {
+     "date": "2026-03-27",
+     "opp": "Costa Rica",
+     "score": "2-2"
+    },
+    {
+     "date": "2026-03-31",
+     "opp": "Nigeria",
+     "score": "2-2"
+    },
+    {
+     "date": "2026-05-31",
+     "opp": "Switzerland",
+     "score": "1-4"
+    },
+    {
+     "date": "2026-06-07",
+     "opp": "Colombia",
+     "score": "0-2"
+    }
+   ],
+   "h2h_group": {
+    "Algeria": [
+     0,
+     1,
+     1
+    ],
+    "Argentina": [
+     0,
+     0,
+     0
+    ],
+    "Austria": [
+     0,
+     0,
+     0
+    ]
+   },
+   "fifa_rank": null
+  },
+  "Mexico": {
+   "elo": 1993.5,
+   "group": "A",
+   "form_last10": [
+    7,
+    2,
+    1
+   ],
+   "avg_gf_2y": 1.455,
+   "avg_gc_2y": 0.667,
+   "matches_2y": 33,
+   "last10": [
+    {
+     "date": "2025-11-18",
+     "opp": "Paraguay",
+     "score": "1-2"
+    },
+    {
+     "date": "2026-01-22",
+     "opp": "Panama",
+     "score": "1-0"
+    },
+    {
+     "date": "2026-01-25",
+     "opp": "Bolivia",
+     "score": "1-0"
+    },
+    {
+     "date": "2026-02-25",
+     "opp": "Iceland",
+     "score": "4-0"
+    },
+    {
+     "date": "2026-03-28",
+     "opp": "Portugal",
+     "score": "0-0"
+    },
+    {
+     "date": "2026-03-31",
+     "opp": "Belgium",
+     "score": "1-1"
+    },
+    {
+     "date": "2026-05-22",
+     "opp": "Ghana",
+     "score": "2-0"
+    },
+    {
+     "date": "2026-05-30",
+     "opp": "Australia",
+     "score": "1-0"
+    },
+    {
+     "date": "2026-06-04",
+     "opp": "Serbia",
+     "score": "5-1"
+    },
+    {
+     "date": "2026-06-11",
+     "opp": "South Africa",
+     "score": "2-0"
+    }
+   ],
+   "h2h_group": {
+    "Czech Republic": [
+     0,
+     0,
+     1
+    ],
+    "South Africa": [
+     3,
+     1,
+     1
+    ],
+    "South Korea": [
+     8,
+     3,
+     3
+    ]
+   },
+   "fifa_rank": 14
+  },
+  "Morocco": {
+   "elo": 1989.3,
+   "group": "C",
+   "form_last10": [
+    7,
+    3,
+    0
+   ],
+   "avg_gf_2y": 2.441,
+   "avg_gc_2y": 0.294,
+   "matches_2y": 34,
+   "last10": [
+    {
+     "date": "2025-12-29",
+     "opp": "Zambia",
+     "score": "3-0"
+    },
+    {
+     "date": "2026-01-04",
+     "opp": "Tanzania",
+     "score": "1-0"
+    },
+    {
+     "date": "2026-01-09",
+     "opp": "Cameroon",
+     "score": "2-0"
+    },
+    {
+     "date": "2026-01-14",
+     "opp": "Nigeria",
+     "score": "0-0"
+    },
+    {
+     "date": "2026-01-18",
+     "opp": "Senegal",
+     "score": "3-0"
+    },
+    {
+     "date": "2026-03-27",
+     "opp": "Ecuador",
+     "score": "1-1"
+    },
+    {
+     "date": "2026-03-31",
+     "opp": "Paraguay",
+     "score": "2-1"
+    },
+    {
+     "date": "2026-05-26",
+     "opp": "Burundi",
+     "score": "5-0"
+    },
+    {
+     "date": "2026-06-02",
+     "opp": "Madagascar",
+     "score": "4-0"
+    },
+    {
+     "date": "2026-06-07",
+     "opp": "Norway",
+     "score": "1-1"
+    }
+   ],
+   "h2h_group": {
+    "Brazil": [
+     1,
+     0,
+     2
+    ],
+    "Haiti": [
+     0,
+     0,
+     0
+    ],
+    "Scotland": [
+     1,
+     0,
+     0
+    ]
+   },
+   "fifa_rank": 7
+  },
+  "Netherlands": {
+   "elo": 2011.9,
+   "group": "F",
+   "form_last10": [
+    6,
+    3,
+    1
+   ],
+   "avg_gf_2y": 2.308,
+   "avg_gc_2y": 1.038,
+   "matches_2y": 26,
+   "last10": [
+    {
+     "date": "2025-09-04",
+     "opp": "Poland",
+     "score": "1-1"
+    },
+    {
+     "date": "2025-09-07",
+     "opp": "Lithuania",
+     "score": "3-2"
+    },
+    {
+     "date": "2025-10-09",
+     "opp": "Malta",
+     "score": "4-0"
+    },
+    {
+     "date": "2025-10-12",
+     "opp": "Finland",
+     "score": "4-0"
+    },
+    {
+     "date": "2025-11-14",
+     "opp": "Poland",
+     "score": "1-1"
+    },
+    {
+     "date": "2025-11-17",
+     "opp": "Lithuania",
+     "score": "4-0"
+    },
+    {
+     "date": "2026-03-27",
+     "opp": "Norway",
+     "score": "2-1"
+    },
+    {
+     "date": "2026-03-31",
+     "opp": "Ecuador",
+     "score": "1-1"
+    },
+    {
+     "date": "2026-06-03",
+     "opp": "Algeria",
+     "score": "0-1"
+    },
+    {
+     "date": "2026-06-08",
+     "opp": "Uzbekistan",
+     "score": "2-1"
+    }
+   ],
+   "h2h_group": {
+    "Japan": [
+     2,
+     1,
+     0
+    ],
+    "Sweden": [
+     11,
+     6,
+     8
+    ],
+    "Tunisia": [
+     1,
+     2,
+     0
+    ]
+   },
+   "fifa_rank": 8
+  },
+  "New Zealand": {
+   "elo": 1731.8,
+   "group": "G",
+   "form_last10": [
+    1,
+    1,
+    8
+   ],
+   "avg_gf_2y": 2.417,
+   "avg_gc_2y": 1.042,
+   "matches_2y": 24,
+   "last10": [
+    {
+     "date": "2025-09-05",
+     "opp": "Australia",
+     "score": "0-1"
+    },
+    {
+     "date": "2025-09-09",
+     "opp": "Australia",
+     "score": "1-3"
+    },
+    {
+     "date": "2025-10-09",
+     "opp": "Poland",
+     "score": "0-1"
+    },
+    {
+     "date": "2025-10-14",
+     "opp": "Norway",
+     "score": "1-1"
+    },
+    {
+     "date": "2025-11-15",
+     "opp": "Colombia",
+     "score": "1-2"
+    },
+    {
+     "date": "2025-11-18",
+     "opp": "Ecuador",
+     "score": "0-2"
+    },
+    {
+     "date": "2026-03-27",
+     "opp": "Finland",
+     "score": "0-2"
+    },
+    {
+     "date": "2026-03-30",
+     "opp": "Chile",
+     "score": "4-1"
+    },
+    {
+     "date": "2026-06-02",
+     "opp": "Haiti",
+     "score": "0-4"
+    },
+    {
+     "date": "2026-06-06",
+     "opp": "England",
+     "score": "0-1"
+    }
+   ],
+   "h2h_group": {
+    "Belgium": [
+     0,
+     0,
+     0
+    ],
+    "Egypt": [
+     0,
+     1,
+     2
+    ],
+    "Iran": [
+     0,
+     1,
+     1
+    ]
+   },
+   "fifa_rank": null
+  },
+  "Norway": {
+   "elo": 1986.0,
+   "group": "I",
+   "form_last10": [
+    6,
+    3,
+    1
+   ],
+   "avg_gf_2y": 2.95,
+   "avg_gc_2y": 0.85,
+   "matches_2y": 20,
+   "last10": [
+    {
+     "date": "2025-09-04",
+     "opp": "Finland",
+     "score": "1-0"
+    },
+    {
+     "date": "2025-09-09",
+     "opp": "Moldova",
+     "score": "11-1"
+    },
+    {
+     "date": "2025-10-11",
+     "opp": "Israel",
+     "score": "5-0"
+    },
+    {
+     "date": "2025-10-14",
+     "opp": "New Zealand",
+     "score": "1-1"
+    },
+    {
+     "date": "2025-11-13",
+     "opp": "Estonia",
+     "score": "4-1"
+    },
+    {
+     "date": "2025-11-16",
+     "opp": "Italy",
+     "score": "4-1"
+    },
+    {
+     "date": "2026-03-27",
+     "opp": "Netherlands",
+     "score": "1-2"
+    },
+    {
+     "date": "2026-03-31",
+     "opp": "Switzerland",
+     "score": "0-0"
+    },
+    {
+     "date": "2026-06-01",
+     "opp": "Sweden",
+     "score": "3-1"
+    },
+    {
+     "date": "2026-06-07",
+     "opp": "Morocco",
+     "score": "1-1"
+    }
+   ],
+   "h2h_group": {
+    "France": [
+     5,
+     4,
+     7
+    ],
+    "Iraq": [
+     0,
+     0,
+     0
+    ],
+    "Senegal": [
+     0,
+     0,
+     1
+    ]
+   },
+   "fifa_rank": null
+  },
+  "Panama": {
+   "elo": 1856.0,
+   "group": "L",
+   "form_last10": [
+    4,
+    4,
+    2
+   ],
+   "avg_gf_2y": 1.581,
+   "avg_gc_2y": 1.484,
+   "matches_2y": 31,
+   "last10": [
+    {
+     "date": "2025-10-14",
+     "opp": "Suriname",
+     "score": "1-1"
+    },
+    {
+     "date": "2025-11-13",
+     "opp": "Guatemala",
+     "score": "3-2"
+    },
+    {
+     "date": "2025-11-18",
+     "opp": "El Salvador",
+     "score": "3-0"
+    },
+    {
+     "date": "2026-01-18",
+     "opp": "Bolivia",
+     "score": "1-1"
+    },
+    {
+     "date": "2026-01-22",
+     "opp": "Mexico",
+     "score": "0-1"
+    },
+    {
+     "date": "2026-03-27",
+     "opp": "South Africa",
+     "score": "1-1"
+    },
+    {
+     "date": "2026-03-31",
+     "opp": "South Africa",
+     "score": "2-1"
+    },
+    {
+     "date": "2026-05-31",
+     "opp": "Brazil",
+     "score": "2-6"
+    },
+    {
+     "date": "2026-06-03",
+     "opp": "Dominican Republic",
+     "score": "4-2"
+    },
+    {
+     "date": "2026-06-06",
+     "opp": "Bosnia and Herzegovina",
+     "score": "1-1"
+    }
+   ],
+   "h2h_group": {
+    "Croatia": [
+     0,
+     0,
+     0
+    ],
+    "England": [
+     0,
+     0,
+     1
+    ],
+    "Ghana": [
+     0,
+     0,
+     0
+    ]
+   },
+   "fifa_rank": null
+  },
+  "Paraguay": {
+   "elo": 1915.8,
+   "group": "D",
+   "form_last10": [
+    4,
+    2,
+    4
+   ],
+   "avg_gf_2y": 1.217,
+   "avg_gc_2y": 1.043,
+   "matches_2y": 23,
+   "last10": [
+    {
+     "date": "2025-06-10",
+     "opp": "Brazil",
+     "score": "0-1"
+    },
+    {
+     "date": "2025-09-04",
+     "opp": "Ecuador",
+     "score": "0-0"
+    },
+    {
+     "date": "2025-09-09",
+     "opp": "Peru",
+     "score": "1-0"
+    },
+    {
+     "date": "2025-10-10",
+     "opp": "Japan",
+     "score": "2-2"
+    },
+    {
+     "date": "2025-10-14",
+     "opp": "South Korea",
+     "score": "0-2"
+    },
+    {
+     "date": "2025-11-15",
+     "opp": "United States",
+     "score": "1-2"
+    },
+    {
+     "date": "2025-11-18",
+     "opp": "Mexico",
+     "score": "2-1"
+    },
+    {
+     "date": "2026-03-27",
+     "opp": "Greece",
+     "score": "1-0"
+    },
+    {
+     "date": "2026-03-31",
+     "opp": "Morocco",
+     "score": "1-2"
+    },
+    {
+     "date": "2026-06-05",
+     "opp": "Nicaragua",
+     "score": "4-0"
+    }
+   ],
+   "h2h_group": {
+    "Australia": [
+     0,
+     3,
+     2
+    ],
+    "Turkey": [
+     0,
+     0,
+     0
+    ],
+    "United States": [
+     2,
+     2,
+     5
+    ]
+   },
+   "fifa_rank": null
+  },
+  "Portugal": {
+   "elo": 2058.7,
+   "group": "K",
+   "form_last10": [
+    7,
+    2,
+    1
+   ],
+   "avg_gf_2y": 2.12,
+   "avg_gc_2y": 0.92,
+   "matches_2y": 25,
+   "last10": [
+    {
+     "date": "2025-09-06",
+     "opp": "Armenia",
+     "score": "5-0"
+    },
+    {
+     "date": "2025-09-09",
+     "opp": "Hungary",
+     "score": "3-2"
+    },
+    {
+     "date": "2025-10-11",
+     "opp": "Republic of Ireland",
+     "score": "1-0"
+    },
+    {
+     "date": "2025-10-14",
+     "opp": "Hungary",
+     "score": "2-2"
+    },
+    {
+     "date": "2025-11-13",
+     "opp": "Republic of Ireland",
+     "score": "0-2"
+    },
+    {
+     "date": "2025-11-16",
+     "opp": "Armenia",
+     "score": "9-1"
+    },
+    {
+     "date": "2026-03-28",
+     "opp": "Mexico",
+     "score": "0-0"
+    },
+    {
+     "date": "2026-03-31",
+     "opp": "United States",
+     "score": "2-0"
+    },
+    {
+     "date": "2026-06-06",
+     "opp": "Chile",
+     "score": "2-1"
+    },
+    {
+     "date": "2026-06-10",
+     "opp": "Nigeria",
+     "score": "2-1"
+    }
+   ],
+   "h2h_group": {
+    "Colombia": [
+     0,
+     0,
+     0
+    ],
+    "DR Congo": [
+     0,
+     0,
+     0
+    ],
+    "Uzbekistan": [
+     0,
+     0,
+     0
+    ]
+   },
+   "fifa_rank": 5
+  },
+  "Qatar": {
+   "elo": 1572.7,
+   "group": "B",
+   "form_last10": [
+    1,
+    4,
+    5
+   ],
+   "avg_gf_2y": 1.208,
+   "avg_gc_2y": 1.875,
+   "matches_2y": 24,
+   "last10": [
+    {
+     "date": "2025-09-03",
+     "opp": "Bahrain",
+     "score": "2-2"
+    },
+    {
+     "date": "2025-09-07",
+     "opp": "Russia",
+     "score": "1-4"
+    },
+    {
+     "date": "2025-10-08",
+     "opp": "Oman",
+     "score": "0-0"
+    },
+    {
+     "date": "2025-10-14",
+     "opp": "United Arab Emirates",
+     "score": "2-1"
+    },
+    {
+     "date": "2025-11-17",
+     "opp": "Zimbabwe",
+     "score": "1-2"
+    },
+    {
+     "date": "2025-12-01",
+     "opp": "Palestine",
+     "score": "0-1"
+    },
+    {
+     "date": "2025-12-04",
+     "opp": "Syria",
+     "score": "1-1"
+    },
+    {
+     "date": "2025-12-07",
+     "opp": "Tunisia",
+     "score": "0-3"
+    },
+    {
+     "date": "2026-05-28",
+     "opp": "Republic of Ireland",
+     "score": "0-1"
+    },
+    {
+     "date": "2026-06-06",
+     "opp": "El Salvador",
+     "score": "0-0"
+    }
+   ],
+   "h2h_group": {
+    "Bosnia and Herzegovina": [
+     1,
+     1,
+     0
+    ],
+    "Canada": [
+     0,
+     0,
+     1
+    ],
+    "Switzerland": [
+     1,
+     0,
+     0
+    ]
+   },
+   "fifa_rank": null
+  },
+  "Saudi Arabia": {
+   "elo": 1696.9,
+   "group": "H",
+   "form_last10": [
+    4,
+    1,
+    5
+   ],
+   "avg_gf_2y": 1.114,
+   "avg_gc_2y": 1.114,
+   "matches_2y": 35,
+   "last10": [
+    {
+     "date": "2025-12-02",
+     "opp": "Oman",
+     "score": "2-1"
+    },
+    {
+     "date": "2025-12-05",
+     "opp": "Comoros",
+     "score": "3-1"
+    },
+    {
+     "date": "2025-12-08",
+     "opp": "Morocco",
+     "score": "0-1"
+    },
+    {
+     "date": "2025-12-11",
+     "opp": "Palestine",
+     "score": "2-1"
+    },
+    {
+     "date": "2025-12-15",
+     "opp": "Jordan",
+     "score": "0-1"
+    },
+    {
+     "date": "2026-03-27",
+     "opp": "Egypt",
+     "score": "0-4"
+    },
+    {
+     "date": "2026-03-31",
+     "opp": "Serbia",
+     "score": "1-2"
+    },
+    {
+     "date": "2026-05-30",
+     "opp": "Ecuador",
+     "score": "1-2"
+    },
+    {
+     "date": "2026-06-05",
+     "opp": "Puerto Rico",
+     "score": "3-0"
+    },
+    {
+     "date": "2026-06-09",
+     "opp": "Senegal",
+     "score": "0-0"
+    }
+   ],
+   "h2h_group": {
+    "Cape Verde": [
+     0,
+     0,
+     0
+    ],
+    "Spain": [
+     0,
+     0,
+     3
+    ],
+    "Uruguay": [
+     1,
+     1,
+     1
+    ]
+   },
+   "fifa_rank": null
+  },
+  "Scotland": {
+   "elo": 1856.0,
+   "group": "C",
+   "form_last10": [
+    6,
+    1,
+    3
+   ],
+   "avg_gf_2y": 1.565,
+   "avg_gc_2y": 1.348,
+   "matches_2y": 23,
+   "last10": [
+    {
+     "date": "2025-09-05",
+     "opp": "Denmark",
+     "score": "0-0"
+    },
+    {
+     "date": "2025-09-08",
+     "opp": "Belarus",
+     "score": "2-0"
+    },
+    {
+     "date": "2025-10-09",
+     "opp": "Greece",
+     "score": "3-1"
+    },
+    {
+     "date": "2025-10-12",
+     "opp": "Belarus",
+     "score": "2-1"
+    },
+    {
+     "date": "2025-11-15",
+     "opp": "Greece",
+     "score": "2-3"
+    },
+    {
+     "date": "2025-11-18",
+     "opp": "Denmark",
+     "score": "4-2"
+    },
+    {
+     "date": "2026-03-28",
+     "opp": "Japan",
+     "score": "0-1"
+    },
+    {
+     "date": "2026-03-31",
+     "opp": "Ivory Coast",
+     "score": "0-1"
+    },
+    {
+     "date": "2026-05-30",
+     "opp": "Curaçao",
+     "score": "4-1"
+    },
+    {
+     "date": "2026-06-06",
+     "opp": "Bolivia",
+     "score": "4-0"
+    }
+   ],
+   "h2h_group": {
+    "Brazil": [
+     0,
+     2,
+     8
+    ],
+    "Haiti": [
+     0,
+     0,
+     0
+    ],
+    "Morocco": [
+     0,
+     0,
+     1
+    ]
+   },
+   "fifa_rank": null
+  },
+  "Senegal": {
+   "elo": 1909.9,
+   "group": "I",
+   "form_last10": [
+    6,
+    2,
+    2
+   ],
+   "avg_gf_2y": 2.111,
+   "avg_gc_2y": 0.593,
+   "matches_2y": 27,
+   "last10": [
+    {
+     "date": "2025-12-27",
+     "opp": "DR Congo",
+     "score": "1-1"
+    },
+    {
+     "date": "2025-12-30",
+     "opp": "Benin",
+     "score": "3-0"
+    },
+    {
+     "date": "2026-01-03",
+     "opp": "Sudan",
+     "score": "3-1"
+    },
+    {
+     "date": "2026-01-09",
+     "opp": "Mali",
+     "score": "1-0"
+    },
+    {
+     "date": "2026-01-14",
+     "opp": "Egypt",
+     "score": "1-0"
+    },
+    {
+     "date": "2026-01-18",
+     "opp": "Morocco",
+     "score": "0-3"
+    },
+    {
+     "date": "2026-03-28",
+     "opp": "Peru",
+     "score": "2-0"
+    },
+    {
+     "date": "2026-03-31",
+     "opp": "Gambia",
+     "score": "3-1"
+    },
+    {
+     "date": "2026-05-31",
+     "opp": "United States",
+     "score": "2-3"
+    },
+    {
+     "date": "2026-06-09",
+     "opp": "Saudi Arabia",
+     "score": "0-0"
+    }
+   ],
+   "h2h_group": {
+    "France": [
+     2,
+     0,
+     0
+    ],
+    "Iraq": [
+     0,
+     0,
+     0
+    ],
+    "Norway": [
+     1,
+     0,
+     0
+    ]
+   },
+   "fifa_rank": 15
+  },
+  "South Africa": {
+   "elo": 1658.0,
+   "group": "A",
+   "form_last10": [
+    4,
+    2,
+    4
+   ],
+   "avg_gf_2y": 1.625,
+   "avg_gc_2y": 0.875,
+   "matches_2y": 24,
+   "last10": [
+    {
+     "date": "2025-11-15",
+     "opp": "Zambia",
+     "score": "3-1"
+    },
+    {
+     "date": "2025-12-22",
+     "opp": "Angola",
+     "score": "2-1"
+    },
+    {
+     "date": "2025-12-26",
+     "opp": "Egypt",
+     "score": "0-1"
+    },
+    {
+     "date": "2025-12-29",
+     "opp": "Zimbabwe",
+     "score": "3-2"
+    },
+    {
+     "date": "2026-01-04",
+     "opp": "Cameroon",
+     "score": "1-2"
+    },
+    {
+     "date": "2026-03-27",
+     "opp": "Panama",
+     "score": "1-1"
+    },
+    {
+     "date": "2026-03-31",
+     "opp": "Panama",
+     "score": "1-2"
+    },
+    {
+     "date": "2026-05-29",
+     "opp": "Nicaragua",
+     "score": "0-0"
+    },
+    {
+     "date": "2026-06-06",
+     "opp": "Jamaica",
+     "score": "1-0"
+    },
+    {
+     "date": "2026-06-11",
+     "opp": "Mexico",
+     "score": "0-2"
+    }
+   ],
+   "h2h_group": {
+    "Czech Republic": [
+     0,
+     1,
+     0
+    ],
+    "Mexico": [
+     1,
+     1,
+     3
+    ],
+    "South Korea": [
+     0,
+     0,
+     0
+    ]
+   },
+   "fifa_rank": null
+  },
+  "South Korea": {
+   "elo": 1905.5,
+   "group": "A",
+   "form_last10": [
+    6,
+    1,
+    3
+   ],
+   "avg_gf_2y": 1.762,
+   "avg_gc_2y": 0.952,
+   "matches_2y": 21,
+   "last10": [
+    {
+     "date": "2025-09-09",
+     "opp": "Mexico",
+     "score": "2-2"
+    },
+    {
+     "date": "2025-10-10",
+     "opp": "Brazil",
+     "score": "0-5"
+    },
+    {
+     "date": "2025-10-14",
+     "opp": "Paraguay",
+     "score": "2-0"
+    },
+    {
+     "date": "2025-11-14",
+     "opp": "Bolivia",
+     "score": "2-0"
+    },
+    {
+     "date": "2025-11-18",
+     "opp": "Ghana",
+     "score": "1-0"
+    },
+    {
+     "date": "2026-03-28",
+     "opp": "Ivory Coast",
+     "score": "0-4"
+    },
+    {
+     "date": "2026-03-31",
+     "opp": "Austria",
+     "score": "0-1"
+    },
+    {
+     "date": "2026-05-30",
+     "opp": "Trinidad and Tobago",
+     "score": "5-0"
+    },
+    {
+     "date": "2026-06-03",
+     "opp": "El Salvador",
+     "score": "1-0"
+    },
+    {
+     "date": "2026-06-11",
+     "opp": "Czech Republic",
+     "score": "2-1"
+    }
+   ],
+   "h2h_group": {
+    "Czech Republic": [
+     2,
+     1,
+     1
+    ],
+    "Mexico": [
+     3,
+     3,
+     8
+    ],
+    "South Africa": [
+     0,
+     0,
+     0
+    ]
+   },
+   "fifa_rank": null
+  },
+  "Spain": {
+   "elo": 2223.2,
+   "group": "H",
+   "form_last10": [
+    7,
+    3,
+    0
+   ],
+   "avg_gf_2y": 2.519,
+   "avg_gc_2y": 0.852,
+   "matches_2y": 27,
+   "last10": [
+    {
+     "date": "2025-09-04",
+     "opp": "Bulgaria",
+     "score": "3-0"
+    },
+    {
+     "date": "2025-09-07",
+     "opp": "Turkey",
+     "score": "6-0"
+    },
+    {
+     "date": "2025-10-11",
+     "opp": "Georgia",
+     "score": "2-0"
+    },
+    {
+     "date": "2025-10-14",
+     "opp": "Bulgaria",
+     "score": "4-0"
+    },
+    {
+     "date": "2025-11-15",
+     "opp": "Georgia",
+     "score": "4-0"
+    },
+    {
+     "date": "2025-11-18",
+     "opp": "Turkey",
+     "score": "2-2"
+    },
+    {
+     "date": "2026-03-27",
+     "opp": "Serbia",
+     "score": "3-0"
+    },
+    {
+     "date": "2026-03-31",
+     "opp": "Egypt",
+     "score": "0-0"
+    },
+    {
+     "date": "2026-06-04",
+     "opp": "Iraq",
+     "score": "1-1"
+    },
+    {
+     "date": "2026-06-08",
+     "opp": "Peru",
+     "score": "3-1"
+    }
+   ],
+   "h2h_group": {
+    "Cape Verde": [
+     0,
+     0,
+     0
+    ],
+    "Saudi Arabia": [
+     3,
+     0,
+     0
+    ],
+    "Uruguay": [
+     5,
+     5,
+     0
+    ]
+   },
+   "fifa_rank": 2
+  },
+  "Sweden": {
+   "elo": 1777.7,
+   "group": "F",
+   "form_last10": [
+    2,
+    3,
+    5
+   ],
+   "avg_gf_2y": 2.15,
+   "avg_gc_2y": 1.45,
+   "matches_2y": 20,
+   "last10": [
+    {
+     "date": "2025-09-05",
+     "opp": "Slovenia",
+     "score": "2-2"
+    },
+    {
+     "date": "2025-09-08",
+     "opp": "Kosovo",
+     "score": "0-2"
+    },
+    {
+     "date": "2025-10-10",
+     "opp": "Switzerland",
+     "score": "0-2"
+    },
+    {
+     "date": "2025-10-13",
+     "opp": "Kosovo",
+     "score": "0-1"
+    },
+    {
+     "date": "2025-11-15",
+     "opp": "Switzerland",
+     "score": "1-4"
+    },
+    {
+     "date": "2025-11-18",
+     "opp": "Slovenia",
+     "score": "1-1"
+    },
+    {
+     "date": "2026-03-26",
+     "opp": "Ukraine",
+     "score": "3-1"
+    },
+    {
+     "date": "2026-03-31",
+     "opp": "Poland",
+     "score": "3-2"
+    },
+    {
+     "date": "2026-06-01",
+     "opp": "Norway",
+     "score": "1-3"
+    },
+    {
+     "date": "2026-06-04",
+     "opp": "Greece",
+     "score": "2-2"
+    }
+   ],
+   "h2h_group": {
+    "Japan": [
+     1,
+     3,
+     0
+    ],
+    "Netherlands": [
+     8,
+     6,
+     11
+    ],
+    "Tunisia": [
+     2,
+     1,
+     1
+    ]
+   },
+   "fifa_rank": null
+  },
+  "Switzerland": {
+   "elo": 1952.6,
+   "group": "B",
+   "form_last10": [
+    5,
+    4,
+    1
+   ],
+   "avg_gf_2y": 1.92,
+   "avg_gc_2y": 1.2,
+   "matches_2y": 25,
+   "last10": [
+    {
+     "date": "2025-09-05",
+     "opp": "Kosovo",
+     "score": "4-0"
+    },
+    {
+     "date": "2025-09-08",
+     "opp": "Slovenia",
+     "score": "3-0"
+    },
+    {
+     "date": "2025-10-10",
+     "opp": "Sweden",
+     "score": "2-0"
+    },
+    {
+     "date": "2025-10-13",
+     "opp": "Slovenia",
+     "score": "0-0"
+    },
+    {
+     "date": "2025-11-15",
+     "opp": "Sweden",
+     "score": "4-1"
+    },
+    {
+     "date": "2025-11-18",
+     "opp": "Kosovo",
+     "score": "1-1"
+    },
+    {
+     "date": "2026-03-27",
+     "opp": "Germany",
+     "score": "3-4"
+    },
+    {
+     "date": "2026-03-31",
+     "opp": "Norway",
+     "score": "0-0"
+    },
+    {
+     "date": "2026-05-31",
+     "opp": "Jordan",
+     "score": "4-1"
+    },
+    {
+     "date": "2026-06-06",
+     "opp": "Australia",
+     "score": "1-1"
+    }
+   ],
+   "h2h_group": {
+    "Bosnia and Herzegovina": [
+     0,
+     0,
+     1
+    ],
+    "Canada": [
+     0,
+     0,
+     1
+    ],
+    "Qatar": [
+     0,
+     0,
+     1
+    ]
+   },
+   "fifa_rank": 19
+  },
+  "Tunisia": {
+   "elo": 1735.6,
+   "group": "F",
+   "form_last10": [
+    3,
+    4,
+    3
+   ],
+   "avg_gf_2y": 1.536,
+   "avg_gc_2y": 0.964,
+   "matches_2y": 28,
+   "last10": [
+    {
+     "date": "2025-12-04",
+     "opp": "Palestine",
+     "score": "2-2"
+    },
+    {
+     "date": "2025-12-07",
+     "opp": "Qatar",
+     "score": "3-0"
+    },
+    {
+     "date": "2025-12-23",
+     "opp": "Uganda",
+     "score": "3-1"
+    },
+    {
+     "date": "2025-12-27",
+     "opp": "Nigeria",
+     "score": "2-3"
+    },
+    {
+     "date": "2025-12-30",
+     "opp": "Tanzania",
+     "score": "1-1"
+    },
+    {
+     "date": "2026-01-03",
+     "opp": "Mali",
+     "score": "1-1"
+    },
+    {
+     "date": "2026-03-28",
+     "opp": "Haiti",
+     "score": "1-0"
+    },
+    {
+     "date": "2026-03-31",
+     "opp": "Canada",
+     "score": "0-0"
+    },
+    {
+     "date": "2026-06-01",
+     "opp": "Austria",
+     "score": "0-1"
+    },
+    {
+     "date": "2026-06-06",
+     "opp": "Belgium",
+     "score": "0-5"
+    }
+   ],
+   "h2h_group": {
+    "Japan": [
+     1,
+     0,
+     4
+    ],
+    "Netherlands": [
+     0,
+     2,
+     1
+    ],
+    "Sweden": [
+     1,
+     1,
+     2
+    ]
+   },
+   "fifa_rank": null
+  },
+  "Turkey": {
+   "elo": 1974.9,
+   "group": "D",
+   "form_last10": [
+    8,
+    1,
+    1
+   ],
+   "avg_gf_2y": 2.0,
+   "avg_gc_2y": 1.2,
+   "matches_2y": 25,
+   "last10": [
+    {
+     "date": "2025-09-04",
+     "opp": "Georgia",
+     "score": "3-2"
+    },
+    {
+     "date": "2025-09-07",
+     "opp": "Spain",
+     "score": "0-6"
+    },
+    {
+     "date": "2025-10-11",
+     "opp": "Bulgaria",
+     "score": "6-1"
+    },
+    {
+     "date": "2025-10-14",
+     "opp": "Georgia",
+     "score": "4-1"
+    },
+    {
+     "date": "2025-11-15",
+     "opp": "Bulgaria",
+     "score": "2-0"
+    },
+    {
+     "date": "2025-11-18",
+     "opp": "Spain",
+     "score": "2-2"
+    },
+    {
+     "date": "2026-03-26",
+     "opp": "Romania",
+     "score": "1-0"
+    },
+    {
+     "date": "2026-03-31",
+     "opp": "Kosovo",
+     "score": "1-0"
+    },
+    {
+     "date": "2026-06-01",
+     "opp": "North Macedonia",
+     "score": "4-0"
+    },
+    {
+     "date": "2026-06-06",
+     "opp": "Venezuela",
+     "score": "2-1"
+    }
+   ],
+   "h2h_group": {
+    "Australia": [
+     2,
+     0,
+     0
+    ],
+    "Paraguay": [
+     0,
+     0,
+     0
+    ],
+    "United States": [
+     2,
+     1,
+     2
+    ]
+   },
+   "fifa_rank": null
+  },
+  "United States": {
+   "elo": 1839.6,
+   "group": "D",
+   "form_last10": [
+    5,
+    1,
+    4
+   ],
+   "avg_gf_2y": 1.625,
+   "avg_gc_2y": 1.375,
+   "matches_2y": 32,
+   "last10": [
+    {
+     "date": "2025-09-06",
+     "opp": "South Korea",
+     "score": "0-2"
+    },
+    {
+     "date": "2025-09-09",
+     "opp": "Japan",
+     "score": "2-0"
+    },
+    {
+     "date": "2025-10-10",
+     "opp": "Ecuador",
+     "score": "1-1"
+    },
+    {
+     "date": "2025-10-14",
+     "opp": "Australia",
+     "score": "2-1"
+    },
+    {
+     "date": "2025-11-15",
+     "opp": "Paraguay",
+     "score": "2-1"
+    },
+    {
+     "date": "2025-11-18",
+     "opp": "Uruguay",
+     "score": "5-1"
+    },
+    {
+     "date": "2026-03-28",
+     "opp": "Belgium",
+     "score": "2-5"
+    },
+    {
+     "date": "2026-03-31",
+     "opp": "Portugal",
+     "score": "0-2"
+    },
+    {
+     "date": "2026-05-31",
+     "opp": "Senegal",
+     "score": "3-2"
+    },
+    {
+     "date": "2026-06-06",
+     "opp": "Germany",
+     "score": "1-2"
+    }
+   ],
+   "h2h_group": {
+    "Australia": [
+     2,
+     1,
+     1
+    ],
+    "Paraguay": [
+     5,
+     2,
+     2
+    ],
+    "Turkey": [
+     2,
+     1,
+     2
+    ]
+   },
+   "fifa_rank": 17
+  },
+  "Uruguay": {
+   "elo": 1972.7,
+   "group": "H",
+   "form_last10": [
+    4,
+    4,
+    2
+   ],
+   "avg_gf_2y": 1.04,
+   "avg_gc_2y": 0.76,
+   "matches_2y": 25,
+   "last10": [
+    {
+     "date": "2025-06-05",
+     "opp": "Paraguay",
+     "score": "0-2"
+    },
+    {
+     "date": "2025-06-10",
+     "opp": "Venezuela",
+     "score": "2-0"
+    },
+    {
+     "date": "2025-09-04",
+     "opp": "Peru",
+     "score": "3-0"
+    },
+    {
+     "date": "2025-09-09",
+     "opp": "Chile",
+     "score": "0-0"
+    },
+    {
+     "date": "2025-10-10",
+     "opp": "Dominican Republic",
+     "score": "1-0"
+    },
+    {
+     "date": "2025-10-13",
+     "opp": "Uzbekistan",
+     "score": "2-1"
+    },
+    {
+     "date": "2025-11-15",
+     "opp": "Mexico",
+     "score": "0-0"
+    },
+    {
+     "date": "2025-11-18",
+     "opp": "United States",
+     "score": "1-5"
+    },
+    {
+     "date": "2026-03-27",
+     "opp": "England",
+     "score": "1-1"
+    },
+    {
+     "date": "2026-03-31",
+     "opp": "Algeria",
+     "score": "0-0"
+    }
+   ],
+   "h2h_group": {
+    "Cape Verde": [
+     0,
+     0,
+     0
+    ],
+    "Saudi Arabia": [
+     1,
+     1,
+     1
+    ],
+    "Spain": [
+     0,
+     5,
+     5
+    ]
+   },
+   "fifa_rank": 16
+  },
+  "Uzbekistan": {
+   "elo": 1822.3,
+   "group": "K",
+   "form_last10": [
+    4,
+    3,
+    3
+   ],
+   "avg_gf_2y": 1.25,
+   "avg_gc_2y": 0.8,
+   "matches_2y": 20,
+   "last10": [
+    {
+     "date": "2025-06-10",
+     "opp": "Qatar",
+     "score": "3-0"
+    },
+    {
+     "date": "2025-10-10",
+     "opp": "Kuwait",
+     "score": "2-0"
+    },
+    {
+     "date": "2025-10-13",
+     "opp": "Uruguay",
+     "score": "1-2"
+    },
+    {
+     "date": "2025-11-14",
+     "opp": "Egypt",
+     "score": "2-0"
+    },
+    {
+     "date": "2025-11-18",
+     "opp": "Iran",
+     "score": "0-0"
+    },
+    {
+     "date": "2026-01-26",
+     "opp": "China",
+     "score": "2-2"
+    },
+    {
+     "date": "2026-03-27",
+     "opp": "Gabon",
+     "score": "3-1"
+    },
+    {
+     "date": "2026-03-30",
+     "opp": "Venezuela",
+     "score": "0-0"
+    },
+    {
+     "date": "2026-06-01",
+     "opp": "Canada",
+     "score": "0-2"
+    },
+    {
+     "date": "2026-06-08",
+     "opp": "Netherlands",
+     "score": "1-2"
+    }
+   ],
+   "h2h_group": {
+    "Colombia": [
+     0,
+     0,
+     0
+    ],
+    "DR Congo": [
+     0,
+     0,
+     0
+    ],
+    "Portugal": [
+     0,
+     0,
+     0
+    ]
+   },
+   "fifa_rank": null
+  }
+ }
+}
