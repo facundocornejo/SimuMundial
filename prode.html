@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prode Mundial 2026 · Cargá tu pronóstico</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0a1020;--bg2:#0e1630;--card:#121b33;--line:#22304f;--txt:#e8edf8;--mut:#8da0c0;
+    --dim:#5f7195;--ok:#34d399;--warn:#fbbf24;--bad:#f87171;--acc:#6366f1;--acc2:#22d3ee}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--txt);font-family:'Inter',system-ui,sans-serif;line-height:1.5}
+  h1,h2,h3{font-family:'Sora',system-ui,sans-serif}
+  .wrap{max-width:980px;margin:0 auto;padding:0 16px 80px}
+  header{background:linear-gradient(180deg,#0d1430,#0a1020);border-bottom:1px solid var(--line);padding:36px 16px 24px;text-align:center}
+  header h1{font-size:clamp(24px,4vw,38px);background:linear-gradient(90deg,#7dd3fc,#a5b4fc,#f0abfc);
+    -webkit-background-clip:text;background-clip:text;color:transparent}
+  header p{color:var(--mut);font-size:14px;margin-top:6px}
+  .topbar{position:sticky;top:0;z-index:50;background:rgba(10,16,32,.95);backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);padding:10px 16px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+  .topbar input[type=text]{background:var(--card);border:1px solid var(--line);color:var(--txt);
+    border-radius:10px;padding:8px 14px;font-size:14px;font-family:inherit;flex:1;min-width:160px}
+  button{background:linear-gradient(90deg,#6366f1,#22d3ee);color:#0a1020;font-weight:700;border:none;
+    border-radius:10px;padding:9px 16px;font-size:13px;cursor:pointer;font-family:inherit}
+  button.ghost{background:transparent;color:var(--mut);border:1px solid var(--line)}
+  button:hover{filter:brightness(1.1)}
+  .progress{font-size:12.5px;color:var(--mut);white-space:nowrap}
+  .progress b{color:var(--ok)}
+  .group{margin-top:30px;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .group h2{font-size:15px;padding:12px 16px;color:#fff;letter-spacing:.05em}
+  .gA{background:#dc2626}.gB{background:#ea580c}.gC{background:#16a34a}.gD{background:#2563eb}
+  .gE{background:#7c3aed}.gF{background:#db2777}.gG{background:#0d9488}.gH{background:#ca8a04}
+  .gI{background:#4f46e5}.gJ{background:#0891b2}.gK{background:#9333ea}.gL{background:#b91c1c}
+  .mrow{display:grid;grid-template-columns:auto 1fr auto auto auto 1fr auto;gap:8px;align-items:center;
+    padding:9px 16px;border-top:1px solid var(--line);font-size:14px}
+  .mrow .d{color:var(--dim);font-size:11px;width:42px}
+  .mrow .home{text-align:right;font-weight:600}
+  .mrow .away{font-weight:600}
+  .mrow input{width:44px;text-align:center;background:var(--bg2);border:1px solid var(--line);
+    color:var(--txt);border-radius:8px;padding:7px 0;font-size:15px;font-weight:700;font-family:'Sora'}
+  .mrow input:focus{outline:none;border-color:var(--acc2)}
+  .real{font-size:10.5px;color:var(--ok);background:rgba(52,211,153,.1);border:1px solid rgba(52,211,153,.35);
+    border-radius:99px;padding:2px 8px;white-space:nowrap;justify-self:end}
+  .real.empty{visibility:hidden}
+  .mini{padding:10px 16px;border-top:1px dashed var(--line);font-size:12px;color:var(--mut);display:none}
+  .mini table{border-collapse:collapse;width:100%}
+  .mini td,.mini th{padding:3px 8px;text-align:center}
+  .mini td:first-child{text-align:left}
+  .mini tr.q{color:var(--ok)} .mini tr.t{color:var(--warn)}
+  .footer-note{margin-top:30px;text-align:center;color:var(--dim);font-size:12.5px;border:1px dashed var(--line);
+    border-radius:12px;padding:14px}
+  #msg{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#16213e;border:1px solid var(--acc);
+    border-radius:12px;padding:12px 22px;font-size:14px;display:none;z-index:99}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>⚽ Prode Mundial 2026</h1>
+  <p>Cargá el resultado que creés para cada partido de la fase de grupos.
+     Con eso se calcula TU cuadro completo hasta la final. Datos al 2026-06-12 01:04:57.</p>
+</header>
+
+<div class="topbar">
+  <input type="text" id="pname" placeholder="Tu nombre (ej: Facu)" maxlength="24">
+  <span class="progress">Completados: <b id="done">0</b>/<span id="total">72</span></span>
+  <button class="ghost" onclick="fillModel()">🤖 Autocompletar con el modelo</button>
+  <button class="ghost" onclick="document.getElementById('imp').click()">Importar</button>
+  <input type="file" id="imp" accept=".json" style="display:none" onchange="importFile(this)">
+  <button onclick="exportProde()">⬇ Descargar mi prode</button>
+</div>
+
+<div class="wrap" id="groups"></div>
+
+<div class="wrap">
+  <div class="footer-note">
+    Podés cargar TODOS los partidos, incluso los ya jugados (la etiqueta <span style="color:var(--ok)">real: x-x</span> es solo referencia):
+    sirve para transcribir pronósticos hechos antes del torneo. Juego de confianza entre amigos 🤝.<br>
+    Cuando termines, descargá tu archivo <b>prode_&lt;nombre&gt;.json</b> y pasáselo al organizador
+    (va a la carpeta <code>prode/</code> y se regenera el ranking con <code>python scripts/game.py</code>).
+  </div>
+</div>
+
+<div id="msg"></div>
+
+<script>
+const MATCHES = [{"id": "2026-A-01", "g": "A", "d": "2026-06-11", "h": "México", "a": "Sudáfrica", "hc": "Mexico", "ac": "South Africa", "played": true, "score": [2, 0], "model": null}, {"id": "2026-A-02", "g": "A", "d": "2026-06-11", "h": "Corea del Sur", "a": "Chequia", "hc": "South Korea", "ac": "Czech Republic", "played": true, "score": [2, 1], "model": [1, 0]}, {"id": "2026-B-01", "g": "B", "d": "2026-06-12", "h": "Canadá", "a": "Bosnia y Herzegovina", "hc": "Canada", "ac": "Bosnia and Herzegovina", "played": false, "score": null, "model": [2, 0]}, {"id": "2026-D-01", "g": "D", "d": "2026-06-12", "h": "Estados Unidos", "a": "Paraguay", "hc": "United States", "ac": "Paraguay", "played": false, "score": null, "model": [1, 0]}, {"id": "2026-B-02", "g": "B", "d": "2026-06-13", "h": "Catar", "a": "Suiza", "hc": "Qatar", "ac": "Switzerland", "played": false, "score": null, "model": [0, 2]}, {"id": "2026-C-01", "g": "C", "d": "2026-06-13", "h": "Brasil", "a": "Marruecos", "hc": "Brazil", "ac": "Morocco", "played": false, "score": null, "model": [1, 0]}, {"id": "2026-C-02", "g": "C", "d": "2026-06-13", "h": "Haití", "a": "Escocia", "hc": "Haiti", "ac": "Scotland", "played": false, "score": null, "model": [0, 2]}, {"id": "2026-D-02", "g": "D", "d": "2026-06-13", "h": "Australia", "a": "Turquía", "hc": "Australia", "ac": "Turkey", "played": false, "score": null, "model": [0, 1]}, {"id": "2026-E-01", "g": "E", "d": "2026-06-14", "h": "Alemania", "a": "Curazao", "hc": "Germany", "ac": "Curaçao", "played": false, "score": null, "model": [2, 0]}, {"id": "2026-F-01", "g": "F", "d": "2026-06-14", "h": "Países Bajos", "a": "Japón", "hc": "Netherlands", "ac": "Japan", "played": false, "score": null, "model": [1, 0]}, {"id": "2026-E-02", "g": "E", "d": "2026-06-14", "h": "Costa de Marfil", "a": "Ecuador", "hc": "Ivory Coast", "ac": "Ecuador", "played": false, "score": null, "model": [0, 1]}, {"id": "2026-F-02", "g": "F", "d": "2026-06-14", "h": "Suecia", "a": "Túnez", "hc": "Sweden", "ac": "Tunisia", "played": false, "score": null, "model": [1, 0]}, {"id": "2026-G-01", "g": "G", "d": "2026-06-15", "h": "Bélgica", "a": "Egipto", "hc": "Belgium", "ac": "Egypt", "played": false, "score": null, "model": [1, 0]}, {"id": "2026-H-01", "g": "H", "d": "2026-06-15", "h": "España", "a": "Cabo Verde", "hc": "Spain", "ac": "Cape Verde", "played": false, "score": null, "model": [2, 0]}, {"id": "2026-G-02", "g": "G", "d": "2026-06-15", "h": "Irán", "a": "Nueva Zelanda", "hc": "Iran", "ac": "New Zealand", "played": false, "score": null, "model": [1, 0]}, {"id": "2026-H-02", "g": "H", "d": "2026-06-15", "h": "Arabia Saudita", "a": "Uruguay", "hc": "Saudi Arabia", "ac": "Uruguay", "played": false, "score": null, "model": [0, 1]}, {"id": "2026-I-01", "g": "I", "d": "2026-06-16", "h": "Francia", "a": "Senegal", "hc": "France", "ac": "Senegal", "played": false, "score": null, "model": [2, 0]}, {"id": "2026-I-02", "g": "I", "d": "2026-06-16", "h": "Irak", "a": "Noruega", "hc": "Iraq", "ac": "Norway", "played": false, "score": null, "model": [0, 2]}, {"id": "2026-J-01", "g": "J", "d": "2026-06-16", "h": "Argentina", "a": "Argelia", "hc": "Argentina", "ac": "Algeria", "played": false, "score": null, "model": [2, 0]}, {"id": "2026-J-02", "g": "J", "d": "2026-06-16", "h": "Austria", "a": "Jordania", "hc": "Austria", "ac": "Jordan", "played": false, "score": null, "model": [1, 0]}, {"id": "2026-K-01", "g": "K", "d": "2026-06-17", "h": "Portugal", "a": "RD Congo", "hc": "Portugal", "ac": "DR Congo", "played": false, "score": null, "model": [2, 0]}, {"id": "2026-L-01", "g": "L", "d": "2026-06-17", "h": "Inglaterra", "a": "Croacia", "hc": "England", "ac": "Croatia", "played": false, "score": null, "model": [1, 0]}, {"id": "2026-L-02", "g": "L", "d": "2026-06-17", "h": "Ghana", "a": "Panamá", "hc": "Ghana", "ac": "Panama", "played": false, "score": null, "model": [0, 2]}, {"id": "2026-K-02", "g": "K", "d": "2026-06-17", "h": "Uzbekistán", "a": "Colombia", "hc": "Uzbekistan", "ac": "Colombia", "played": false, "score": null, "model": [0, 2]}, {"id": "2026-A-03", "g": "A", "d": "2026-06-18", "h": "Chequia", "a": "Sudáfrica", "hc": "Czech Republic", "ac": "South Africa", "played": false, "score": null, "model": [1, 0]}, {"id": "2026-B-03", "g": "B", "d": "2026-06-18", "h": "Suiza", "a": "Bosnia y Herzegovina", "hc": "Switzerland", "ac": "Bosnia and Herzegovina", "played": false, "score": null, "model": [2, 0]}, {"id": "2026-B-04", "g": "B", "d": "2026-06-18", "h": "Canadá", "a": "Catar", "hc": "Canada", "ac": "Qatar", "played": false, "score": null, "model": [2, 0]}, {"id": "2026-A-04", "g": "A", "d": "2026-06-18", "h": "México", "a": "Corea del Sur", "hc": "Mexico", "ac": "South Korea", "played": false, "score": null, "model": [1, 0]}, {"id": "2026-D-03", "g": "D", "d": "2026-06-19", "h": "Estados Unidos", "a": "Australia", "hc": "United States", "ac": "Australia", "played": false, "score": null, "model": [1, 0]}, {"id": "2026-C-03", "g": "C", "d": "2026-06-19", "h": "Escocia", "a": "Marruecos", "hc": "Scotland", "ac": "Morocco", "played": false, "score": null, "model": [0, 1]}, {"id": "2026-D-04", "g": "D", "d": "2026-06-19", "h": "Turquía", "a": "Paraguay", "hc": "Turkey", "ac": "Paraguay", "played": false, "score": null, "model": [1, 0]}, {"id": "2026-C-04", "g": "C", "d": "2026-06-19", "h": "Brasil", "a": "Haití", "hc": "Brazil", "ac": "Haiti", "played": false, "score": null, "model": [2, 0]}, {"id": "2026-F-03", "g": "F", "d": "2026-06-20", "h": "Países Bajos", "a": "Suecia", "hc": "Netherlands", "ac": "Sweden", "played": false, "score": null, "model": [2, 0]}, {"id": "2026-E-03", "g": "E", "d": "2026-06-20", "h": "Alemania", "a": "Costa de Marfil", "hc": "Germany", "ac": "Ivory Coast", "played": false, "score": null, "model": [2, 0]}, {"id": "2026-E-04", "g": "E", "d": "2026-06-20", "h": "Ecuador", "a": "Curazao", "hc": "Ecuador", "ac": "Curaçao", "played": false, "score": null, "model": [2, 0]}, {"id": "2026-F-04", "g": "F", "d": "2026-06-20", "h": "Túnez", "a": "Japón", "hc": "Tunisia", "ac": "Japan", "played": false, "score": null, "model": [0, 2]}, {"id": "2026-G-03", "g": "G", "d": "2026-06-21", "h": "Bélgica", "a": "Irán", "hc": "Belgium", "ac": "Iran", "played": false, "score": null, "model": [1, 0]}, {"id": "2026-H-03", "g": "H", "d": "2026-06-21", "h": "España", "a": "Arabia Saudita", "hc": "Spain", "ac": "Saudi Arabia", "played": false, "score": null, "model": [2, 0]}, {"id": "2026-G-04", "g": "G", "d": "2026-06-21", "h": "Nueva Zelanda", "a": "Egipto", "hc": "New Zealand", "ac": "Egypt", "played": false, "score": null, "model": [0, 1]}, {"id": "2026-H-04", "g": "H", "d": "2026-06-21", "h": "Uruguay", "a": "Cabo Verde", "hc": "Uruguay", "ac": "Cape Verde", "played": false, "score": null, "model": [1, 0]}, {"id": "2026-J-03", "g": "J", "d": "2026-06-22", "h": "Argentina", "a": "Austria", "hc": "Argentina", "ac": "Austria", "played": false, "score": null, "model": [2, 0]}, {"id": "2026-I-03", "g": "I", "d": "2026-06-22", "h": "Francia", "a": "Irak", "hc": "France", "ac": "Iraq", "played": false, "score": null, "model": [2, 0]}, {"id": "2026-I-04", "g": "I", "d": "2026-06-22", "h": "Noruega", "a": "Senegal", "hc": "Norway", "ac": "Senegal", "played": false, "score": null, "model": [2, 1]}, {"id": "2026-J-04", "g": "J", "d": "2026-06-22", "h": "Jordania", "a": "Argelia", "hc": "Jordan", "ac": "Algeria", "played": false, "score": null, "model": [0, 1]}, {"id": "2026-K-03", "g": "K", "d": "2026-06-23", "h": "Portugal", "a": "Uzbekistán", "hc": "Portugal", "ac": "Uzbekistan", "played": false, "score": null, "model": [2, 0]}, {"id": "2026-L-03", "g": "L", "d": "2026-06-23", "h": "Inglaterra", "a": "Ghana", "hc": "England", "ac": "Ghana", "played": false, "score": null, "model": [2, 0]}, {"id": "2026-L-04", "g": "L", "d": "2026-06-23", "h": "Panamá", "a": "Croacia", "hc": "Panama", "ac": "Croatia", "played": false, "score": null, "model": [0, 1]}, {"id": "2026-K-04", "g": "K", "d": "2026-06-23", "h": "Colombia", "a": "RD Congo", "hc": "Colombia", "ac": "DR Congo", "played": false, "score": null, "model": [2, 0]}, {"id": "2026-B-05", "g": "B", "d": "2026-06-24", "h": "Suiza", "a": "Canadá", "hc": "Switzerland", "ac": "Canada", "played": false, "score": null, "model": [1, 0]}, {"id": "2026-B-06", "g": "B", "d": "2026-06-24", "h": "Bosnia y Herzegovina", "a": "Catar", "hc": "Bosnia and Herzegovina", "ac": "Qatar", "played": false, "score": null, "model": [1, 0]}, {"id": "2026-C-05", "g": "C", "d": "2026-06-24", "h": "Escocia", "a": "Brasil", "hc": "Scotland", "ac": "Brazil", "played": false, "score": null, "model": [0, 2]}, {"id": "2026-C-06", "g": "C", "d": "2026-06-24", "h": "Marruecos", "a": "Haití", "hc": "Morocco", "ac": "Haiti", "played": false, "score": null, "model": [2, 0]}, {"id": "2026-A-05", "g": "A", "d": "2026-06-24", "h": "Chequia", "a": "México", "hc": "Czech Republic", "ac": "Mexico", "played": false, "score": null, "model": [0, 1]}, {"id": "2026-A-06", "g": "A", "d": "2026-06-24", "h": "Sudáfrica", "a": "Corea del Sur", "hc": "South Africa", "ac": "South Korea", "played": false, "score": null, "model": [0, 2]}, {"id": "2026-E-05", "g": "E", "d": "2026-06-25", "h": "Curazao", "a": "Costa de Marfil", "hc": "Curaçao", "ac": "Ivory Coast", "played": false, "score": null, "model": [0, 2]}, {"id": "2026-E-06", "g": "E", "d": "2026-06-25", "h": "Ecuador", "a": "Alemania", "hc": "Ecuador", "ac": "Germany", "played": false, "score": null, "model": [1, 0]}, {"id": "2026-F-05", "g": "F", "d": "2026-06-25", "h": "Japón", "a": "Suecia", "hc": "Japan", "ac": "Sweden", "played": false, "score": null, "model": [2, 0]}, {"id": "2026-F-06", "g": "F", "d": "2026-06-25", "h": "Túnez", "a": "Países Bajos", "hc": "Tunisia", "ac": "Netherlands", "played": false, "score": null, "model": [0, 2]}, {"id": "2026-D-05", "g": "D", "d": "2026-06-25", "h": "Turquía", "a": "Estados Unidos", "hc": "Turkey", "ac": "United States", "played": false, "score": null, "model": [1, 0]}, {"id": "2026-D-06", "g": "D", "d": "2026-06-25", "h": "Paraguay", "a": "Australia", "hc": "Paraguay", "ac": "Australia", "played": false, "score": null, "model": [1, 0]}, {"id": "2026-I-05", "g": "I", "d": "2026-06-26", "h": "Noruega", "a": "Francia", "hc": "Norway", "ac": "France", "played": false, "score": null, "model": [0, 2]}, {"id": "2026-I-06", "g": "I", "d": "2026-06-26", "h": "Senegal", "a": "Irak", "hc": "Senegal", "ac": "Iraq", "played": false, "score": null, "model": [1, 0]}, {"id": "2026-H-05", "g": "H", "d": "2026-06-26", "h": "Uruguay", "a": "España", "hc": "Uruguay", "ac": "Spain", "played": false, "score": null, "model": [0, 2]}, {"id": "2026-H-06", "g": "H", "d": "2026-06-26", "h": "Cabo Verde", "a": "Arabia Saudita", "hc": "Cape Verde", "ac": "Saudi Arabia", "played": false, "score": null, "model": [0, 1]}, {"id": "2026-G-05", "g": "G", "d": "2026-06-26", "h": "Egipto", "a": "Irán", "hc": "Egypt", "ac": "Iran", "played": false, "score": null, "model": [0, 1]}, {"id": "2026-G-06", "g": "G", "d": "2026-06-26", "h": "Nueva Zelanda", "a": "Bélgica", "hc": "New Zealand", "ac": "Belgium", "played": false, "score": null, "model": [0, 2]}, {"id": "2026-L-05", "g": "L", "d": "2026-06-27", "h": "Panamá", "a": "Inglaterra", "hc": "Panama", "ac": "England", "played": false, "score": null, "model": [0, 2]}, {"id": "2026-L-06", "g": "L", "d": "2026-06-27", "h": "Croacia", "a": "Ghana", "hc": "Croatia", "ac": "Ghana", "played": false, "score": null, "model": [2, 0]}, {"id": "2026-K-05", "g": "K", "d": "2026-06-27", "h": "Colombia", "a": "Portugal", "hc": "Colombia", "ac": "Portugal", "played": false, "score": null, "model": [1, 0]}, {"id": "2026-K-06", "g": "K", "d": "2026-06-27", "h": "RD Congo", "a": "Uzbekistán", "hc": "DR Congo", "ac": "Uzbekistan", "played": false, "score": null, "model": [0, 1]}, {"id": "2026-J-05", "g": "J", "d": "2026-06-27", "h": "Argelia", "a": "Austria", "hc": "Algeria", "ac": "Austria", "played": false, "score": null, "model": [0, 1]}, {"id": "2026-J-06", "g": "J", "d": "2026-06-27", "h": "Jordania", "a": "Argentina", "hc": "Jordan", "ac": "Argentina", "played": false, "score": null, "model": [0, 2]}];
+const byGroup = {};
+MATCHES.forEach(m => (byGroup[m.g] = byGroup[m.g] || []).push(m));
+
+function fmtDate(d){ if(!d) return ""; const p=d.split("-"); return p[2]+"/"+p[1]; }
+
+function render(){
+  const root = document.getElementById("groups");
+  let html = "";
+  for (const g of Object.keys(byGroup).sort()){
+    html += `<section class="group"><h2 class="g${g}">GRUPO ${g}</h2>`;
+    for (const m of byGroup[g]){
+      const real = m.played ? `real: ${m.score[0]}-${m.score[1]}` : "";
+      html += `<div class="mrow">
+        <span class="d">${fmtDate(m.d)}</span>
+        <span class="home">${m.h}</span>
+        <input type="number" min="0" max="15" id="${m.id}-h" value="" oninput="changed()">
+        <span style="color:var(--dim)">–</span>
+        <input type="number" min="0" max="15" id="${m.id}-a" value="" oninput="changed()">
+        <span class="away">${m.a}</span>
+        <span class="real ${real?'':'empty'}">${real}</span>
+      </div>`;
+    }
+    html += `<div class="mini" id="mini-${g}"></div></section>`;
+  }
+  root.innerHTML = html;
+  changed();
+}
+
+function getResults(includeEmpty){
+  const res = {};
+  for (const m of MATCHES){
+    const h = document.getElementById(m.id+"-h").value;
+    const a = document.getElementById(m.id+"-a").value;
+    if (h !== "" && a !== "") res[m.id] = [parseInt(h), parseInt(a)];
+    else if (includeEmpty) res[m.id] = null;
+  }
+  return res;
+}
+
+function changed(){
+  const res = getResults(false);
+  document.getElementById("done").textContent = Object.keys(res).length;
+  // mini tablas por grupo cuando el grupo esta completo
+  for (const g of Object.keys(byGroup)){
+    const ms = byGroup[g];
+    const complete = ms.every(m => res[m.id]);
+    const box = document.getElementById("mini-"+g);
+    if (!complete){ box.style.display = "none"; continue; }
+    const t = {};
+    ms.forEach(m => { t[m.h] = t[m.h]||{p:0,gf:0,gc:0}; t[m.a] = t[m.a]||{p:0,gf:0,gc:0}; });
+    ms.forEach(m => {
+      const [hs, as] = res[m.id];
+      t[m.h].gf += hs; t[m.h].gc += as; t[m.a].gf += as; t[m.a].gc += hs;
+      if (hs > as) t[m.h].p += 3; else if (hs < as) t[m.a].p += 3; else { t[m.h].p++; t[m.a].p++; }
+    });
+    const order = Object.keys(t).sort((x,y) => t[y].p - t[x].p ||
+      (t[y].gf - t[y].gc) - (t[x].gf - t[x].gc) || t[y].gf - t[x].gf || x.localeCompare(y));
+    let h = "<table><tr><th></th><th>Pts</th><th>DG</th></tr>";
+    order.forEach((name,i) => {
+      h += `<tr class="${i<2?'q':(i==2?'t':'')}"><td>${i+1}° ${name}</td><td>${t[name].p}</td><td>${t[name].gf - t[name].gc}</td></tr>`;
+    });
+    box.innerHTML = h + "</table>";
+    box.style.display = "block";
+  }
+}
+
+function fillModel(){
+  let n = 0;
+  for (const m of MATCHES){
+    if (!m.model) continue;
+    const ih = document.getElementById(m.id+"-h"), ia = document.getElementById(m.id+"-a");
+    if (ih.value === "" || ia.value === ""){ ih.value = m.model[0]; ia.value = m.model[1]; n++; }
+  }
+  changed();
+  toast(`Se completaron ${n} partidos con la predicción del modelo. Tocá los que quieras cambiar.`);
+}
+
+function exportProde(){
+  const name = document.getElementById("pname").value.trim();
+  if (!name){ toast("Poné tu nombre arriba antes de exportar."); return; }
+  const res = getResults(false);
+  const missing = MATCHES.filter(m => !res[m.id]);
+  if (missing.length){ toast(`Te faltan ${missing.length} partidos (el primero: ${missing[0].h} vs ${missing[0].a}).`); return; }
+  const data = {
+    player: name,
+    created: new Date().toISOString().slice(0,19),
+    results: res,
+  };
+  const blob = new Blob([JSON.stringify(data, null, 1)], {type: "application/json"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = `prode_${name.toLowerCase().replace(/[^a-z0-9]+/g,"_")}.json`;
+  a.click();
+  toast("¡Listo! Mandale el archivo al organizador.");
+}
+
+function importFile(input){
+  const f = input.files[0];
+  if (!f) return;
+  f.text().then(txt => {
+    const data = JSON.parse(txt);
+    document.getElementById("pname").value = data.player || "";
+    for (const [mid, sc] of Object.entries(data.results || {})){
+      const ih = document.getElementById(mid+"-h"), ia = document.getElementById(mid+"-a");
+      if (ih && sc){ ih.value = sc[0]; ia.value = sc[1]; }
+    }
+    changed();
+    toast("Prode importado: podés seguir editando.");
+  }).catch(() => toast("No pude leer ese archivo."));
+  input.value = "";
+}
+
+let toastTimer;
+function toast(msg){
+  const el = document.getElementById("msg");
+  el.textContent = msg; el.style.display = "block";
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.style.display = "none", 4000);
+}
+
+render();
+</script>
+</body>
+</html>

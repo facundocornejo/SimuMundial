@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mundial 2026 · Análisis predictivo de la fase de grupos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a1020; --bg2:#0e1630; --card:#121b33; --card2:#16213e;
+    --line:#22304f; --txt:#e8edf8; --mut:#8da0c0; --dim:#5f7195;
+    --home:#2dd4bf; --draw:#64748b; --away:#f59e0b;
+    --ok:#34d399; --warn:#fbbf24; --bad:#f87171;
+    --acc:#6366f1; --acc2:#22d3ee;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--txt);font-family:'Inter',system-ui,sans-serif;line-height:1.5}
+  h1,h2,h3{font-family:'Sora',system-ui,sans-serif}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 20px 80px}
+  header.hero{
+    background:
+      radial-gradient(1200px 400px at 80% -50%, rgba(34,211,238,.18), transparent 60%),
+      radial-gradient(900px 380px at 10% -40%, rgba(99,102,241,.25), transparent 60%),
+      linear-gradient(180deg,#0d1430,#0a1020);
+    border-bottom:1px solid var(--line);
+    padding:56px 20px 36px; text-align:center;
+  }
+  .hero .kicker{letter-spacing:.25em;text-transform:uppercase;font-size:12px;color:var(--acc2);font-weight:600}
+  .hero h1{font-size:clamp(28px,4.5vw,46px);font-weight:800;margin:10px 0 6px;
+    background:linear-gradient(90deg,#7dd3fc,#a5b4fc,#f0abfc);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p{color:var(--mut);max-width:760px;margin:8px auto 0;font-size:15px}
+  .stats{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+  .stat{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:14px;padding:10px 22px}
+  .stat b{display:block;font-size:22px;font-family:'Sora'} .stat span{font-size:12px;color:var(--mut)}
+  .legend{display:flex;gap:18px;flex-wrap:wrap;justify-content:center;margin:26px 0 8px;font-size:12.5px;color:var(--mut)}
+  .legend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+  .note{max-width:880px;margin:14px auto 0;text-align:center;font-size:13px;color:var(--dim);
+    border:1px dashed var(--line);border-radius:12px;padding:12px 18px}
+  .note b{color:var(--mut)}
+  nav.days{position:sticky;top:0;z-index:50;background:rgba(10,16,32,.92);backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);padding:10px 16px;display:flex;gap:8px;overflow-x:auto;scrollbar-width:thin}
+  nav.days a{flex:0 0 auto;color:var(--mut);text-decoration:none;font-size:13px;font-weight:600;
+    padding:6px 13px;border-radius:99px;border:1px solid var(--line);transition:.15s}
+  nav.days a:hover{color:#fff;border-color:var(--acc);background:rgba(99,102,241,.15)}
+  nav.days a.tab-final{color:#fde68a;border-color:#7c6418}
+  section.day{margin-top:46px;scroll-margin-top:70px}
+  .dayhead{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:18px}
+  .dayhead h2{font-size:22px;font-weight:700}
+  .dayhead .md{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+    padding:4px 10px;border-radius:99px;background:rgba(99,102,241,.18);color:#a5b4fc;border:1px solid rgba(99,102,241,.4)}
+  .dayhead .md.f2{background:rgba(34,211,238,.12);color:#67e8f9;border-color:rgba(34,211,238,.35)}
+  .dayhead .md.f3{background:rgba(244,114,182,.12);color:#f9a8d4;border-color:rgba(244,114,182,.35)}
+  .dayhead small{color:var(--dim);font-size:12.5px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:16px}
+  .match{background:linear-gradient(180deg,var(--card),var(--bg2));border:1px solid var(--line);
+    border-radius:16px;padding:16px 16px 14px;display:flex;flex-direction:column;gap:10px;transition:.15s}
+  .match:hover{transform:translateY(-2px);border-color:#33456e}
+  .match.played{border-color:rgba(52,211,153,.45);background:linear-gradient(180deg,#10241f,#0c1a18)}
+  .match.star{border-color:rgba(245,158,11,.45)}
+  .mtop{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:11px}
+  .grp{font-weight:700;letter-spacing:.08em;padding:3px 9px;border-radius:6px;color:#fff;font-size:10.5px}
+  .gA{background:#dc2626}.gB{background:#ea580c}.gC{background:#16a34a}.gD{background:#2563eb}
+  .gE{background:#7c3aed}.gF{background:#db2777}.gG{background:#0d9488}.gH{background:#ca8a04}
+  .gI{background:#4f46e5}.gJ{background:#0891b2}.gK{background:#9333ea}.gL{background:#b91c1c}
+  .meta{color:var(--dim)}
+  .tag{margin-left:auto;font-weight:700;font-size:10px;letter-spacing:.08em;padding:3px 8px;border-radius:99px;text-transform:uppercase}
+  .t-jugado{background:rgba(52,211,153,.15);color:var(--ok);border:1px solid rgba(52,211,153,.4)}
+  .t-dificil{background:rgba(251,191,36,.12);color:var(--warn);border:1px solid rgba(251,191,36,.35)}
+  .t-star{background:rgba(245,158,11,.15);color:#fbbf24;border:1px solid rgba(245,158,11,.4)}
+  .teams{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px}
+  .teams .t{font-weight:600;font-size:15.5px;line-height:1.25}
+  .teams .t.away{text-align:right}
+  .score{font-family:'Sora';font-weight:800;font-size:21px;background:rgba(255,255,255,.06);
+    border:1px solid var(--line);border-radius:10px;padding:4px 12px;white-space:nowrap}
+  .played .score{background:rgba(52,211,153,.12);border-color:rgba(52,211,153,.4);color:var(--ok)}
+  .bar{display:flex;height:9px;border-radius:99px;overflow:hidden;background:#0a0f1e}
+  .bar i{height:100%}
+  .bar .h{background:linear-gradient(90deg,#14b8a6,#2dd4bf)}
+  .bar .d{background:#475569}
+  .bar .a{background:linear-gradient(90deg,#f59e0b,#fbbf24)}
+  .probs{display:flex;justify-content:space-between;font-size:11.5px;color:var(--mut)}
+  .probs b{color:var(--txt)}
+  .mfoot{display:flex;justify-content:space-between;align-items:center;gap:10px;border-top:1px solid var(--line);padding-top:9px}
+  .mfoot .com{font-size:12.5px;color:var(--mut);font-style:italic}
+  .conf{font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:99px;white-space:nowrap}
+  .c-alta{background:rgba(52,211,153,.13);color:var(--ok)}
+  .c-media{background:rgba(251,191,36,.13);color:var(--warn)}
+  .c-baja{background:rgba(248,113,113,.13);color:var(--bad)}
+  .finals{margin-top:64px;scroll-margin-top:70px}
+  .finals>h2{font-size:26px;margin-bottom:6px}
+  .finals>.sub{color:var(--mut);font-size:14px;margin-bottom:24px}
+  .ggrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(265px,1fr));gap:16px}
+  .gcard{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .gcard h3{font-size:13px;padding:10px 14px;letter-spacing:.06em;color:#fff;display:flex;justify-content:space-between}
+  table{width:100%;border-collapse:collapse;font-size:12.5px}
+  .gcard td,.gcard th{padding:6px 8px;text-align:center;border-top:1px solid var(--line)}
+  .gcard th{color:var(--dim);font-size:10.5px;text-transform:uppercase;letter-spacing:.05em;font-weight:600}
+  .gcard td:nth-child(2),.gcard th:nth-child(2){text-align:left}
+  .gcard tr.q1 td{background:rgba(52,211,153,.07)}
+  .gcard tr.q3 td{background:rgba(251,191,36,.06)}
+  .pos{font-family:'Sora';font-weight:700;color:var(--dim)}
+  .q1 .pos{color:var(--ok)} .q3 .pos{color:var(--warn)}
+  .thirds{margin-top:40px;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .thirds h3{padding:16px 20px 4px;font-size:18px}
+  .thirds p{padding:0 20px 14px;color:var(--mut);font-size:13px}
+  .thirds table{font-size:13.5px}
+  .thirds th,.thirds td{padding:9px 14px;border-top:1px solid var(--line);text-align:center}
+  .thirds td:nth-child(2),.thirds th:nth-child(2){text-align:left}
+  .thirds tr.in td{background:rgba(52,211,153,.07)}
+  .thirds tr.out td{background:rgba(248,113,113,.05);color:var(--mut)}
+  .pill{font-size:11px;font-weight:700;padding:3px 10px;border-radius:99px}
+  .pill.si{background:rgba(52,211,153,.15);color:var(--ok)}
+  .pill.no{background:rgba(248,113,113,.13);color:var(--bad)}
+  footer{margin-top:60px;border-top:1px solid var(--line);padding:26px 20px;text-align:center;color:var(--dim);font-size:12.5px}
+  footer b{color:var(--mut)}
+  @media (max-width:560px){ .grid{grid-template-columns:1fr} .teams .t{font-size:14px} }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="kicker">FIFA World Cup 2026 · Estados Unidos · México · Canadá</div>
+  <h1>Fase de Grupos — Modelo Predictivo</h1>
+  <p>72 partidos · 12 grupos · Modelo Elo → Poisson + Monte Carlo ({{ "{:,}".format(n_sims).replace(",", ".") }} simulaciones).
+     Actualizado: <b>{{ updated }}</b>. Clasifican 1° y 2° + los 8 mejores terceros.</p>
+  <div class="stats">
+    <div class="stat"><b>{{ played_count }}</b><span>jugados</span></div>
+    <div class="stat"><b>{{ pending_count }}</b><span>pendientes</span></div>
+    <div class="stat"><b>{{ n_history }}</b><span>partidos históricos en el Elo</span></div>
+    <div class="stat"><b>🇦🇷 {{ arg_advance }}%</b><span>prob. de Argentina de avanzar</span></div>
+  </div>
+</header>
+
+<nav class="days">
+  {% for d in days %}<a href="#d{{ d.anchor }}">{{ d.short }}</a>{% endfor %}
+  <a href="#finales" class="tab-final">★ Tablas</a>
+</nav>
+
+<div class="wrap">
+
+  <div class="legend">
+    <span><i style="background:linear-gradient(90deg,#14b8a6,#2dd4bf)"></i>Gana local</span>
+    <span><i style="background:#475569"></i>Empate</span>
+    <span><i style="background:linear-gradient(90deg,#f59e0b,#fbbf24)"></i>Gana visitante</span>
+    <span><i style="background:rgba(52,211,153,.5)"></i>Resultado real</span>
+  </div>
+  <div class="note">
+    <b>Modelo:</b> Elo propio calculado sobre {{ n_history }} partidos internacionales (1872–hoy, K por importancia,
+    ajuste por margen y localía) → Poisson con corrección de empate → Monte Carlo de la fase completa.
+    Los partidos jugados entran como dato fijo y recalibran todo. Las probabilidades suman 100%. Nada de esto es una certeza.
+  </div>
+
+  {% for d in days %}
+  <section class="day" id="d{{ d.anchor }}">
+    <div class="dayhead"><span class="md {{ d.md_class }}">{{ d.md_label }}</span><h2>{{ d.title }}</h2><small>{{ d.subtitle }}</small></div>
+    <div class="grid">
+      {% for m in d.matches %}
+      <article class="match{% if m.played %} played{% endif %}{% if m.star %} star{% endif %}">
+        <div class="mtop"><span class="grp g{{ m.group }}">GRUPO {{ m.group }}</span><span class="meta">{{ m.meta }}</span>
+          {% if m.played %}<span class="tag t-jugado">Ya jugado</span>
+          {% elif m.star %}<span class="tag t-star">★ Partidazo</span>
+          {% elif m.dificil %}<span class="tag t-dificil">Difícil</span>{% endif %}</div>
+        <div class="teams"><span class="t">{{ m.home }}</span><span class="score">{{ m.score }}</span><span class="t away">{{ m.away }}</span></div>
+        {% if m.played %}
+        <div class="probs"><span>{{ m.comment }}</span><b>RESULTADO REAL</b></div>
+        {% else %}
+        <div class="bar"><i class="h" style="width:{{ m.p1 }}%"></i><i class="d" style="width:{{ m.px }}%"></i><i class="a" style="width:{{ m.p2 }}%"></i></div>
+        <div class="probs"><span><b>{{ m.p1 }}%</b> {{ m.home }}</span><span><b>{{ m.px }}%</b> empate</span><span><b>{{ m.p2 }}%</b> {{ m.away }}</span></div>
+        <div class="mfoot"><span class="com">{{ m.comment }}</span><span class="conf c-{{ m.conf_class }}">Conf. {{ m.conf }}</span></div>
+        {% endif %}
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+  {% endfor %}
+
+  <section class="finals" id="finales">
+    <h2>📊 Posiciones proyectadas por grupo</h2>
+    <p class="sub">Promedios de {{ "{:,}".format(n_sims).replace(",", ".") }} simulaciones Monte Carlo · verde = top-2 proyectado · amarillo = tercero ·
+      <b>Avanza</b> = prob. total de pasar de ronda (1°, 2° o mejor tercero)</p>
+    <div class="ggrid">
+      {% for g in groups %}
+      <div class="gcard"><h3 style="background:{{ g.color }}">GRUPO {{ g.letter }}</h3>
+        <table><tr><th>#</th><th>Equipo</th><th>Pts esp.</th><th>DG esp.</th><th>1°</th><th>Avanza</th></tr>
+        {% for t in g.teams %}
+        <tr class="{{ t.row_class }}"><td class="pos">{{ loop.index }}</td><td>{{ t.name }}</td><td><b>{{ t.exp_pts }}</b></td><td>{{ t.exp_gd }}</td><td>{{ t.p_first }}%</td><td>{{ t.p_advance }}%</td></tr>
+        {% endfor %}</table>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="thirds">
+      <h3>🎯 Carrera de los terceros — clasifican los 8 mejores</h3>
+      <p>Tercero más probable de cada grupo y su chance de entrar al corte (desempate real: pts → DG → GF → fair play).</p>
+      <table>
+        <tr><th>#</th><th>Selección</th><th>Grupo</th><th>P(terminar 3°)</th><th>P(clasificar como 3°)</th><th>P(avanzar total)</th><th>Proyección</th></tr>
+        {% for t in thirds %}
+        <tr class="{{ 'in' if t.likely else 'out' }}"><td>{{ loop.index }}</td><td>{{ t.name }}</td><td>{{ t.group }}</td>
+          <td>{{ t.p_third }}%</td><td><b>{{ t.p_third_qualify }}%</b></td><td>{{ t.p_advance }}%</td>
+          <td><span class="pill {{ 'si' if t.likely else 'no' }}">{{ 'ADENTRO' if t.likely else 'AFUERA' }}</span></td></tr>
+        {% endfor %}
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    <b>Pipeline automático · Mundial FIFA 2026 · Fase de grupos</b><br>
+    Fuentes: Wikipedia (fixture/resultados/fair play) · martj42/international_results (histórico 1872–hoy) · ranking FIFA.<br>
+    Modelo: {{ model_desc }} · Regenerado el {{ updated }} con <code>python scripts/update.py</code>.<br>
+    Ninguna predicción es una certeza: el modelo se recalibra solo a medida que entran resultados reales.
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+
+# Datos pesados regenerables (se re-bajan con fetch_history.py)
+data/history.csv
+
+# Node / Next.js (web app)
+web/node_modules/
+web/.next/
+web/out/
+
+# Sistema / archivos locales que no van al repo
+Thumbs.db
+desktop.ini
+*.exe
+*.winmd
+.claude/

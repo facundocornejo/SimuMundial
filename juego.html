@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Juego · Prode Mundial 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0a1020;--bg2:#0e1630;--card:#121b33;--line:#22304f;--txt:#e8edf8;--mut:#8da0c0;
+    --dim:#5f7195;--ok:#34d399;--warn:#fbbf24;--bad:#f87171;--acc:#6366f1;--acc2:#22d3ee;--gold:#fbbf24}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--txt);font-family:'Inter',system-ui,sans-serif;line-height:1.5}
+  h1,h2,h3{font-family:'Sora',system-ui,sans-serif}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 16px 80px}
+  header{background:
+    radial-gradient(900px 300px at 50% -40%, rgba(251,191,36,.15), transparent 60%),
+    linear-gradient(180deg,#0d1430,#0a1020);
+    border-bottom:1px solid var(--line);padding:42px 16px 28px;text-align:center}
+  header h1{font-size:clamp(26px,4.5vw,42px);background:linear-gradient(90deg,#fbbf24,#f0abfc,#7dd3fc);
+    -webkit-background-clip:text;background-clip:text;color:transparent}
+  header p{color:var(--mut);font-size:14px;margin-top:8px;max-width:720px;margin-inline:auto}
+  .board{margin-top:34px;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .board h2{padding:16px 20px 6px;font-size:20px}
+  .board p{padding:0 20px 12px;color:var(--mut);font-size:13px}
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  th,td{padding:10px 14px;border-top:1px solid var(--line);text-align:center}
+  th{color:var(--dim);font-size:11px;text-transform:uppercase;letter-spacing:.06em}
+  td:nth-child(2){text-align:left;font-weight:600}
+  tr.first td{background:rgba(251,191,36,.08)}
+  tr.model td{color:var(--mut);font-style:italic}
+  .pts{font-family:'Sora';font-weight:800;font-size:17px;color:var(--gold)}
+  .pcard{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .pcard summary{cursor:pointer;padding:16px 20px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;list-style:none}
+  .pcard summary::-webkit-details-marker{display:none}
+  .pcard summary:hover{background:rgba(255,255,255,.03)}
+  .pname{font-family:'Sora';font-weight:700;font-size:17px}
+  .chip{font-size:12px;padding:4px 12px;border-radius:99px;border:1px solid var(--line);color:var(--mut)}
+  .chip.champ{border-color:rgba(251,191,36,.5);color:var(--gold);font-weight:700}
+  .chip.pts{border-color:rgba(52,211,153,.4);color:var(--ok);font-weight:700;margin-left:auto}
+  .detail{border-top:1px solid var(--line);padding:18px 20px;display:grid;gap:18px}
+  .round h4{font-size:12px;color:var(--acc2);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px}
+  .ko{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:6px}
+  .ko div{font-size:12.5px;color:var(--mut);background:var(--bg2);border:1px solid var(--line);
+    border-radius:8px;padding:6px 10px}
+  .ko b{color:var(--txt)}
+  .ko .w{color:var(--ok);font-weight:700}
+  .qual{font-size:12.5px;color:var(--mut)}
+  .qual b{color:var(--txt)}
+  .rules{margin-top:30px;text-align:center;color:var(--dim);font-size:12.5px;border:1px dashed var(--line);
+    border-radius:12px;padding:14px}
+  .empty{margin-top:40px;text-align:center;color:var(--mut);border:1px dashed var(--line);border-radius:16px;padding:40px}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🏆 El Juego — Prode Mundial 2026</h1>
+  <p>1 jugador + el modelo · 2 partidos jugados, 70 pendientes ·
+     Cada prode genera su propio cuadro hasta la final (los cruces eliminatorios los decide el modelo Elo sobre TUS grupos).
+     Actualizado: 2026-06-12 01:15.</p>
+</header>
+
+<div class="wrap">
+
+  
+
+  <div class="board">
+    <h2>📋 Tabla de posiciones del prode</h2>
+    <p>Exacto = 3 pts · acierto 1X2 = 1 pt · puntúan todos los partidos ya jugados contra lo que pronosticó cada uno.</p>
+    <table>
+      <tr><th>#</th><th>Jugador</th><th>Exactos</th><th>Aciertos 1X2</th><th>Puntos</th><th>Su campeón</th><th>Su final</th></tr>
+      
+      <tr class="first">
+        <td>1</td><td>facu</td>
+        <td>1</td><td>0</td>
+        <td class="pts">3</td>
+        <td>🏆 Inglaterra</td><td>España vs Inglaterra</td>
+      </tr>
+      
+      <tr class="model">
+        <td>2</td><td>🤖 Modelo</td>
+        <td>0</td><td>1</td>
+        <td class="pts">1</td>
+        <td>🏆 Brasil</td><td>Francia vs Brasil</td>
+      </tr>
+      
+    </table>
+  </div>
+
+  
+  <details class="pcard">
+    <summary>
+      <span class="pname">1° facu</span>
+      <span class="chip champ">🏆 Inglaterra</span>
+      <span class="chip">Final: España vs Inglaterra</span>
+      <span class="chip pts">3 pts</span>
+    </summary>
+    <div class="detail">
+      <div class="qual"><b>Sus 32 clasificados:</b> Alemania · Argelia · Argentina · Austria · Brasil · Bélgica · Canadá · Chequia · Colombia · Corea del Sur · Costa de Marfil · Croacia · Ecuador · Egipto · Escocia · España · Estados Unidos · Francia · Inglaterra · Irán · Japón · Marruecos · México · Noruega · Panamá · Paraguay · Países Bajos · Portugal · Senegal · Suiza · Turquía · Uruguay</div>
+      <div class="qual"><b>Ganadores de grupo:</b>
+        A: <b>México</b> · B: <b>Suiza</b> · C: <b>Brasil</b> · D: <b>Turquía</b> · E: <b>Ecuador</b> · F: <b>Países Bajos</b> · G: <b>Bélgica</b> · H: <b>España</b> · I: <b>Francia</b> · J: <b>Argentina</b> · K: <b>Colombia</b> · L: <b>Inglaterra</b></div>
+      <div class="qual"><b>Sus 8 terceros que pasan:</b> Corea del Sur · Costa de Marfil · Panamá · Escocia · Egipto · Paraguay · Senegal · Argelia</div>
+      <div class="round"><h4>Dieciseisavos de final</h4><div class="ko">
+        <div>P73 · Chequia <b>1-2</b> Canadá → <span class="w">Canadá</span> (73%)</div><div>P74 · Ecuador <b>1-0</b> Corea del Sur → <span class="w">Ecuador</span> (73%)</div><div>P75 · Países Bajos <b>2-0</b> Marruecos → <span class="w">Países Bajos</span> (55%)</div><div>P76 · Brasil <b>0-2</b> Japón → <span class="w">Japón</span> (36%)</div><div>P77 · Francia <b>1-0</b> Paraguay → <span class="w">Francia</span> (85%)</div><div>P78 · Alemania <b>0-1</b> Noruega → <span class="w">Noruega</span> (46%)</div><div>P79 · México <b>2-1</b> Escocia → <span class="w">México</span> (86%)</div><div>P80 · Inglaterra <b>3-0</b> Costa de Marfil → <span class="w">Inglaterra</span> (91%)</div><div>P81 · Turquía <b>2-1</b> Senegal → <span class="w">Turquía</span> (64%)</div><div>P82 · Bélgica <b>1-2</b> Argelia → <span class="w">Argelia</span> (37%)</div><div>P83 · Portugal <b>3-1</b> Croacia → <span class="w">Portugal</span> (68%)</div><div>P84 · España <b>2-0</b> Austria → <span class="w">España</span> (95%)</div><div>P85 · Suiza <b>1-1 (pen)</b> Egipto → <span class="w">Suiza</span> (77%)</div><div>P86 · Argentina <b>2-2 (pen)</b> Uruguay → <span class="w">Uruguay</span> (15%)</div><div>P87 · Colombia <b>3-1</b> Panamá → <span class="w">Colombia</span> (85%)</div><div>P88 · Estados Unidos <b>1-1 (pen)</b> Irán → <span class="w">Estados Unidos</span> (56%)</div>
+      </div></div>
+      <div class="round"><h4>Octavos</h4><div class="ko">
+        <div>P89 · Ecuador <b>0-1</b> Francia → <span class="w">Francia</span> (70%)</div><div>P90 · Canadá <b>1-3</b> Países Bajos → <span class="w">Países Bajos</span> (71%)</div><div>P91 · Japón <b>0-1</b> Noruega → <span class="w">Noruega</span> (48%)</div><div>P92 · México <b>1-2</b> Inglaterra → <span class="w">Inglaterra</span> (70%)</div><div>P93 · Portugal <b>0-2</b> España → <span class="w">España</span> (81%)</div><div>P94 · Turquía <b>0-0 (pen)</b> Argelia → <span class="w">Turquía</span> (69%)</div><div>P95 · Uruguay <b>1-1 (pen)</b> Estados Unidos → <span class="w">Uruguay</span> (75%)</div><div>P96 · Suiza <b>1-1 (pen)</b> Colombia → <span class="w">Colombia</span> (72%)</div>
+      </div></div>
+      <div class="round"><h4>Cuartos</h4><div class="ko">
+        <div>P97 · Francia <b>2-3</b> Países Bajos → <span class="w">Países Bajos</span> (27%)</div><div>P98 · España <b>1-0</b> Turquía → <span class="w">España</span> (90%)</div><div>P99 · Noruega <b>1-1 (pen)</b> Inglaterra → <span class="w">Inglaterra</span> (72%)</div><div>P100 · Uruguay <b>1-1 (pen)</b> Colombia → <span class="w">Colombia</span> (68%)</div>
+      </div></div>
+      <div class="round"><h4>Semifinales</h4><div class="ko">
+        <div>P101 · Países Bajos <b>0-2</b> España → <span class="w">España</span> (87%)</div><div>P102 · Inglaterra <b>0-0 (pen)</b> Colombia → <span class="w">Inglaterra</span> (57%)</div>
+      </div></div>
+      <div class="round"><h4>Final · 19/7 · MetLife Stadium</h4><div class="ko">
+        <div>España <b>0-1</b> Inglaterra → 🏆 <span class="w">Inglaterra</span> (25%)</div>
+      </div></div>
+    </div>
+  </details>
+  
+  <details class="pcard">
+    <summary>
+      <span class="pname">2° 🤖 Modelo</span>
+      <span class="chip champ">🏆 Brasil</span>
+      <span class="chip">Final: Francia vs Brasil</span>
+      <span class="chip pts">1 pts</span>
+    </summary>
+    <div class="detail">
+      <div class="qual"><b>Sus 32 clasificados:</b> Alemania · Argelia · Argentina · Austria · Brasil · Bélgica · Canadá · Chequia · Colombia · Corea del Sur · Costa de Marfil · Croacia · Ecuador · Egipto · Escocia · España · Estados Unidos · Francia · Inglaterra · Irán · Japón · Marruecos · México · Noruega · Panamá · Paraguay · Países Bajos · Portugal · Senegal · Suiza · Turquía · Uruguay</div>
+      <div class="qual"><b>Ganadores de grupo:</b>
+        A: <b>México</b> · B: <b>Suiza</b> · C: <b>Brasil</b> · D: <b>Turquía</b> · E: <b>Ecuador</b> · F: <b>Países Bajos</b> · G: <b>Bélgica</b> · H: <b>España</b> · I: <b>Francia</b> · J: <b>Argentina</b> · K: <b>Colombia</b> · L: <b>Inglaterra</b></div>
+      <div class="qual"><b>Sus 8 terceros que pasan:</b> Chequia · Costa de Marfil · Panamá · Escocia · Egipto · Paraguay · Senegal · Argelia</div>
+      <div class="round"><h4>Dieciseisavos de final</h4><div class="ko">
+        <div>P73 · Corea del Sur <b>0-1</b> Canadá → <span class="w">Canadá</span> (50%)</div><div>P74 · Ecuador <b>2-1</b> Chequia → <span class="w">Ecuador</span> (88%)</div><div>P75 · Países Bajos <b>4-1</b> Marruecos → <span class="w">Países Bajos</span> (55%)</div><div>P76 · Brasil <b>0-0 (pen)</b> Japón → <span class="w">Brasil</span> (64%)</div><div>P77 · Francia <b>2-2 (pen)</b> Paraguay → <span class="w">Francia</span> (85%)</div><div>P78 · Alemania <b>1-2</b> Noruega → <span class="w">Noruega</span> (46%)</div><div>P79 · México <b>3-0</b> Escocia → <span class="w">México</span> (86%)</div><div>P80 · Inglaterra <b>5-1</b> Costa de Marfil → <span class="w">Inglaterra</span> (91%)</div><div>P81 · Turquía <b>1-1 (pen)</b> Senegal → <span class="w">Turquía</span> (64%)</div><div>P82 · Bélgica <b>3-3 (pen)</b> Argelia → <span class="w">Bélgica</span> (63%)</div><div>P83 · Portugal <b>2-0</b> Croacia → <span class="w">Portugal</span> (68%)</div><div>P84 · España <b>2-1</b> Austria → <span class="w">España</span> (95%)</div><div>P85 · Suiza <b>2-0</b> Egipto → <span class="w">Suiza</span> (77%)</div><div>P86 · Argentina <b>4-0</b> Uruguay → <span class="w">Argentina</span> (85%)</div><div>P87 · Colombia <b>5-0</b> Panamá → <span class="w">Colombia</span> (85%)</div><div>P88 · Estados Unidos <b>2-3</b> Irán → <span class="w">Irán</span> (44%)</div>
+      </div></div>
+      <div class="round"><h4>Octavos</h4><div class="ko">
+        <div>P89 · Ecuador <b>0-4</b> Francia → <span class="w">Francia</span> (70%)</div><div>P90 · Canadá <b>2-1</b> Países Bajos → <span class="w">Canadá</span> (29%)</div><div>P91 · Brasil <b>2-0</b> Noruega → <span class="w">Brasil</span> (67%)</div><div>P92 · México <b>1-3</b> Inglaterra → <span class="w">Inglaterra</span> (70%)</div><div>P93 · Portugal <b>1-2</b> España → <span class="w">España</span> (81%)</div><div>P94 · Turquía <b>2-3</b> Bélgica → <span class="w">Bélgica</span> (43%)</div><div>P95 · Argentina <b>3-2</b> Irán → <span class="w">Argentina</span> (92%)</div><div>P96 · Suiza <b>0-1</b> Colombia → <span class="w">Colombia</span> (72%)</div>
+      </div></div>
+      <div class="round"><h4>Cuartos</h4><div class="ko">
+        <div>P97 · Francia <b>4-0</b> Canadá → <span class="w">Francia</span> (86%)</div><div>P98 · España <b>3-0</b> Bélgica → <span class="w">España</span> (92%)</div><div>P99 · Brasil <b>1-1 (pen)</b> Inglaterra → <span class="w">Brasil</span> (44%)</div><div>P100 · Argentina <b>2-3</b> Colombia → <span class="w">Colombia</span> (26%)</div>
+      </div></div>
+      <div class="round"><h4>Semifinales</h4><div class="ko">
+        <div>P101 · Francia <b>3-1</b> España → <span class="w">Francia</span> (30%)</div><div>P102 · Brasil <b>0-0 (pen)</b> Colombia → <span class="w">Brasil</span> (51%)</div>
+      </div></div>
+      <div class="round"><h4>Final · 19/7 · MetLife Stadium</h4><div class="ko">
+        <div>Francia <b>0-1</b> Brasil → 🏆 <span class="w">Brasil</span> (37%)</div>
+      </div></div>
+    </div>
+  </details>
+  
+
+  <div class="rules">
+    <b>Reglas:</b> exacto 3 pts · 1X2 1 pt · al cerrar la fase de grupos: +2 por clasificado real acertado ·
+    +10 si tu campeón sorteado sale campeón real.<br>
+    Con TUS grupos se arma el cuadro oficial FIFA de 16avos, y de ahí hasta la final cada cruce se <b>sortea con las
+    probabilidades del modelo Elo</b> (estadística + azar). El sorteo de cada prode es fijo: regenerar no te cambia el destino.<br>
+    Se pueden cargar pronósticos de partidos ya jugados (transcripción de prodes pre-torneo, a confianza 🤝).
+    Regenerar: <code>python scripts/game.py</code> (o <code>python scripts/update.py</code> que corre todo).
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+# PROMPT — Análisis predictivo de la fase de grupos · Mundial 2026
+
+> Copiá y pegá todo lo que sigue. Está pensado para un modelo con búsqueda web activa.
+
+---
+
+## ROL
+Actuás como **analista senior de fútbol** especializado en estadística deportiva y modelado predictivo de resultados. Tu salida debe parecer la previa de un medio serio + un modelo cuantitativo, no intuición suelta. Respondé en español rioplatense, claro y ordenado.
+
+## CONTEXTO FIJO DEL TORNEO
+Datos del Mundial FIFA 2026 (igual verificalos con búsqueda, pero usalos como base):
+- Sedes: Estados Unidos, México y Canadá. **48 selecciones**, **12 grupos (A–L) de 4 equipos** → **72 partidos en fase de grupos**.
+- Fase de grupos: **11 al 27 de junio de 2026**.
+- Clasifican a dieciseisavos: **1° y 2° de cada grupo (24) + los 8 mejores terceros** = 32 equipos.
+- Desempate de terceros: puntos → diferencia de gol → goles a favor → fair play (menos tarjetas).
+- Vigente campeón: **Argentina**.
+- Hoy es la fecha real del sistema. Usala para saber qué partidos ya se jugaron.
+
+## OBJETIVO
+Análisis partido por partido de TODA la fase de grupos, ordenado cronológicamente por día y horario, con predicción del resultado más probable de cada encuentro pendiente, usando la info más actualizada posible.
+
+---
+
+## FASE 0 — VERIFICACIÓN (HACÉ ESTO PRIMERO Y FRENÁ)
+Antes de cualquier predicción:
+1. Buscá el **fixture oficial vigente** y los **resultados a la fecha de hoy**.
+2. Devolvé una **tabla de estado** con TODOS los partidos de grupos: fecha, hora local de la sede, grupo, partido, estado (`ya jugado` / `pendiente`) y resultado real si corresponde.
+3. Indicá tu **nivel de confianza en los datos del fixture** y avisá si hay **conflicto entre fuentes**.
+4. **Pará acá.** Esperá mi "OK, seguí" antes de pasar al análisis. Si te digo "seguí de corrido", continuás por tandas sin frenar.
+
+## MANEJO DEL VOLUMEN (importante)
+Son ~72 partidos. No intentes meter todo en una sola respuesta:
+- Procesá **por jornada/día**. Al final de cada tanda escribí: *"Fin jornada X — decime 'seguí' para la siguiente"*.
+- La **profundidad es proporcional a la importancia**: bloque completo (13 puntos) para partidos parejos o decisivos; bloque condensado para partidos de pronóstico muy claro (favorito + 3 probabilidades + marcador + una línea de justificación).
+- Nunca cortes un partido por la mitad. Si no te entra, terminá la jornada anterior y avisá.
+
+---
+
+## REGLAS DE DATOS (no negociables)
+- **No inventes nada.** Si un dato no lo podés verificar, escribí explícitamente "dato no verificado" y no lo uses para la predicción.
+- Diferenciá SIEMPRE **dato real** (verificado, con fuente) de **estimación** (tu modelo). Marcá cada número como `[verificado]` o `[estimado]`.
+- Las tres probabilidades (gana A / empate / gana B) **deben sumar 100%**. Redondeá a entero.
+- No presentes ninguna predicción como certeza.
+- Priorizá fuentes recientes (últimas semanas). Si dos fuentes chocan, aclaralo y decí cuál preferís y por qué.
+- Tené muy en cuenta **lesiones, bajas, sanciones y convocatorias recientes**: pueden cambiar la predicción.
+- Marcá explícitamente: **partidos difíciles de predecir**, **posibles sorpresas** y **partidos trampa**.
+
+---
+
+## BLOQUE POR PARTIDO (solo pendientes)
+Para cada partido pendiente:
+
+1. **Fecha y horario** (hora local de la sede)
+2. **Grupo**
+3. **Partido** (Equipo A vs Equipo B)
+4. **Estado**: pendiente
+5. **Resultado real**: — (solo si ya se jugó)
+6. **Predicción**
+7. **Probabilidades** (suman 100): gana A __% · empate __% · gana B __%
+8. **Marcador más probable**
+9. **Nivel de confianza**: alto / medio / bajo
+10. **Justificación** (breve, con estadística + contexto)
+11. **Factores clave**
+12. **Riesgos de la predicción**
+13. **Fuentes usadas**
+
+Dimensiones a considerar al analizar (usá solo las que puedas verificar, marcá el resto como estimado): forma reciente, últimos oficiales y amistosos, head-to-head, rendimiento en Eliminatorias/Copa continental, ranking FIFA o métrica equivalente, calidad de plantel, actualidad de los jugadores en sus clubes, lesiones/bajas/sanciones, DT y sistema táctico, fortaleza ofensiva y defensiva, historial en Mundiales, contexto del grupo, importancia según la tabla, localía/clima/sede/viaje, y stats (GF, GC, xG si existe, posesión, tiros, eficacia, pelota parada).
+
+Para partidos ya jugados: poné el **resultado real** y la etiqueta `ya jugado`. No los prediz​cas.
+
+---
+
+## TABLAS FINALES (al terminar todas las jornadas)
+
+### A) Tabla resumen de partidos
+Columnas: fecha · grupo · partido · resultado real o predicción · favorito · prob. del favorito · nivel de confianza · comentario corto.
+
+### B) Tablas de posiciones proyectadas (una por grupo)
+Usando tus resultados estimados. Por grupo: posición · selección · puntos · GF · GC · DG · prob. aprox. de clasificar · prob. aprox. de quedar eliminada.
+- Aplicá la regla real: clasifican 1° y 2°, y los **8 mejores terceros** entre los 12 grupos. Estimá la prob. de cada tercero de entrar en ese corte.
+
+### C) Tabla única de terceros proyectados
+Ranking de los 12 terceros por puntos → DG → goles, marcando los 8 que clasificarían.
+
+---
+
+## AUTOCHEQUEO ANTES DE ENTREGAR CADA TANDA
+- ¿Las 3 probabilidades de cada partido suman 100?
+- ¿Cada dato está etiquetado `[verificado]` o `[estimado]`?
+- ¿Separé claramente resultados reales de predicciones?
+- ¿Marqué los partidos difíciles / sorpresas / trampa?
+- ¿Cité fuente donde correspondía?
+
+---
+
+## EXPECTATIVA REALISTA (leé esto)
+El fixture y los resultados ya jugados son verificables: ahí exigí precisión total. Las predicciones son inherentemente inciertas: un modelo honesto da rangos y probabilidades, no marcadores exactos garantizados. Si el marcador exacto es muy incierto, priorizá los porcentajes 1/X/2 por sobre el resultado puntual.
