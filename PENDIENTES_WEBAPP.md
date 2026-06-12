@@ -70,9 +70,9 @@ Pendiente visual futuro:
 
 Que sigue recomendado:
 
-1. Terminar la prueba visual manual en Chrome (en curso por Facu).
-2. Correr `npm run build` cuando el dev server este apagado (comparten `web/.next`).
-3. Deploy a Vercel cuando build y prueba visual esten OK.
+1. ~~Prueba visual manual en Chrome~~ — hecha por Facu el 2026-06-12.
+2. ~~Correr `npm run build`~~ — hecho el 2026-06-12: build limpio desde cero (se borro `.next` antes), 10 rutas OK. Ademas se corrio `npm run start` y los 16 e2e de Playwright pasaron contra el server de produccion (la validacion mas cercana a Vercel posible).
+3. Deploy a Vercel cuando Facu lo decida: la app ya esta lista tecnicamente (build limpio, e2e contra produccion, datos en `web/data/`, todo commiteado y pusheado).
 
 ## Actualizacion 2026-06-12 (Claude, fuera del sandbox de Codex)
 
