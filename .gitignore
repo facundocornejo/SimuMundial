@@ -17,6 +17,9 @@ web/out/
 web/test-results/
 web/playwright-report/
 
+# Tokens de APIs (nunca al repo)
+.env
+
 # Sistema / archivos locales que no van al repo
 Thumbs.db
 desktop.ini

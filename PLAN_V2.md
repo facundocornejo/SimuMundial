@@ -60,9 +60,15 @@ Decisiones explícitas:
 
 ### 2.1 Manejo de secretos: `.env` en la raíz
 
-- Crear soporte para `B:\mundial\.env` (formato `CLAVE=valor`, una por línea): `FOOTBALL_DATA_KEY=...`, `ODDS_API_KEY=...`.
-- **Sin dependencias nuevas**: en `scripts/update.py`, un parser de ~10 líneas que lea `.env` si existe y haga `os.environ.setdefault(k, v)` antes de correr los pasos.
-- Agregar `.env` al `.gitignore`. Documentar en README. Crear `.env.example` commiteado con las claves vacías.
+**Estado al 12/6 (ya hecho por Claude — Codex NO debe rehacerlo):**
+- `B:\mundial\.env` YA EXISTE con `FOOTBALL_DATA_KEY` y `ODDS_API_KEY` cargados (gitignoreado). `.env.example` y la entrada en `.gitignore` ya están commiteados.
+- `FOOTBALL_DATA_KEY` **verificada**: `GET https://api.football-data.org/v4/competitions/WC` con header `X-Auth-Token` → 200 OK.
+- `ODDS_API_KEY` devolvió **401** en `GET https://api.the-odds-api.com/v4/sports/?apiKey=...` → probablemente falta confirmar el mail de registro de the-odds-api.com (Facu: revisá el mail de confirmación). Re-testear con:
+  `curl "https://api.the-odds-api.com/v4/sports/?apiKey=$ODDS_API_KEY"` (ese endpoint no gasta cuota). Si sigue 401, regenerar la key en el dashboard.
+
+**Lo que SÍ falta hacer (Codex):**
+- En `scripts/update.py`, un parser de ~10 líneas que lea `.env` si existe y haga `os.environ.setdefault(k, v)` antes de correr los pasos (sin dependencias nuevas).
+- Documentar en README.
 
 ### 2.2 `scripts/fetch_elo.py` (nuevo) → `data/elo_world.json`
 
