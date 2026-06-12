@@ -12,7 +12,9 @@ export const runtime = "nodejs";
 export async function GET(request: Request) {
   const url = new URL(request.url);
   const code = url.searchParams.get("p");
-  const backgroundUrl = new URL("/media/og-default.svg", request.url).toString();
+  // satori (next/og) no soporta WebP como <img>: este fondo queda en PNG.
+  // Es server-side, no afecta el peso que baja el cliente.
+  const backgroundUrl = new URL("/media/og-default.png", request.url).toString();
   const [fixture, profiles] = await Promise.all([getFixture(), getProfiles()]);
   const matchIds = orderedMatchIds(fixture.matches);
   let prode: Prode | null = null;

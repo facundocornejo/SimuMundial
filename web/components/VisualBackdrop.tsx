@@ -3,13 +3,13 @@ import type { CSSProperties } from "react";
 type VisualVariant = "home" | "prode" | "world" | "groups" | "knockout" | "ranking" | "og";
 
 const mediaByVariant: Record<VisualVariant, string> = {
-  home: "/media/hero-stadium.svg",
-  prode: "/media/prode-boardroom.svg",
-  world: "/media/world-tunnel.svg",
-  groups: "/media/phase-groups.svg",
-  knockout: "/media/phase-knockout.svg",
-  ranking: "/media/phase-knockout.svg",
-  og: "/media/og-default.svg",
+  home: "/media/hero-stadium.webp",
+  prode: "/media/prode-boardroom.webp",
+  world: "/media/world-tunnel.webp",
+  groups: "/media/phase-groups.webp",
+  knockout: "/media/phase-knockout.webp",
+  ranking: "/media/phase-knockout.webp",
+  og: "/media/og-default.webp",
 };
 
 function mediaStyle(variant: VisualVariant): CSSProperties {
@@ -51,7 +51,7 @@ export function PhaseAtmosphere({ kind }: { kind: "groups" | "knockout" | "final
 export function TrophyVisual() {
   return (
     <div aria-hidden="true" className="trophy-visual" style={mediaStyle("world")}>
-      <img alt="" src="/media/trophy-generic.svg" />
+      <img alt="" src="/media/trophy-generic.webp" />
     </div>
   );
 }

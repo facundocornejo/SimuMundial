@@ -1,13 +1,24 @@
 # Pendientes web app Prode Mundial 2026
 
-Estado al cierre de esta pasada: los 5 sprints del plan base quedaron implementados en codigo. Esta actualizacion agrega correcciones de reinicio, coherencia de resultados, validacion fuerte, SEO y headers de seguridad.
+Estado actual: los 5 sprints del plan base quedaron implementados en codigo. Tambien quedaron aplicadas las correcciones de reinicio/coherencia, validacion fuerte, SEO/seguridad y la pasada visual premium con assets PNG generados.
 
 ## Actualizacion: visual premium broadcast
 
 Hecho en esta pasada:
 
 - Se aplico una direccion visual `broadcast premium mundialista`, original y sin marca FIFA.
-- Se agregaron assets locales livianos en `web/public/media/`:
+- Se agregaron assets locales en `web/public/media/`. Hay dos familias:
+  - SVG livianos de fallback, creados desde Codex.
+  - PNG cinematicos generados, movidos manualmente desde `C:\Users\facu\.codex\generated_images\019eba33-8d2d-7423-bdbc-662fd93137f4\`.
+- PNG activos en codigo:
+  - `hero-stadium.png`
+  - `prode-boardroom.png`
+  - `world-tunnel.png`
+  - `phase-groups.png`
+  - `phase-knockout.png`
+  - `trophy-generic.png`
+  - `og-default.png`
+- SVG fallback disponibles:
   - `hero-stadium.svg`
   - `prode-boardroom.svg`
   - `world-tunnel.svg`
@@ -15,7 +26,8 @@ Hecho en esta pasada:
   - `phase-knockout.svg`
   - `trophy-generic.svg`
   - `og-default.svg`
-- Se generaron tambien 7 PNG cinematicos con la herramienta de imagen como fuente creativa. El entorno de Codex no permitio copiarlos como binarios a `B:\mundial` (`PermissionError`/`EPERM`), por eso la app quedo integrada con SVGs propios servidos desde `public`.
+- Se actualizo `web/components/VisualBackdrop.tsx` para que la app use los PNG reales.
+- Se actualizo `/api/og` para usar `og-default.png`.
 - Se agrego `web/components/VisualBackdrop.tsx` con:
   - `VisualBackdrop`
   - `HeroMedia`
@@ -42,13 +54,29 @@ Verificado en esta pasada:
 - `tsc --project web/tsconfig.json --noEmit --incremental false`: OK, sin errores.
 - `npm run build`: bloqueado por permisos del entorno al escribir `web/.next/trace`.
 
+Conversion WebP (hecha el 2026-06-12 por Claude):
+
+- Los 7 PNG se convirtieron a WebP con Pillow (quality 82): de 13.3MB totales a ~660KB.
+- `VisualBackdrop.tsx` apunta a `.webp` en todas las variantes.
+- `/api/og` se queda con `og-default.png`: satori (next/og) NO soporta WebP como `<img>` (devuelve conexion vacia). No importa: ese fondo es server-side y no afecta el peso que baja el cliente.
+- Se borraron los 6 PNG sin uso de `web/public/media/` (los originales siguen en `C:\Users\facu\.codex\generated_images\019eba33-8d2d-7423-bdbc-662fd93137f4\`).
+- Los SVG livianos quedan como referencia/fallback.
+- Verificado: 9 tests vitest, tsc limpio, 16 tests Playwright e2e verdes (desktop + mobile 390px).
+
 Pendiente visual futuro:
 
-- Si queres usar los PNG 3D generados reales en vez de los SVG livianos, copiarlos manualmente desde `C:\Users\facu\.codex\generated_images\019eba33-8d2d-7423-bdbc-662fd93137f4\` a `web/public/media/` y convertirlos a WebP.
 - Three.js real queda para fase 2, solo si la version actual ya esta estable en mobile.
 - Video loops quedan para fase 2; por ahora motion web liviano evita peso y problemas de autoplay.
 
+Que sigue recomendado:
+
+1. Terminar la prueba visual manual en Chrome (en curso por Facu).
+2. Correr `npm run build` cuando el dev server este apagado (comparten `web/.next`).
+3. Deploy a Vercel cuando build y prueba visual esten OK.
+
 ## Actualizacion 2026-06-12 (Claude, fuera del sandbox de Codex)
+
+Nota: esta verificacion fue anterior a la pasada visual premium con PNG activos. Despues de esa pasada hay que repetir `npm run build` desde tu terminal/admin.
 
 Se destrabaron todos los pendientes por bloqueo de entorno, salvo el deploy:
 
@@ -63,6 +91,7 @@ Se destrabaron todos los pendientes por bloqueo de entorno, salvo el deploy:
 Sigue pendiente:
 
 - Prueba visual/manual completa en navegador (autoplay, responsive 390px, editar prode, borrar guardados, etc.).
+- Repetir `npm run build` despues de los cambios visuales y assets PNG.
 - Deploy a Vercel (punto 5 de abajo).
 - Las mejoras propuestas por Codex (seccion final), que son opcionales pre-deploy.
 
