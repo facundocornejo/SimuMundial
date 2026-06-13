@@ -332,9 +332,24 @@ p {
   text-transform: none;
 }
 
+.field--missing span,
+.field--missing .req-hint {
+  color: #fca5a5;
+}
+
 .field--missing input {
   border-color: #dc2626;
-  box-shadow: 0 0 0 1px #dc2626;
+  box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.45);
+}
+
+.field--missing input::placeholder {
+  color: #f1a1a1;
+}
+
+.field-error {
+  color: #fca5a5;
+  font-size: 0.82rem;
+  font-weight: 700;
 }
 
 .blockers {

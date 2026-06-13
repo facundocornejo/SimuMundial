@@ -92,7 +92,6 @@ export function ProdeBuilder({
     [draft.player, draft.results, matchIds],
   );
   const loadedCount = validation.imported;
-  const resultsComplete = validation.missing.length === 0 && validation.invalid.length === 0 && validation.unknown.length === 0;
   const complete = validation.valid;
   const scoreSummary = useMemo(
     () => scoreProde({ player: draft.player || "draft", results: draft.results }, matches),
@@ -301,14 +300,18 @@ export function ProdeBuilder({
 
       <section className="builder-layout">
         <aside className="builder-tools">
-          <label className={`field${resultsComplete && !draft.player.trim() ? " field--missing" : ""}`}>
+          <label className={`field${!draft.player.trim() ? " field--missing" : ""}`}>
             <span>Nombre <em className="req-hint">· obligatorio para simular</em></span>
             <input
               value={draft.player}
               aria-required={true}
+              aria-invalid={!draft.player.trim()}
               onChange={(event) => setDraft((currentDraft) => ({ ...currentDraft, player: event.target.value }))}
               placeholder="facu"
             />
+            {!draft.player.trim() ? (
+              <small className="field-error">⚠ Poné tu nombre para poder simular</small>
+            ) : null}
           </label>
 
           <div className="segmented" aria-label="Modo de carga">
