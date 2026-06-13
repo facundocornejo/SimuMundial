@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useMemo, useRef, type CSSProperties } from "react";
+import { useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
 import { FINAL, QF, R16, SF, type KnockoutDefinition } from "@/lib/bracket";
 import type { DrawnMatch, KnockoutDraw } from "@/lib/draw";
 import { ES } from "@/lib/teams";
@@ -280,31 +280,23 @@ function KnockoutTie({
   );
 }
 
-// Fila compacta para el carrusel mobile (deslizable entre rondas).
-function MobileTie({ match, status }: { match: DrawnMatch; status: TieStatus }) {
-  const resolved = status === "resolved";
-  const named = status !== "hidden";
+// Tarjeta a foco completo de un cruce (carrusel mobile, un partido a la vez).
+function FocusCard({ match }: { match: DrawnMatch }) {
   const { homeGoals, awayGoals, penalties } = parseScore(match.score);
-  const teamClass = (team: string) =>
-    [
-      "ko-mteam",
-      resolved && match.winner === team ? "is-winner" : "",
-      resolved && match.winner !== team ? "is-loser" : "",
-    ].filter(Boolean).join(" ");
+  const homeWins = match.winner === match.home;
   return (
-    <div className="ko-mtie">
-      <div className={teamClass(match.home)}>
-        <span>{named ? teamName(match.home) : "Por definirse"}</span>
-        <b>{resolved ? homeGoals : "–"}{resolved && penalties && match.winner === match.home ? "ᵖ" : ""}</b>
+    <article className="ko-fcard">
+      <div className={`ko-fteam${homeWins ? " is-winner" : " is-loser"}`}>
+        <span>{teamName(match.home)}</span>
+        <b>{homeGoals}{penalties && homeWins ? "ᵖ" : ""}</b>
       </div>
-      <div className={teamClass(match.away)}>
-        <span>{named ? teamName(match.away) : "Por definirse"}</span>
-        <b>{resolved ? awayGoals : "–"}{resolved && penalties && match.winner === match.away ? "ᵖ" : ""}</b>
+      <span className="ko-fvs">vs</span>
+      <div className={`ko-fteam${homeWins ? " is-loser" : " is-winner"}`}>
+        <span>{teamName(match.away)}</span>
+        <b>{awayGoals}{penalties && !homeWins ? "ᵖ" : ""}</b>
       </div>
-      <small>
-        {resolved ? `${teamName(match.winner)} avanza · ${match.score}` : `Partido ${match.n} · por jugarse`}
-      </small>
-    </div>
+      <p className="ko-fmeta">{teamName(match.winner)} avanza · {match.score} · {match.p}%</p>
+    </article>
   );
 }
 
@@ -319,17 +311,21 @@ export function KnockoutBracket({
 }) {
   const layout = useMemo(() => buildBracketLayout(knockout), [knockout]);
   const revealedIndex = ROUND_ORDER.indexOf(revealedRound);
-  const trackRef = useRef<HTMLDivElement | null>(null);
-  const roundRefs = useRef<(HTMLElement | null)[]>([]);
+  const focusRef = useRef<HTMLDivElement | null>(null);
+  const [matchIdx, setMatchIdx] = useState(0);
 
-  // Mobile: deslizar el carrusel hasta la ronda recién revelada (sin saltar la página).
+  // Mobile: al cambiar de ronda, volver al primer cruce del carrusel a foco.
   useEffect(() => {
-    const track = trackRef.current;
-    const el = roundRefs.current[revealedIndex];
-    if (track && el && track.offsetParent !== null) {
-      track.scrollTo({ left: el.offsetLeft - 14, behavior: reducedMotion ? "auto" : "smooth" });
-    }
-  }, [revealedIndex, reducedMotion]);
+    setMatchIdx(0);
+    focusRef.current?.scrollTo({ left: 0, behavior: "auto" });
+  }, [revealedRound]);
+
+  function onFocusScroll() {
+    const track = focusRef.current;
+    if (!track || !track.clientWidth) return;
+    const idx = Math.round(track.scrollLeft / track.clientWidth);
+    setMatchIdx((prev) => (prev === idx ? prev : idx));
+  }
 
   // En el primer paint solo anima la ronda actual si no venimos de reduced-motion;
   // los avances posteriores animan únicamente la ronda recién revelada.
@@ -348,6 +344,7 @@ export function KnockoutBracket({
 
   const finalRevealed = revealedRound === "final";
   const finalStatus = statusOf(ROUND_ORDER.indexOf("final"));
+  const roundMatches = knockout[revealedRound];
 
   return (
     <div className={`phase-page phase-page--knockout${finalRevealed ? " is-final" : ""}`}>
@@ -433,35 +430,37 @@ export function KnockoutBracket({
         </div>
       </div>
 
-      <div className="ko-mobile" ref={trackRef} role="group" aria-label="Cuadro de eliminatorias — deslizá entre rondas">
-        {ROUND_ORDER.map((round, roundIndex) => {
-          const status = statusOf(roundIndex);
-          const active = round === revealedRound;
-          return (
-            <section
-              className={`ko-mround${active ? " is-active" : ""}`}
-              data-round={round}
-              key={round}
-              ref={(el) => { roundRefs.current[roundIndex] = el; }}
-            >
-              <header className="ko-mround__head">
-                <span className="phase-kicker">{roundNames[round].phase}</span>
-                <strong>{roundNames[round].label}</strong>
-              </header>
-              <div className="ko-mround__list">
-                {knockout[round].map((match) => (
-                  <MobileTie key={match.n} match={match} status={status} />
-                ))}
-              </div>
-              {round === "final" && finalRevealed ? (
-                <div className="champion-mark">
-                  <span>Campeón</span>
-                  <strong>{teamName(knockout.champion)}</strong>
-                </div>
-              ) : null}
-            </section>
-          );
-        })}
+      <div className="ko-focus">
+        <div className="ko-focus__head">
+          <span className="phase-kicker">{roundNames[revealedRound].label}</span>
+          {roundMatches.length > 1 ? (
+            <span className="ko-focus__count">{matchIdx + 1}/{roundMatches.length}</span>
+          ) : null}
+        </div>
+        <div
+          className="ko-focus__track"
+          ref={focusRef}
+          onScroll={onFocusScroll}
+          role="group"
+          aria-label="Cruces de la ronda — deslizá entre partidos"
+        >
+          {roundMatches.map((match) => (
+            <FocusCard key={match.n} match={match} />
+          ))}
+        </div>
+        {roundMatches.length > 1 ? (
+          <div className="ko-dots" aria-hidden="true">
+            {roundMatches.map((match, i) => (
+              <span className={i === matchIdx ? "is-active" : ""} key={match.n} />
+            ))}
+          </div>
+        ) : null}
+        {finalRevealed ? (
+          <div className="champion-mark">
+            <span>Campeón</span>
+            <strong>{teamName(knockout.champion)}</strong>
+          </div>
+        ) : null}
       </div>
     </div>
   );

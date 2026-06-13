@@ -2011,8 +2011,8 @@ input:focus-visible,
   }
 }
 
-/* Knockout mobile: carrusel deslizable entre rondas (desktop usa .ko-bracket) */
-.ko-mobile {
+/* Knockout mobile: un cruce a la vez, deslizable (desktop usa .ko-bracket) */
+.ko-focus {
   display: none;
 }
 
@@ -2021,97 +2021,122 @@ input:focus-visible,
     display: none;
   }
 
-  .ko-mobile {
-    -webkit-overflow-scrolling: touch;
-    display: flex;
-    gap: 12px;
-    overflow-x: auto;
-    padding: 4px 0 8px;
-    position: relative;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
+  /* el knockout debe ocupar una sola columna acotada para que el track scrollee */
+  .phase-page--knockout {
+    grid-template-columns: minmax(0, 1fr);
   }
 
-  .ko-mobile::-webkit-scrollbar {
-    display: none;
+  .ko-focus {
+    display: block;
+    min-width: 0;
   }
 
-  .ko-mround {
-    align-content: start;
-    background: rgb(8 13 22 / 0.5);
-    border: 1px solid rgb(232 237 248 / 0.1);
-    border-radius: 12px;
-    display: grid;
-    flex: 0 0 86%;
-    gap: 10px;
-    padding: 14px;
-    scroll-snap-align: center;
-  }
-
-  .ko-mround.is-active {
-    border-color: rgb(231 184 75 / 0.5);
-    box-shadow: 0 0 0 1px rgb(231 184 75 / 0.32);
-  }
-
-  .ko-mround__head {
-    display: grid;
-    gap: 2px;
-  }
-
-  .ko-mround__head strong {
-    font-family: Sora, Inter, ui-sans-serif, system-ui, sans-serif;
-    font-size: 1.1rem;
-  }
-
-  .ko-mround__list {
-    display: grid;
-    gap: 8px;
-  }
-
-  .ko-mtie {
-    background: rgb(18 27 51 / 0.72);
-    border: 1px solid rgb(232 237 248 / 0.1);
-    border-radius: 8px;
-    display: grid;
-    gap: 4px;
-    padding: 8px 11px;
-  }
-
-  .ko-mteam {
+  .ko-focus__head {
     align-items: center;
     display: flex;
-    gap: 8px;
     justify-content: space-between;
-    min-height: 30px;
+    margin-bottom: 10px;
   }
 
-  .ko-mteam span {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-
-  .ko-mteam b {
-    color: #f1bf4d;
+  .ko-focus__count {
+    color: rgb(174 185 211 / 0.85);
     font-variant-numeric: tabular-nums;
-  }
-
-  .ko-mteam.is-winner {
-    color: #fff;
     font-weight: 800;
   }
 
-  .ko-mteam.is-loser {
+  .ko-focus__track {
+    -webkit-overflow-scrolling: touch;
+    display: flex;
+    gap: 12px;
+    max-width: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    width: 100%;
+  }
+
+  .ko-focus__track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ko-fcard {
+    align-content: center;
+    background: linear-gradient(160deg, rgb(18 27 51 / 0.9), rgb(8 13 22 / 0.9));
+    border: 1px solid rgb(231 184 75 / 0.3);
+    border-radius: 18px;
+    display: grid;
+    flex: 0 0 100%;
+    gap: 14px;
+    min-height: 330px;
+    padding: 30px 22px;
+    scroll-snap-align: center;
+    text-align: center;
+  }
+
+  .ko-fteam {
+    display: grid;
+    gap: 6px;
+  }
+
+  .ko-fteam span {
+    font-family: Sora, Inter, ui-sans-serif, system-ui, sans-serif;
+    font-size: 1.7rem;
+    font-weight: 800;
+    line-height: 1.05;
+  }
+
+  .ko-fteam b {
+    color: #f1bf4d;
+    font-size: 2.6rem;
+    font-variant-numeric: tabular-nums;
+    line-height: 1;
+  }
+
+  .ko-fteam.is-winner span {
+    color: #fff;
+  }
+
+  .ko-fteam.is-loser {
     opacity: 0.5;
   }
 
-  .ko-mtie small {
-    color: rgb(174 185 211 / 0.72);
-    font-size: 0.74rem;
+  .ko-fvs {
+    color: rgb(174 185 211 / 0.6);
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
   }
 
-  .ko-mround .champion-mark {
+  .ko-fmeta {
+    color: rgb(174 185 211 / 0.85);
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin: 4px 0 0;
+  }
+
+  .ko-dots {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    justify-content: center;
+    margin-top: 14px;
+  }
+
+  .ko-dots span {
+    background: rgb(232 237 248 / 0.25);
+    border-radius: 999px;
+    height: 7px;
+    transition: width 200ms ease, background 200ms ease;
+    width: 7px;
+  }
+
+  .ko-dots span.is-active {
+    background: #e7b84b;
+    width: 22px;
+  }
+
+  .ko-focus .champion-mark {
     grid-column: auto;
-    margin-top: 6px;
+    margin-top: 16px;
   }
 }
