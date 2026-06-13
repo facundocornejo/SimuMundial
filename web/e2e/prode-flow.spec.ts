@@ -36,7 +36,8 @@ async function closeTools(page: Page) {
 
 async function skipToChampion(page: Page) {
   await page.getByRole("button", { name: "Saltear todo" }).click();
-  const champion = page.locator(".champion-mark strong");
+  // hay dos .champion-mark (cuadro desktop + carrusel mobile); solo uno es visible
+  const champion = page.locator(".champion-mark:visible strong");
   await expect(champion).toBeVisible();
   return (await champion.textContent())?.trim() ?? "";
 }

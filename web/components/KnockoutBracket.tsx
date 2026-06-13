@@ -280,6 +280,34 @@ function KnockoutTie({
   );
 }
 
+// Fila compacta para el carrusel mobile (deslizable entre rondas).
+function MobileTie({ match, status }: { match: DrawnMatch; status: TieStatus }) {
+  const resolved = status === "resolved";
+  const named = status !== "hidden";
+  const { homeGoals, awayGoals, penalties } = parseScore(match.score);
+  const teamClass = (team: string) =>
+    [
+      "ko-mteam",
+      resolved && match.winner === team ? "is-winner" : "",
+      resolved && match.winner !== team ? "is-loser" : "",
+    ].filter(Boolean).join(" ");
+  return (
+    <div className="ko-mtie">
+      <div className={teamClass(match.home)}>
+        <span>{named ? teamName(match.home) : "Por definirse"}</span>
+        <b>{resolved ? homeGoals : "–"}{resolved && penalties && match.winner === match.home ? "ᵖ" : ""}</b>
+      </div>
+      <div className={teamClass(match.away)}>
+        <span>{named ? teamName(match.away) : "Por definirse"}</span>
+        <b>{resolved ? awayGoals : "–"}{resolved && penalties && match.winner === match.away ? "ᵖ" : ""}</b>
+      </div>
+      <small>
+        {resolved ? `${teamName(match.winner)} avanza · ${match.score}` : `Partido ${match.n} · por jugarse`}
+      </small>
+    </div>
+  );
+}
+
 export function KnockoutBracket({
   knockout,
   revealedRound,
@@ -291,6 +319,17 @@ export function KnockoutBracket({
 }) {
   const layout = useMemo(() => buildBracketLayout(knockout), [knockout]);
   const revealedIndex = ROUND_ORDER.indexOf(revealedRound);
+  const trackRef = useRef<HTMLDivElement | null>(null);
+  const roundRefs = useRef<(HTMLElement | null)[]>([]);
+
+  // Mobile: deslizar el carrusel hasta la ronda recién revelada (sin saltar la página).
+  useEffect(() => {
+    const track = trackRef.current;
+    const el = roundRefs.current[revealedIndex];
+    if (track && el && track.offsetParent !== null) {
+      track.scrollTo({ left: el.offsetLeft - 14, behavior: reducedMotion ? "auto" : "smooth" });
+    }
+  }, [revealedIndex, reducedMotion]);
 
   // En el primer paint solo anima la ronda actual si no venimos de reduced-motion;
   // los avances posteriores animan únicamente la ronda recién revelada.
@@ -392,6 +431,37 @@ export function KnockoutBracket({
             </motion.div>
           ) : null}
         </div>
+      </div>
+
+      <div className="ko-mobile" ref={trackRef} role="group" aria-label="Cuadro de eliminatorias — deslizá entre rondas">
+        {ROUND_ORDER.map((round, roundIndex) => {
+          const status = statusOf(roundIndex);
+          const active = round === revealedRound;
+          return (
+            <section
+              className={`ko-mround${active ? " is-active" : ""}`}
+              data-round={round}
+              key={round}
+              ref={(el) => { roundRefs.current[roundIndex] = el; }}
+            >
+              <header className="ko-mround__head">
+                <span className="phase-kicker">{roundNames[round].phase}</span>
+                <strong>{roundNames[round].label}</strong>
+              </header>
+              <div className="ko-mround__list">
+                {knockout[round].map((match) => (
+                  <MobileTie key={match.n} match={match} status={status} />
+                ))}
+              </div>
+              {round === "final" && finalRevealed ? (
+                <div className="champion-mark">
+                  <span>Campeón</span>
+                  <strong>{teamName(knockout.champion)}</strong>
+                </div>
+              ) : null}
+            </section>
+          );
+        })}
       </div>
     </div>
   );
