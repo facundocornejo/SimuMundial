@@ -1,10 +1,13 @@
 import type { TeamProfile } from "./types";
 
-export const HOME_ADV = 85;
-export const RHO = 1.1;
+// SYNC: scripts/predict.py — estas constantes DEBEN coincidir con el modelo Python.
+// Calibradas por backtest (sweep validado train/test) el 2026-06-13.
+export const HOME_ADV = 75;
+export const RHO = 1.15;
 export const MAX_G = 8;
 export const MIN_LAMBDA = 0.18;
-export const BASE_TOTAL = 2.55;
+export const BASE_TOTAL = 2.35;
+export const TOTAL_BLEND_W = 0.7; // peso del total base vs ataque reciente (SYNC: predict.py)
 
 export function clamp(value: number, min: number, max: number) {
   return Math.max(min, Math.min(max, value));
@@ -29,7 +32,7 @@ export function lambdas(home: TeamProfile, away: TeamProfile, venueCountry?: str
   const we = eloWe(diff);
   const attack =
     (home.avg_gf_2y + away.avg_gc_2y + away.avg_gf_2y + home.avg_gc_2y) / 2;
-  const total = clamp(0.5 * BASE_TOTAL + 0.5 * attack, 1.8, 3.6);
+  const total = clamp(TOTAL_BLEND_W * BASE_TOTAL + (1 - TOTAL_BLEND_W) * attack, 1.8, 3.6);
   return {
     lambdaHome: Math.max(MIN_LAMBDA, total * we),
     lambdaAway: Math.max(MIN_LAMBDA, total * (1 - we)),

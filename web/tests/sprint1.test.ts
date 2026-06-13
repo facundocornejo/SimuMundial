@@ -21,13 +21,16 @@ const facu = readJson<Prode>("prode/prode_facu.json");
 const profiles = readJson<ProfilesData>("data/team_profiles.json");
 const matchIds = fixture.matches.map((match) => match.match_id).sort();
 
+// Snapshot de las posiciones que produce buildR32 con el prode de facu + los
+// resultados reales ya jugados (data/fixture.json). Depende de los datos actuales:
+// re-pinnear cuando se jueguen más partidos de grupos. Actualizado 2026-06-13.
 const expectedRanked = {
   A: ["Mexico", "Czech Republic", "South Korea", "South Africa"],
   B: ["Switzerland", "Canada", "Bosnia and Herzegovina", "Qatar"],
-  C: ["Brazil", "Morocco", "Scotland", "Haiti"],
+  C: ["Scotland", "Brazil", "Haiti", "Morocco"],
   D: ["Turkey", "United States", "Paraguay", "Australia"],
-  E: ["Ecuador", "Germany", "Ivory Coast", "Curaçao"],
-  F: ["Netherlands", "Japan", "Sweden", "Tunisia"],
+  E: ["Germany", "Ecuador", "Curaçao", "Ivory Coast"],
+  F: ["Netherlands", "Sweden", "Japan", "Tunisia"],
   G: ["Belgium", "Iran", "Egypt", "New Zealand"],
   H: ["Spain", "Uruguay", "Saudi Arabia", "Cape Verde"],
   I: ["France", "Norway", "Senegal", "Iraq"],
@@ -38,14 +41,14 @@ const expectedRanked = {
 
 const expectedR32 = [
   { n: 73, home: "Czech Republic", away: "Canada" },
-  { n: 74, home: "Ecuador", away: "Scotland" },
-  { n: 75, home: "Netherlands", away: "Morocco" },
-  { n: 76, home: "Brazil", away: "Japan" },
+  { n: 74, home: "Germany", away: "Haiti" },
+  { n: 75, home: "Netherlands", away: "Brazil" },
+  { n: 76, home: "Scotland", away: "Sweden" },
   { n: 77, home: "France", away: "Paraguay" },
-  { n: 78, home: "Germany", away: "Norway" },
-  { n: 79, home: "Mexico", away: "Saudi Arabia" },
-  { n: 80, home: "England", away: "Senegal" },
-  { n: 81, home: "Turkey", away: "Ivory Coast" },
+  { n: 78, home: "Ecuador", away: "Norway" },
+  { n: 79, home: "Mexico", away: "Senegal" },
+  { n: 80, home: "England", away: "Saudi Arabia" },
+  { n: 81, home: "Turkey", away: "Japan" },
   { n: 82, home: "Belgium", away: "Algeria" },
   { n: 83, home: "Portugal", away: "Croatia" },
   { n: 84, home: "Spain", away: "Austria" },
@@ -66,8 +69,8 @@ describe("Sprint 1 parity", () => {
   it("scores facu like the current juego.html snapshot", () => {
     expect(scoreProde(facu, fixture.matches)).toEqual({
       exact: 1,
-      outcome: 0,
-      points: 3,
+      outcome: 1,
+      points: 4,
     });
   });
 

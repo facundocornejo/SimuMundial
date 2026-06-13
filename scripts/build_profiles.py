@@ -21,7 +21,7 @@ from teams import TEAMS, TEAM_GROUP, GROUPS, canon
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
 
-HOME_ADV = 85.0
+HOME_ADV = 75.0  # calibrado por backtest (sweep validado) 2026-06-13; SYNC: predict.py / model.ts
 START_ELO = 1500.0
 
 

@@ -1,5 +1,5 @@
 {
- "updated": "2026-06-12T21:48:54",
+ "updated": "2026-06-13T01:47:23",
  "source": "football-data.org",
  "fairplay": {},
  "matches": [
@@ -64,8 +64,11 @@
    "time": "01:00 UTC",
    "venue": "",
    "venue_country": "United States",
-   "status": "pending",
-   "score": null,
+   "status": "played",
+   "score": [
+    4,
+    1
+   ],
    "match_id": "2026-D-01"
   },
   {
