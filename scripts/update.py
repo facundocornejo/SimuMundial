@@ -7,6 +7,7 @@ Uso:
   python scripts/update.py --no-html       # sin regenerar el HTML
 """
 import json
+import os
 import shutil
 import sys
 from pathlib import Path
@@ -14,7 +15,6 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
-PRODE = ROOT / "prode"
 WEB_DATA = ROOT / "web" / "data"
 
 if hasattr(sys.stdout, "reconfigure"):
@@ -27,6 +27,22 @@ def run(name, fn, *args):
     if rc not in (0, None):
         print(f"FALLO en {name} (rc={rc})")
         sys.exit(rc)
+
+
+def load_env_file(path=ROOT / ".env"):
+    if not path.exists():
+        return
+    for raw_line in path.read_text(encoding="utf-8").splitlines():
+        line = raw_line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        if line.startswith("export "):
+            line = line[len("export "):].strip()
+        key, value = line.split("=", 1)
+        key = key.strip()
+        value = value.strip().strip('"').strip("'")
+        if key:
+            os.environ.setdefault(key, value)
 
 
 def validate():
@@ -64,17 +80,15 @@ def validate():
 
 def copy_web_data():
     WEB_DATA.mkdir(parents=True, exist_ok=True)
-    (WEB_DATA / "prodes").mkdir(parents=True, exist_ok=True)
     for name in ("fixture.json", "team_profiles.json", "predictions.json", "model_picks.json"):
         shutil.copy2(DATA / name, WEB_DATA / name)
-    for src in PRODE.glob("*.json"):
-        shutil.copy2(src, WEB_DATA / "prodes" / src.name)
     print("  Datos copiados a web/data")
 
 
 def main():
+    load_env_file()
     args = sys.argv[1:]
-    import fetch_fixture, fetch_history, fetch_rankings
+    import fetch_fixture, fetch_history, fetch_rankings, fetch_elo, fetch_odds
     import build_profiles, predict, simulate, generate_html
     import generate_prode, game
 
@@ -82,6 +96,9 @@ def main():
     if "--skip-history" not in args:
         run("2/9 Historico internacional", fetch_history.main, "--force" in args)
     run("3/9 Ranking FIFA", fetch_rankings.main)
+    fetcher_args = ["--force"] if "--force" in args else []
+    run("3b/9 Elo externo", fetch_elo.main, fetcher_args)
+    run("3c/9 Cuotas", fetch_odds.main, fetcher_args)
     run("4/9 Elo + perfiles", build_profiles.main)
     run("5/9 Modelo de prediccion", predict.main)
     run("6/9 Monte Carlo", simulate.main)

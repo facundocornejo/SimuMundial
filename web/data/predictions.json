@@ -1,26 +1,7 @@
 {
- "updated": "2026-06-12T01:04:58",
+ "updated": "2026-06-12T21:48:56",
  "model": "Elo->Poisson rho=1.10, home_adv=85",
  "predictions": {
-  "2026-B-01": {
-   "p1": 80,
-   "px": 16,
-   "p2": 4,
-   "lambda_home": 2.197,
-   "lambda_away": 0.324,
-   "rho": 1.1,
-   "elo_home": 1903.7,
-   "elo_away": 1656.3,
-   "elo_diff": 332.4,
-   "host_home": true,
-   "score_pred": [
-    2,
-    0
-   ],
-   "over25": 46,
-   "favorite": "Canada",
-   "confidence": "alta"
-  },
   "2026-D-01": {
    "p1": 37,
    "px": 28,
@@ -192,25 +173,6 @@
    "favorite": "Sweden",
    "confidence": "baja"
   },
-  "2026-G-01": {
-   "p1": 59,
-   "px": 25,
-   "p2": 16,
-   "lambda_home": 1.773,
-   "lambda_away": 0.814,
-   "rho": 1.1,
-   "elo_home": 1944.3,
-   "elo_away": 1809.1,
-   "elo_diff": 135.2,
-   "host_home": false,
-   "score_pred": [
-    1,
-    0
-   ],
-   "over25": 47,
-   "favorite": "Belgium",
-   "confidence": "media-alta"
-  },
   "2026-H-01": {
    "p1": 88,
    "px": 10,
@@ -230,23 +192,23 @@
    "favorite": "Spain",
    "confidence": "alta"
   },
-  "2026-G-02": {
-   "p1": 65,
-   "px": 22,
-   "p2": 13,
-   "lambda_home": 1.999,
-   "lambda_away": 0.779,
+  "2026-G-01": {
+   "p1": 59,
+   "px": 25,
+   "p2": 16,
+   "lambda_home": 1.773,
+   "lambda_away": 0.814,
    "rho": 1.1,
-   "elo_home": 1895.5,
-   "elo_away": 1731.8,
-   "elo_diff": 163.7,
+   "elo_home": 1944.3,
+   "elo_away": 1809.1,
+   "elo_diff": 135.2,
    "host_home": false,
    "score_pred": [
     1,
     0
    ],
-   "over25": 52,
-   "favorite": "Iran",
+   "over25": 47,
+   "favorite": "Belgium",
    "confidence": "media-alta"
   },
   "2026-H-02": {
@@ -267,6 +229,25 @@
    "over25": 39,
    "favorite": "Uruguay",
    "confidence": "alta"
+  },
+  "2026-G-02": {
+   "p1": 65,
+   "px": 22,
+   "p2": 13,
+   "lambda_home": 1.999,
+   "lambda_away": 0.779,
+   "rho": 1.1,
+   "elo_home": 1895.5,
+   "elo_away": 1731.8,
+   "elo_diff": 163.7,
+   "host_home": false,
+   "score_pred": [
+    1,
+    0
+   ],
+   "over25": 52,
+   "favorite": "Iran",
+   "confidence": "media-alta"
   },
   "2026-I-01": {
    "p1": 71,
@@ -421,15 +402,15 @@
    "confidence": "alta"
   },
   "2026-A-03": {
-   "p1": 58,
-   "px": 25,
+   "p1": 59,
+   "px": 24,
    "p2": 17,
-   "lambda_home": 1.805,
-   "lambda_away": 0.866,
+   "lambda_home": 1.819,
+   "lambda_away": 0.851,
    "rho": 1.1,
    "elo_home": 1785.5,
-   "elo_away": 1658.0,
-   "elo_diff": 127.5,
+   "elo_away": 1653.6,
+   "elo_diff": 131.9,
    "host_home": false,
    "score_pred": [
     1,
@@ -440,15 +421,15 @@
    "confidence": "media-alta"
   },
   "2026-B-03": {
-   "p1": 80,
-   "px": 15,
-   "p2": 5,
-   "lambda_home": 2.363,
-   "lambda_away": 0.429,
+   "p1": 78,
+   "px": 16,
+   "p2": 6,
+   "lambda_home": 2.314,
+   "lambda_away": 0.467,
    "rho": 1.1,
    "elo_home": 1952.6,
-   "elo_away": 1656.3,
-   "elo_diff": 296.3,
+   "elo_away": 1674.7,
+   "elo_diff": 277.9,
    "host_home": false,
    "score_pred": [
     2,
@@ -459,16 +440,16 @@
    "confidence": "alta"
   },
   "2026-B-04": {
-   "p1": 85,
-   "px": 13,
-   "p2": 2,
-   "lambda_home": 2.341,
-   "lambda_away": 0.214,
+   "p1": 79,
+   "px": 16,
+   "p2": 5,
+   "lambda_home": 2.192,
+   "lambda_away": 0.362,
    "rho": 1.1,
-   "elo_home": 1903.7,
+   "elo_home": 1885.3,
    "elo_away": 1572.7,
-   "elo_diff": 416.0,
-   "host_home": true,
+   "elo_diff": 312.6,
+   "host_home": false,
    "score_pred": [
     2,
     0
@@ -478,23 +459,23 @@
    "confidence": "alta"
   },
   "2026-A-04": {
-   "p1": 63,
-   "px": 24,
-   "p2": 13,
-   "lambda_home": 1.814,
-   "lambda_away": 0.67,
+   "p1": 51,
+   "px": 27,
+   "p2": 22,
+   "lambda_home": 1.565,
+   "lambda_away": 0.919,
    "rho": 1.1,
-   "elo_home": 1993.5,
+   "elo_home": 1997.9,
    "elo_away": 1905.5,
-   "elo_diff": 173.0,
-   "host_home": true,
+   "elo_diff": 92.4,
+   "host_home": false,
    "score_pred": [
     1,
     0
    ],
    "over25": 45,
    "favorite": "Mexico",
-   "confidence": "media-alta"
+   "confidence": "media"
   },
   "2026-D-03": {
    "p1": 40,
@@ -534,25 +515,6 @@
    "favorite": "Morocco",
    "confidence": "media-alta"
   },
-  "2026-D-04": {
-   "p1": 47,
-   "px": 27,
-   "p2": 26,
-   "lambda_home": 1.542,
-   "lambda_away": 1.098,
-   "rho": 1.1,
-   "elo_home": 1974.9,
-   "elo_away": 1915.8,
-   "elo_diff": 59.1,
-   "host_home": false,
-   "score_pred": [
-    1,
-    0
-   ],
-   "over25": 49,
-   "favorite": "Turkey",
-   "confidence": "media"
-  },
   "2026-C-04": {
    "p1": 84,
    "px": 13,
@@ -571,6 +533,25 @@
    "over25": 53,
    "favorite": "Brazil",
    "confidence": "alta"
+  },
+  "2026-D-04": {
+   "p1": 47,
+   "px": 27,
+   "p2": 26,
+   "lambda_home": 1.542,
+   "lambda_away": 1.098,
+   "rho": 1.1,
+   "elo_home": 1974.9,
+   "elo_away": 1915.8,
+   "elo_diff": 59.1,
+   "host_home": false,
+   "score_pred": [
+    1,
+    0
+   ],
+   "over25": 49,
+   "favorite": "Turkey",
+   "confidence": "media"
   },
   "2026-F-03": {
    "p1": 75,
@@ -648,25 +629,6 @@
    "favorite": "Japan",
    "confidence": "alta"
   },
-  "2026-G-03": {
-   "p1": 45,
-   "px": 27,
-   "p2": 28,
-   "lambda_home": 1.553,
-   "lambda_away": 1.173,
-   "rho": 1.1,
-   "elo_home": 1944.3,
-   "elo_away": 1895.5,
-   "elo_diff": 48.8,
-   "host_home": false,
-   "score_pred": [
-    1,
-    0
-   ],
-   "over25": 51,
-   "favorite": "Belgium",
-   "confidence": "media"
-  },
   "2026-H-03": {
    "p1": 88,
    "px": 11,
@@ -686,23 +648,23 @@
    "favorite": "Spain",
    "confidence": "alta"
   },
-  "2026-G-04": {
-   "p1": 24,
+  "2026-G-03": {
+   "p1": 45,
    "px": 27,
-   "p2": 49,
-   "lambda_home": 1.031,
-   "lambda_away": 1.609,
+   "p2": 28,
+   "lambda_home": 1.553,
+   "lambda_away": 1.173,
    "rho": 1.1,
-   "elo_home": 1731.8,
-   "elo_away": 1809.1,
-   "elo_diff": -77.3,
+   "elo_home": 1944.3,
+   "elo_away": 1895.5,
+   "elo_diff": 48.8,
    "host_home": false,
    "score_pred": [
-    0,
-    1
+    1,
+    0
    ],
-   "over25": 49,
-   "favorite": "Egypt",
+   "over25": 51,
+   "favorite": "Belgium",
    "confidence": "media"
   },
   "2026-H-04": {
@@ -723,6 +685,25 @@
    "over25": 40,
    "favorite": "Uruguay",
    "confidence": "alta"
+  },
+  "2026-G-04": {
+   "p1": 24,
+   "px": 27,
+   "p2": 49,
+   "lambda_home": 1.031,
+   "lambda_away": 1.609,
+   "rho": 1.1,
+   "elo_home": 1731.8,
+   "elo_away": 1809.1,
+   "elo_diff": -77.3,
+   "host_home": false,
+   "score_pred": [
+    0,
+    1
+   ],
+   "over25": 49,
+   "favorite": "Egypt",
+   "confidence": "media"
   },
   "2026-J-03": {
    "p1": 79,
@@ -877,15 +858,15 @@
    "confidence": "alta"
   },
   "2026-B-05": {
-   "p1": 44,
+   "p1": 47,
    "px": 28,
-   "p2": 28,
-   "lambda_home": 1.461,
-   "lambda_away": 1.103,
+   "p2": 25,
+   "lambda_home": 1.527,
+   "lambda_away": 1.036,
    "rho": 1.1,
    "elo_home": 1952.6,
-   "elo_away": 1903.7,
-   "elo_diff": 48.9,
+   "elo_away": 1885.3,
+   "elo_diff": 67.3,
    "host_home": false,
    "score_pred": [
     1,
@@ -893,18 +874,18 @@
    ],
    "over25": 47,
    "favorite": "Switzerland",
-   "confidence": "baja"
+   "confidence": "media"
   },
   "2026-B-06": {
-   "p1": 51,
-   "px": 26,
-   "p2": 23,
-   "lambda_home": 1.72,
-   "lambda_away": 1.063,
+   "p1": 55,
+   "px": 25,
+   "p2": 20,
+   "lambda_home": 1.782,
+   "lambda_away": 0.99,
    "rho": 1.1,
-   "elo_home": 1656.3,
+   "elo_home": 1674.7,
    "elo_away": 1572.7,
-   "elo_diff": 83.6,
+   "elo_diff": 102.0,
    "host_home": false,
    "score_pred": [
     1,
@@ -912,28 +893,9 @@
    ],
    "over25": 52,
    "favorite": "Bosnia and Herzegovina",
-   "confidence": "media"
+   "confidence": "media-alta"
   },
   "2026-C-05": {
-   "p1": 10,
-   "px": 20,
-   "p2": 70,
-   "lambda_home": 0.616,
-   "lambda_away": 2.058,
-   "rho": 1.1,
-   "elo_home": 1856.0,
-   "elo_away": 2065.6,
-   "elo_diff": -209.6,
-   "host_home": false,
-   "score_pred": [
-    0,
-    2
-   ],
-   "over25": 49,
-   "favorite": "Brazil",
-   "confidence": "alta"
-  },
-  "2026-C-06": {
    "p1": 79,
    "px": 15,
    "p2": 6,
@@ -952,16 +914,35 @@
    "favorite": "Morocco",
    "confidence": "alta"
   },
+  "2026-C-06": {
+   "p1": 10,
+   "px": 20,
+   "p2": 70,
+   "lambda_home": 0.616,
+   "lambda_away": 2.058,
+   "rho": 1.1,
+   "elo_home": 1856.0,
+   "elo_away": 2065.6,
+   "elo_diff": -209.6,
+   "host_home": false,
+   "score_pred": [
+    0,
+    2
+   ],
+   "over25": 49,
+   "favorite": "Brazil",
+   "confidence": "alta"
+  },
   "2026-A-05": {
    "p1": 10,
    "px": 21,
    "p2": 69,
-   "lambda_home": 0.598,
-   "lambda_away": 1.979,
+   "lambda_home": 0.586,
+   "lambda_away": 1.99,
    "rho": 1.1,
    "elo_home": 1785.5,
-   "elo_away": 1993.5,
-   "elo_diff": -208.0,
+   "elo_away": 1997.9,
+   "elo_diff": -212.4,
    "host_home": false,
    "score_pred": [
     0,
@@ -972,15 +953,15 @@
    "confidence": "media-alta"
   },
   "2026-A-06": {
-   "p1": 8,
+   "p1": 7,
    "px": 19,
-   "p2": 73,
-   "lambda_home": 0.5,
-   "lambda_away": 2.078,
+   "p2": 74,
+   "lambda_home": 0.49,
+   "lambda_away": 2.089,
    "rho": 1.1,
-   "elo_home": 1658.0,
+   "elo_home": 1653.6,
    "elo_away": 1905.5,
-   "elo_diff": -247.5,
+   "elo_diff": -251.9,
    "host_home": false,
    "score_pred": [
     0,
@@ -991,25 +972,6 @@
    "confidence": "alta"
   },
   "2026-E-05": {
-   "p1": 10,
-   "px": 21,
-   "p2": 69,
-   "lambda_home": 0.615,
-   "lambda_away": 2.016,
-   "rho": 1.1,
-   "elo_home": 1609.4,
-   "elo_away": 1815.7,
-   "elo_diff": -206.3,
-   "host_home": false,
-   "score_pred": [
-    0,
-    2
-   ],
-   "over25": 48,
-   "favorite": "Ivory Coast",
-   "confidence": "media-alta"
-  },
-  "2026-E-06": {
    "p1": 39,
    "px": 29,
    "p2": 32,
@@ -1028,26 +990,26 @@
    "favorite": "Ecuador",
    "confidence": "baja"
   },
-  "2026-F-05": {
-   "p1": 72,
-   "px": 19,
-   "p2": 9,
-   "lambda_home": 2.225,
-   "lambda_away": 0.634,
+  "2026-E-06": {
+   "p1": 10,
+   "px": 21,
+   "p2": 69,
+   "lambda_home": 0.615,
+   "lambda_away": 2.016,
    "rho": 1.1,
-   "elo_home": 1995.8,
-   "elo_away": 1777.7,
-   "elo_diff": 218.1,
+   "elo_home": 1609.4,
+   "elo_away": 1815.7,
+   "elo_diff": -206.3,
    "host_home": false,
    "score_pred": [
-    2,
-    0
+    0,
+    2
    ],
-   "over25": 54,
-   "favorite": "Japan",
-   "confidence": "alta"
+   "over25": 48,
+   "favorite": "Ivory Coast",
+   "confidence": "media-alta"
   },
-  "2026-F-06": {
+  "2026-F-05": {
    "p1": 6,
    "px": 17,
    "p2": 77,
@@ -1064,6 +1026,25 @@
    ],
    "over25": 51,
    "favorite": "Netherlands",
+   "confidence": "alta"
+  },
+  "2026-F-06": {
+   "p1": 72,
+   "px": 19,
+   "p2": 9,
+   "lambda_home": 2.225,
+   "lambda_away": 0.634,
+   "rho": 1.1,
+   "elo_home": 1995.8,
+   "elo_away": 1777.7,
+   "elo_diff": 218.1,
+   "host_home": false,
+   "score_pred": [
+    2,
+    0
+   ],
+   "over25": 54,
+   "favorite": "Japan",
    "confidence": "alta"
   },
   "2026-D-05": {
@@ -1181,25 +1162,6 @@
    "confidence": "baja"
   },
   "2026-G-05": {
-   "p1": 22,
-   "px": 28,
-   "p2": 50,
-   "lambda_home": 0.913,
-   "lambda_away": 1.501,
-   "rho": 1.1,
-   "elo_home": 1809.1,
-   "elo_away": 1895.5,
-   "elo_diff": -86.4,
-   "host_home": false,
-   "score_pred": [
-    0,
-    1
-   ],
-   "over25": 43,
-   "favorite": "Iran",
-   "confidence": "media"
-  },
-  "2026-G-06": {
    "p1": 9,
    "px": 18,
    "p2": 73,
@@ -1217,6 +1179,25 @@
    "over25": 56,
    "favorite": "Belgium",
    "confidence": "alta"
+  },
+  "2026-G-06": {
+   "p1": 22,
+   "px": 28,
+   "p2": 50,
+   "lambda_home": 0.913,
+   "lambda_away": 1.501,
+   "rho": 1.1,
+   "elo_home": 1809.1,
+   "elo_away": 1895.5,
+   "elo_diff": -86.4,
+   "host_home": false,
+   "score_pred": [
+    0,
+    1
+   ],
+   "over25": 43,
+   "favorite": "Iran",
+   "confidence": "media"
   },
   "2026-L-05": {
    "p1": 8,
@@ -1295,25 +1276,6 @@
    "confidence": "baja"
   },
   "2026-J-05": {
-   "p1": 36,
-   "px": 27,
-   "p2": 37,
-   "lambda_home": 1.37,
-   "lambda_away": 1.399,
-   "rho": 1.1,
-   "elo_home": 1883.1,
-   "elo_away": 1886.8,
-   "elo_diff": -3.7,
-   "host_home": false,
-   "score_pred": [
-    0,
-    1
-   ],
-   "over25": 52,
-   "favorite": "Austria",
-   "confidence": "baja"
-  },
-  "2026-J-06": {
    "p1": 2,
    "px": 13,
    "p2": 85,
@@ -1331,6 +1293,25 @@
    "over25": 48,
    "favorite": "Argentina",
    "confidence": "alta"
+  },
+  "2026-J-06": {
+   "p1": 36,
+   "px": 27,
+   "p2": 37,
+   "lambda_home": 1.37,
+   "lambda_away": 1.399,
+   "rho": 1.1,
+   "elo_home": 1883.1,
+   "elo_away": 1886.8,
+   "elo_diff": -3.7,
+   "host_home": false,
+   "score_pred": [
+    0,
+    1
+   ],
+   "over25": 52,
+   "favorite": "Austria",
+   "confidence": "baja"
   }
  }
 }

@@ -41,7 +41,7 @@ export function HomeClient() {
       <HeroMedia />
       <section className="home-hero">
         <div className="home-copy">
-          <p className="eyebrow">Prode Mundial 2026</p>
+          <p className="eyebrow">SimuMundial</p>
           <h1>Armá tu Mundial antes de que empiece el ruido.</h1>
           <p>
             Cargá los 72 partidos de grupos, completá lo que falte con el modelo
@@ -49,7 +49,7 @@ export function HomeClient() {
           </p>
           <div className="hero-actions">
             <Link className="button button--primary" href="/prode">
-              Armá tu prode
+              Armá tu Mundial
             </Link>
             {saved[0] ? (
               <Link className="button button--ghost" href={`/mundial?p=${saved[0].code}`}>
@@ -59,14 +59,14 @@ export function HomeClient() {
           </div>
         </div>
 
-        <aside className="saved-panel" aria-label="Tus prodes guardados">
+        <aside className="saved-panel" aria-label="Tus mundiales guardados">
           <div className="panel-heading">
-            <p className="eyebrow">Tus prodes</p>
+            <p className="eyebrow">Tus mundiales</p>
             <span>{saved.length}</span>
           </div>
           {saved.length === 0 ? (
             <p className="empty-copy">
-              Todavía no guardaste ninguno. Cuando confirmes un prode, aparece
+              Todavía no guardaste ninguno. Cuando confirmes un mundial, aparece
               acá con su link para seguirlo.
             </p>
           ) : (
@@ -84,11 +84,11 @@ export function HomeClient() {
           {saved.length > 0 ? (
             !confirmDelete ? (
               <button className="button button--ghost clear-saved" type="button" onClick={() => setConfirmDelete(true)}>
-                Borrar prodes guardados
+                Borrar mundiales guardados
               </button>
             ) : (
               <div className="inline-confirm inline-confirm--saved">
-                <span>Esto borra sólo los prodes guardados en este navegador.</span>
+                <span>Esto borra sólo los mundiales guardados en este navegador.</span>
                 <button type="button" onClick={clearSaved}>Borrar</button>
                 <button type="button" onClick={() => setConfirmDelete(false)}>Cancelar</button>
               </div>

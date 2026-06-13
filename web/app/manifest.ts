@@ -2,9 +2,9 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Prode Mundial 2026",
-    short_name: "Prode 2026",
-    description: "Carga, revela y comparte tu pronostico del Mundial 2026.",
+    name: "SimuMundial",
+    short_name: "SimuMundial",
+    description: "Carga, revela y comparte tu Mundial 2026 simulado.",
     start_url: "/",
     display: "standalone",
     background_color: "#050911",

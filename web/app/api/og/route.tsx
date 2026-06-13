@@ -70,11 +70,11 @@ export async function GET(request: Request) {
         />
         <div style={{ position: "absolute", inset: 0, background: "rgba(2, 5, 8, 0.34)" }} />
         <div style={{ color: "#e7b84b", fontSize: 34, fontWeight: 800, position: "relative" }}>
-          Prode Mundial 2026
+          SimuMundial
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 24, position: "relative" }}>
           <div style={{ fontSize: 76, fontWeight: 900, lineHeight: 1 }}>
-            {prode ? `Mundial pronosticado de ${prode.player}` : "Prode Mundial 2026"}
+            {prode ? `Mundial pronosticado de ${prode.player}` : "SimuMundial"}
           </div>
           <div style={{ color: "#fbbf24", fontSize: 54, fontWeight: 900 }}>
             {champion}

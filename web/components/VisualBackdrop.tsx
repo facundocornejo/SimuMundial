@@ -1,6 +1,6 @@
 import type { CSSProperties } from "react";
 
-type VisualVariant = "home" | "prode" | "world" | "groups" | "knockout" | "ranking" | "og";
+type VisualVariant = "home" | "prode" | "world" | "groups" | "knockout" | "og";
 
 const mediaByVariant: Record<VisualVariant, string> = {
   home: "/media/hero-stadium.webp",
@@ -8,7 +8,6 @@ const mediaByVariant: Record<VisualVariant, string> = {
   world: "/media/world-tunnel.webp",
   groups: "/media/phase-groups.webp",
   knockout: "/media/phase-knockout.webp",
-  ranking: "/media/phase-knockout.webp",
   og: "/media/og-default.webp",
 };
 

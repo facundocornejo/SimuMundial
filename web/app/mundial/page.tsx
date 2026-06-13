@@ -15,7 +15,7 @@ export async function generateMetadata({
   searchParams: Promise<{ p?: string }>;
 }): Promise<Metadata> {
   const params = await searchParams;
-  const title = "Prode Mundial 2026";
+  const title = "SimuMundial";
   if (!params.p) return { title };
 
   try {

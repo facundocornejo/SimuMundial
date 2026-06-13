@@ -1,6 +1,6 @@
 {
  "history_matches_used": 49405,
- "wc2026_applied": 2,
+ "wc2026_applied": 3,
  "profiles": {
   "Algeria": {
    "elo": 1883.1,
@@ -413,22 +413,17 @@
    "fifa_rank": 4
   },
   "Bosnia and Herzegovina": {
-   "elo": 1656.3,
+   "elo": 1674.7,
    "group": "B",
    "form_last10": [
-    3,
-    6,
+    2,
+    7,
     1
    ],
-   "avg_gf_2y": 1.45,
-   "avg_gc_2y": 1.5,
-   "matches_2y": 20,
+   "avg_gf_2y": 1.429,
+   "avg_gc_2y": 1.476,
+   "matches_2y": 21,
    "last10": [
-    {
-     "date": "2025-09-06",
-     "opp": "San Marino",
-     "score": "6-0"
-    },
     {
      "date": "2025-09-09",
      "opp": "Austria",
@@ -473,12 +468,17 @@
      "date": "2026-06-06",
      "opp": "Panama",
      "score": "1-1"
+    },
+    {
+     "date": "2026-06-12",
+     "opp": "Canada",
+     "score": "1-1"
     }
    ],
    "h2h_group": {
     "Canada": [
      0,
-     0,
+     1,
      0
     ],
     "Qatar": [
@@ -577,22 +577,17 @@
    "fifa_rank": 1
   },
   "Canada": {
-   "elo": 1903.7,
+   "elo": 1885.3,
    "group": "B",
    "form_last10": [
-    4,
-    5,
+    3,
+    6,
     1
    ],
-   "avg_gf_2y": 1.345,
-   "avg_gc_2y": 0.69,
-   "matches_2y": 29,
+   "avg_gf_2y": 1.333,
+   "avg_gc_2y": 0.7,
+   "matches_2y": 30,
    "last10": [
-    {
-     "date": "2025-09-05",
-     "opp": "Romania",
-     "score": "3-0"
-    },
     {
      "date": "2025-09-09",
      "opp": "Wales",
@@ -637,12 +632,17 @@
      "date": "2026-06-05",
      "opp": "Republic of Ireland",
      "score": "1-1"
+    },
+    {
+     "date": "2026-06-12",
+     "opp": "Bosnia and Herzegovina",
+     "score": "1-1"
     }
    ],
    "h2h_group": {
     "Bosnia and Herzegovina": [
      0,
-     0,
+     1,
      0
     ],
     "Qatar": [
@@ -1044,7 +1044,7 @@
      "score": "5-1"
     },
     {
-     "date": "2026-06-11",
+     "date": "2026-06-12",
      "opp": "South Korea",
      "score": "1-2"
     }
@@ -2135,7 +2135,7 @@
    "fifa_rank": null
   },
   "Mexico": {
-   "elo": 1993.5,
+   "elo": 1997.9,
    "group": "A",
    "form_last10": [
     7,
@@ -3119,7 +3119,7 @@
    "fifa_rank": 15
   },
   "South Africa": {
-   "elo": 1658.0,
+   "elo": 1653.6,
    "group": "A",
    "form_last10": [
     4,
@@ -3258,7 +3258,7 @@
      "score": "1-0"
     },
     {
-     "date": "2026-06-11",
+     "date": "2026-06-12",
      "opp": "Czech Republic",
      "score": "2-1"
     }

@@ -1,4 +1,4 @@
-import { access, readdir, readFile } from "node:fs/promises";
+import { access, readFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import type { FixtureData, Prode, ProfilesData, Score } from "./types";
 
@@ -50,18 +50,4 @@ export async function getModelPicks() {
 
 export async function getFacuProde() {
   return readJson<Prode>("prode/prode_facu.json");
-}
-
-export async function getStoredProdes() {
-  const prodeDir = await firstExisting([
-    resolve(process.cwd(), "data", "prodes"),
-    resolve(root, "prode"),
-  ]);
-  const files = await readdir(prodeDir);
-  const prodes = await Promise.all(
-    files
-      .filter((file) => file.endsWith(".json"))
-      .map(async (file) => JSON.parse(await readFile(resolve(prodeDir, file), "utf8")) as Prode),
-  );
-  return prodes;
 }

@@ -127,7 +127,7 @@ export function ProdeBuilder({
           index: 0,
           mode: "card",
         };
-        setImportMessage(`Prode cargado para editar: ${normalized.report.imported}/72 partidos.`);
+        setImportMessage(`Resultados cargados para editar: ${normalized.report.imported}/72 partidos.`);
       } else {
         const raw = localStorage.getItem(DRAFT_KEY);
         if (!raw) {
@@ -225,7 +225,7 @@ export function ProdeBuilder({
     const file = event.target.files?.[0];
     if (!file) return;
     if (file.size > 128 * 1024) {
-      setImportMessage("Ese JSON es demasiado grande para un prode.");
+      setImportMessage("Ese JSON es demasiado grande para esta carga.");
       event.target.value = "";
       return;
     }
@@ -291,7 +291,7 @@ export function ProdeBuilder({
       <VisualBackdrop variant="prode" />
       <header className="prode-header">
         <div>
-          <p className="eyebrow">Carga del prode</p>
+          <p className="eyebrow">Carga del mundial</p>
           <h1>Partido {Math.min(draft.index + 1, matches.length)}/72</h1>
         </div>
         <div className="progress-meter" aria-label={`${loadedCount} de ${matchIds.length} partidos cargados`}>
@@ -365,14 +365,14 @@ export function ProdeBuilder({
           )}
 
           <label className="file-button">
-            Importar prode JSON
+            Importar resultados JSON
             <input accept="application/json" type="file" onChange={importJson} />
           </label>
           {importMessage ? <p className="import-message">{importMessage}</p> : null}
 
           <div className="completion-card">
             <strong>{loadedCount}/72</strong>
-            <span>{resultsComplete ? "Todos los partidos tienen pronóstico" : "partidos cargados"}</span>
+            <span>{resultsComplete ? "Todos los partidos tienen resultado cargado" : "partidos cargados"}</span>
             {resultsComplete ? (
               <small>
                 {validation.player || "Sin nombre"} · {scoreSummary.exact} exactos · {scoreSummary.outcome} 1X2 contra resultados reales jugados.

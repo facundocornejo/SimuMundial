@@ -1,0 +1,27 @@
+{
+ "updated": "2026-06-12T21:16:55",
+ "backtest_start": "2022-01-01",
+ "constants": {
+  "home_adv": 85.0,
+  "base_total": 2.55,
+  "rho_baseline": 1.1,
+  "rho_dc": -0.1,
+  "half_life_days": 548,
+  "shrinkage_target_matches": 10
+ },
+ "results": {
+  "baseline": {
+   "matches": 4568,
+   "log_loss": 0.887032
+  },
+  "v2_candidate": {
+   "matches": 4568,
+   "log_loss": 0.889519
+  },
+  "decision": {
+   "adopt_v2": false,
+   "delta_log_loss": 0.002487,
+   "note": "Menor log-loss es mejor. Odds y Elo externo no se evaluan historicamente por falta de serie historica."
+  }
+ }
+}

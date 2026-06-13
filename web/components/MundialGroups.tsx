@@ -332,14 +332,11 @@ export function MundialGroups({
           <button className="button button--secondary" type="button" onClick={replayFromStart}>
             Reproducir desde el grupo A
           </button>
-          <Link className="button button--ghost" href="/ranking">
-            Ver ranking
-          </Link>
           <Link className="button button--ghost" href={`/prode?p=${encodeURIComponent(prodeCode)}`}>
-            Editar este prode
+            Editar resultados
           </Link>
           <Link className="button button--primary" href="/prode?new=1" onClick={clearDraftForNewProde}>
-            Armar otro prode
+            Armar otro mundial
           </Link>
         </div>
       ) : null}

@@ -1,4 +1,4 @@
-# Prode Mundial 2026
+# SimuMundial
 
 Web app Next.js en `web/` más pipeline Python local como proveedor de datos.
 
@@ -17,9 +17,21 @@ git push
 - `data/team_profiles.json`
 - `data/predictions.json`
 - `data/model_picks.json`
-- `prode/*.json`
 
 a `web/data/` para el deploy.
+
+El pipeline lee `.env` desde la raiz si existe y carga sus variables con
+`os.environ.setdefault`, sin pisar variables ya exportadas por la terminal.
+Variables soportadas:
+
+- `FOOTBALL_DATA_KEY`: opcional, mejora `fetch_fixture.py`.
+- `ODDS_API_KEY`: opcional, habilita `scripts/fetch_odds.py`.
+
+Fetchers externos agregados:
+
+- `scripts/fetch_elo.py` genera `data/elo_world.json` desde eloratings.net.
+- `scripts/fetch_odds.py` genera `data/odds.json` desde The Odds API.
+- Ambos tienen cache de 12h y modo offline/fixture para pruebas locales.
 
 ## Web
 
@@ -44,7 +56,6 @@ npm run build
 
 Rutas principales:
 
-- `/` landing y prodes guardados localmente
-- `/prode` carga carta por carta o planilla
+- `/` landing y mundiales guardados localmente
+- `/prode` carga de resultados carta por carta o planilla
 - `/mundial?p=<codigo>` revelación de grupos y cuadro
-- `/ranking` tabla de jugadores y modelo

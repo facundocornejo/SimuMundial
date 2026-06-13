@@ -1,4 +1,128 @@
-# Pendientes web app Prode Mundial 2026
+# Pendientes web app SimuMundial
+
+## PLAN_V2 - Fase 1 cerrada: rebrand SimuMundial y sin `/ranking`
+
+Hecho en esta fase:
+
+- Se elimino la ruta web `/ranking`; ahora responde 404.
+- Se saco el link `Ver ranking` de las acciones finales de `/mundial`.
+- Las acciones finales quedaron en 3 opciones:
+  - `Reproducir desde el grupo A`
+  - `Editar resultados`
+  - `Armar otro mundial`
+- Se elimino `/ranking` del sitemap.
+- Se borro `getStoredProdes()` de `web/lib/data.server.ts`; `getModelPicks()` queda intacto.
+- `scripts/update.py` ya no copia `prode/*.json` a `web/data/prodes`.
+- Se removieron los archivos trackeados de `web/data/prodes/`.
+- Se elimino el e2e especifico de `/ranking`.
+- Se saco CSS especifico de ranking y referencias `.ranking-*` del pase visual.
+- Rebrand visible de la web a `SimuMundial` en metadata, manifest, OG, home y pantallas base.
+- Se conservaron rutas `/prode` y `/mundial`, keys de localStorage, codec/import/export y textos e2e protegidos.
+
+Verificado en esta fase:
+
+- `npx tsc --project web/tsconfig.json --noEmit --incremental false`: OK.
+- `npm run test`: OK, 9 tests verdes.
+- `npm run test:e2e` partido por proyectos por limite del canal:
+  - `desktop`: OK, 7 tests verdes.
+  - `mobile-390`: OK, 7 tests verdes.
+- `/ranking`: 404.
+- `/api/og`: 200 `image/png`.
+- Home renderiza marca visible `SimuMundial`.
+
+Bloqueos de entorno en esta fase:
+
+- El comando exacto `npx tsc --project web/tsconfig.json --noEmit` intenta escribir `web/tsconfig.tsbuildinfo` y falla con `EPERM`; por eso la verificacion de source se corrio con `--incremental false`.
+- `npm run build` sigue bloqueado por `EPERM` al abrir `web/.next/trace`, igual que en corridas anteriores desde Codex.
+- La limpieza completa de `web/.next` tambien fue bloqueada por Windows (`EPERM` sobre archivos generados). Se borro solamente el stale `web/.next/types/validator.ts` que todavia referenciaba `/ranking`; Next lo regenera.
+- `git add`/`git commit` desde Codex quedaron bloqueados: el sandbox tiene `.git` en solo lectura (`Permission denied` al crear `.git/index.lock`) y el intento elevado por PowerShell falla antes de ejecutar git por el error CET de Windows.
+
+## PLAN_V2 - Fase 2 cerrada: fetchers externos gratuitos + parser `.env`
+
+Hecho en esta fase:
+
+- `scripts/update.py` ahora lee `.env` desde la raiz y carga variables con `os.environ.setdefault`, sin pisar variables ya exportadas.
+- Se agrego `scripts/fetch_elo.py`:
+  - descarga `https://www.eloratings.net/World.tsv`;
+  - normaliza nombres contra `teams.py`;
+  - genera `data/elo_world.json`;
+  - cachea 12h;
+  - soporta `--fixture`, `--offline`, `--force` y `--output`.
+- Se agrego `scripts/fetch_odds.py`:
+  - usa The Odds API con `ODDS_API_KEY`;
+  - calcula probabilidades 1X2 sin margen;
+  - mapea por equipos + fecha al `match_id`;
+  - genera `data/odds.json`;
+  - cachea 12h;
+  - soporta `--fixture`, `--offline`, `--force` y `--output`.
+- `scripts/update.py` integra ambos pasos como `3b/9 Elo externo` y `3c/9 Cuotas`, despues del ranking FIFA y antes de `build_profiles.py`.
+- Se agregaron fixtures offline:
+  - `tests/fixtures/elo_world.tsv`
+  - `tests/fixtures/odds_worldcup.json`
+- `README.md` documenta `.env`, `FOOTBALL_DATA_KEY`, `ODDS_API_KEY` y los nuevos fetchers.
+- No se tocaron `.env`, `.env.example`, `data/model_picks.json` ni `prode/*.json`.
+- Correccion posterior: `eloratings.net/World.tsv` real trae codigo de seleccion, no nombre. `scripts/fetch_elo.py` ahora mapea esos codigos y valida `48/48` equipos contra la fuente real.
+- Correccion posterior: `scripts/fetch_odds.py` y `scripts/fetch_elo.py` ahora leen `.env` cuando se ejecutan directo; los caches vacios ya no se consideran validos.
+
+Verificado en esta fase:
+
+- `python scripts/fetch_elo.py --fixture tests/fixtures/elo_world.tsv --output <temp> --force`: OK, parsea 10/48 equipos de fixture.
+- `python -B scripts/fetch_elo.py --output <temp> --force`: OK contra `World.tsv` real, `48/48` equipos.
+- `python scripts/fetch_odds.py --fixture tests/fixtures/odds_worldcup.json --output <temp> --force`: OK, mapea 2 partidos a `match_id`.
+- Facu corrio `python scripts/fetch_elo.py --force`: OK, `48/48` equipos.
+- Facu corrio `python scripts/fetch_odds.py --force`: OK, `69` partidos con mercado.
+- Facu corrio `python scripts/update.py --force`: OK, pipeline completo; fixture 72 partidos, 3 jugados, validacion final OK, datos copiados a `web/data`.
+- Parser `.env` probado con archivo temporal: respeta `setdefault` y no pisa variables existentes.
+- Carga de scripts Python con `python -B`: OK.
+- `npx tsc --project web/tsconfig.json --noEmit --incremental false`: OK.
+- `npm run test`: OK, 9 tests verdes.
+- `npm run test:e2e` partido por proyectos:
+  - `desktop`: OK, 7 tests verdes.
+  - `mobile-390`: OK, 7 tests verdes.
+
+Bloqueos de entorno en esta fase:
+
+- `python -m py_compile` no puede escribir en `scripts/__pycache__` por `Permission denied`; se verifico con `python -B` sin generar `.pyc`.
+- `npm run build` sigue bloqueado por `EPERM` en `web/.next/trace`.
+- Commit de fase sigue pendiente por bloqueo de `.git`/CET detallado arriba.
+
+## PLAN_V2 - Fase 3 cerrada: backtest y decision de modelo
+
+Hecho en esta fase:
+
+- Se agrego `scripts/backtest.py`.
+- El backtest hace replay rolling del historial:
+  - predice antes de actualizar Elo con el resultado observado;
+  - usa log-loss 1X2 como metrica principal;
+  - compara `baseline` contra `v2_candidate`;
+  - soporta `--output` para correr en temporal cuando Python no puede escribir en `data/`.
+- Se genero `data/backtest_report.json` con el resultado del baseline y la decision.
+- Se probo una calibracion acotada del candidato v2.
+- Nota: `data/elo_world.json` y `data/odds.json` ya se generan bien, pero el modelo final actual no los incorpora porque la adopcion v2 quedo rechazada por backtest.
+- Por criterio del plan, no se adopto el modelo v2 porque no supero el baseline:
+  - baseline log-loss: `0.887032`
+  - v2 candidate log-loss: `0.889519`
+  - delta: `+0.002487` (peor; menor es mejor)
+- No se tocaron `build_profiles.py`, `predict.py` ni `web/lib/model.ts` como modelo final.
+- `data/model_picks.json` no tiene diff contra Git.
+
+Verificado en esta fase:
+
+- `python -B scripts/backtest.py --output <temp>`: OK.
+- `python -B scripts/backtest.py`: calcula pero falla al escribir `data/backtest_report.json` por permisos del entorno; el reporte quedo agregado con `apply_patch`.
+- `npx tsc --project web/tsconfig.json --noEmit --incremental false`: OK.
+- `npm run test`: OK, 9 tests verdes.
+- `npm run test:e2e` partido por proyectos:
+  - `desktop`: OK, 7 tests verdes.
+  - `mobile-390`: OK, 7 tests verdes.
+
+Bloqueos de entorno en esta fase:
+
+- `python scripts/backtest.py` sin `--output` no puede sobrescribir `data/backtest_report.json` por `Permission denied` desde Python.
+- `python scripts/update.py` real queda pendiente para Facu: en Codex hay bloqueo de escritura Python sobre `data/` y las corridas reales contra APIs deben hacerse desde la terminal local con tokens/red.
+- Despues de la correccion de Elo, falta rerun local de `python scripts/update.py` para regenerar `data/elo_world.json` real con `48/48`.
+- `npm run build` sigue bloqueado por `EPERM` en `web/.next/trace`.
+- Commit de fase sigue pendiente por bloqueo de `.git`/CET detallado arriba.
 
 Estado actual: los 5 sprints del plan base quedaron implementados en codigo. Tambien quedaron aplicadas las correcciones de reinicio/coherencia, validacion fuerte, SEO/seguridad y la pasada visual premium con assets PNG generados.
 

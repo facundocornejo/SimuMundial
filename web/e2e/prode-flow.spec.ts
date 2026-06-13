@@ -74,11 +74,6 @@ test("/mundial sin código redirige a /prode", async ({ page }) => {
   await page.waitForURL(/\/prode/);
 });
 
-test("/ranking muestra al modelo", async ({ page }) => {
-  await page.goto("/ranking");
-  await expect(page.locator("body")).toContainText("Modelo");
-});
-
 test("/api/og responde un PNG, con y sin código", async ({ page, request }) => {
   const generic = await request.get("/api/og");
   expect(generic.status()).toBe(200);

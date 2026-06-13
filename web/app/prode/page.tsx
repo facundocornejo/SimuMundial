@@ -7,7 +7,7 @@ import type { Metadata } from "next";
 import type { Prode } from "@/lib/types";
 
 export const metadata: Metadata = {
-  title: "Cargar prode | Prode Mundial 2026",
+  title: "Cargar resultados | SimuMundial",
   description: "Cargá, editá o completá tu pronóstico de los 72 partidos de grupos del Mundial 2026.",
 };
 

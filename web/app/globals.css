@@ -578,57 +578,6 @@ p {
   flex: 1 1 140px;
 }
 
-.ranking-shell {
-  min-height: 100vh;
-  padding: clamp(20px, 4vw, 48px);
-}
-
-.ranking-header {
-  align-items: end;
-  display: flex;
-  gap: 20px;
-  justify-content: space-between;
-  margin-bottom: 24px;
-}
-
-.ranking-header h1 {
-  font-size: clamp(2.4rem, 7vw, 5.6rem);
-}
-
-.ranking-table {
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.ranking-row {
-  align-items: center;
-  background: var(--card);
-  border-top: 1px solid var(--line);
-  display: grid;
-  gap: 12px;
-  grid-template-columns: 48px minmax(120px, 1.4fr) 80px 70px 80px minmax(120px, 1fr) 70px;
-  min-width: 760px;
-  padding: 14px 16px;
-}
-
-.ranking-row:first-child {
-  border-top: 0;
-}
-
-.ranking-row--head {
-  background: #07111f;
-  color: var(--muted);
-  font-size: 0.78rem;
-  font-weight: 900;
-  text-transform: uppercase;
-}
-
-.ranking-row a {
-  color: var(--cyan);
-  font-weight: 900;
-}
-
 @media (max-width: 860px) {
   .home-hero,
   .prode-header,
@@ -672,14 +621,6 @@ p {
     transform: none;
   }
 
-  .ranking-header {
-    align-items: start;
-    flex-direction: column;
-  }
-
-  .ranking-table {
-    overflow-x: auto;
-  }
 }
 
 /* Mundial reveal v2: one phase per screen */
@@ -973,7 +914,7 @@ p {
   bottom: 92px;
   display: grid;
   gap: 10px;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   left: 50%;
   padding: 10px;
   position: fixed;
@@ -1069,7 +1010,6 @@ p {
 /* Broadcast premium visual pass */
 .home-shell,
 .prode-shell,
-.ranking-shell,
 .world-shell {
   isolation: isolate;
   overflow-x: hidden;
@@ -1124,7 +1064,6 @@ p {
 .home-copy h1,
 .world-header h1,
 .phase-copy h2,
-.ranking-header h1,
 .prode-header h1,
 .teams-line strong,
 .group-block h2,
@@ -1189,7 +1128,6 @@ p {
 .match-card,
 .group-block,
 .completion-card,
-.ranking-table,
 .ledger-row,
 .table-stack li,
 .thirds-race li {
@@ -1257,20 +1195,16 @@ input:focus-visible,
   outline-offset: 3px;
 }
 
-.prode-shell,
-.ranking-shell {
+.prode-shell {
   padding: clamp(18px, 3.4vw, 44px);
 }
 
-.prode-shell .visual-backdrop,
-.ranking-shell .visual-backdrop {
+.prode-shell .visual-backdrop {
   opacity: 0.62;
 }
 
 .prode-header,
-.builder-layout,
-.ranking-header,
-.ranking-table {
+.builder-layout {
   position: relative;
   z-index: 1;
 }
@@ -1418,33 +1352,6 @@ input:focus-visible,
   border-color: rgb(231 184 75 / 0.24);
 }
 
-.ranking-shell .visual-backdrop {
-  background-position: center top;
-}
-
-.ranking-header {
-  border-bottom: 1px solid rgb(237 244 231 / 0.12);
-  padding-bottom: 20px;
-}
-
-.ranking-table {
-  background: rgb(5 10 13 / 0.72);
-}
-
-.ranking-row {
-  background: rgb(8 15 20 / 0.78);
-  border-top-color: rgb(237 244 231 / 0.1);
-}
-
-.ranking-row--head {
-  background: rgb(231 184 75 / 0.13);
-  color: #dfcf9b;
-}
-
-.ranking-row a {
-  color: var(--gold);
-}
-
 @keyframes signalSweep {
   0%, 24% { transform: translateX(-130%); }
   58%, 100% { transform: translateX(320%); }
@@ -1484,8 +1391,7 @@ input:focus-visible,
   }
 
   .home-shell,
-  .prode-shell,
-  .ranking-shell {
+  .prode-shell {
     padding: 14px;
   }
 
