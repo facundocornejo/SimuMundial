@@ -85,6 +85,7 @@ export function ProdeBuilder({
   const [importMessage, setImportMessage] = useState("");
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [pendingClear, setPendingClear] = useState(false);
+  const [toolsOpen, setToolsOpen] = useState(false);
 
   const current = matches[Math.min(draft.index, matches.length - 1)];
   const validation = useMemo(
@@ -299,7 +300,19 @@ export function ProdeBuilder({
       </header>
 
       <section className="builder-layout">
-        <aside className="builder-tools">
+        <aside className={`builder-tools${toolsOpen ? " is-open" : ""}`}>
+          <div className="sheet-head">
+            <span className="sheet-grab" aria-hidden="true" />
+            <strong>Herramientas</strong>
+            <button
+              type="button"
+              className="sheet-close"
+              onClick={() => setToolsOpen(false)}
+              aria-label="Cerrar herramientas"
+            >
+              ✕
+            </button>
+          </div>
           <label className={`field${!draft.player.trim() ? " field--missing" : ""}`}>
             <span>Nombre <em className="req-hint">· obligatorio para simular</em></span>
             <input
@@ -514,6 +527,49 @@ export function ProdeBuilder({
           </section>
         )}
       </section>
+
+      {toolsOpen ? (
+        <div className="sheet-backdrop" aria-hidden="true" onClick={() => setToolsOpen(false)} />
+      ) : null}
+
+      <nav className="prode-actionbar" aria-label="Acciones de carga">
+        <div className="prode-actionbar__nav">
+          <button
+            className="button button--ghost"
+            type="button"
+            onClick={() => move(-1)}
+            disabled={draft.index === 0}
+          >
+            ‹ Anterior
+          </button>
+          <button
+            className="button button--ghost"
+            type="button"
+            onClick={() => move(1)}
+            disabled={draft.index === matches.length - 1}
+          >
+            Siguiente ›
+          </button>
+        </div>
+        <button
+          className={`button button--secondary prode-actionbar__tools${complete ? "" : " has-alert"}`}
+          type="button"
+          onClick={() => setToolsOpen(true)}
+        >
+          ⚙ Herramientas
+        </button>
+        {complete ? null : (
+          <p className="prode-actionbar__hint">⚠ {validation.errors[0]}</p>
+        )}
+        <button
+          className="button button--primary"
+          type="button"
+          disabled={!complete}
+          onClick={confirm}
+        >
+          Confirmar y revelar
+        </button>
+      </nav>
     </main>
   );
 }

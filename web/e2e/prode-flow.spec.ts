@@ -15,6 +15,25 @@ async function importFacuAndConfirm(page: Page) {
   return new URL(page.url()).searchParams.get("p") ?? "";
 }
 
+// En mobile (≤768px) las herramientas viven en un bottom sheet cerrado; el input
+// de nombre solo es editable con el sheet abierto. En desktop el trigger está
+// oculto (display:none) y estos helpers son no-ops.
+async function openTools(page: Page) {
+  const trigger = page.locator(".prode-actionbar__tools");
+  if (await trigger.isVisible().catch(() => false)) {
+    await trigger.click();
+    await page.getByPlaceholder("facu").waitFor({ state: "visible" });
+  }
+}
+
+async function closeTools(page: Page) {
+  const backdrop = page.locator(".sheet-backdrop");
+  if (await backdrop.isVisible().catch(() => false)) {
+    await backdrop.click({ position: { x: 10, y: 10 } });
+    await page.waitForTimeout(350);
+  }
+}
+
 async function skipToChampion(page: Page) {
   await page.getByRole("button", { name: "Saltear todo" }).click();
   const champion = page.locator(".champion-mark strong");
@@ -56,7 +75,9 @@ test("el mismo ?p= da siempre el mismo campeón", async ({ page }) => {
 
 test("autosave: el draft sobrevive una recarga", async ({ page }) => {
   await page.goto("/prode?new=1");
+  await openTools(page);
   await page.getByPlaceholder("facu").fill("TestAutosave");
+  await closeTools(page);
   await page.locator(".quick-grid button", { hasText: "2-1" }).click();
 
   await page.goto("/prode");
@@ -75,6 +96,7 @@ test("no se habilita simular sin nombre ni con resultados faltantes", async ({ p
   // todos los resultados cargados pero sin nombre → sigue bloqueado por el nombre
   await page.locator('input[type="file"]').setInputFiles(facuProdePath);
   await expect(page.locator(".import-message")).toContainText("Importado: 72/72 partidos.");
+  await openTools(page);
   await page.getByPlaceholder("facu").fill("");
   await expect(confirmButton).toBeDisabled();
   await expect(page.locator(".blockers")).toContainText("Falta el nombre.");
