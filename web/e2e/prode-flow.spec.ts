@@ -64,6 +64,26 @@ test("autosave: el draft sobrevive una recarga", async ({ page }) => {
   await expect(page.locator(".source-summary")).toContainText("1/72");
 });
 
+test("no se habilita simular sin nombre ni con resultados faltantes", async ({ page }) => {
+  await page.goto("/prode?new=1");
+  const confirmButton = page.getByRole("button", { name: "Confirmar y revelar" });
+
+  // recién empezado: faltan nombre y resultados → deshabilitado y se explica por qué
+  await expect(confirmButton).toBeDisabled();
+  await expect(page.locator(".blockers")).toContainText("Falta el nombre.");
+
+  // todos los resultados cargados pero sin nombre → sigue bloqueado por el nombre
+  await page.locator('input[type="file"]').setInputFiles(facuProdePath);
+  await expect(page.locator(".import-message")).toContainText("Importado: 72/72 partidos.");
+  await page.getByPlaceholder("facu").fill("");
+  await expect(confirmButton).toBeDisabled();
+  await expect(page.locator(".blockers")).toContainText("Falta el nombre.");
+
+  // al poner el nombre se habilita
+  await page.getByPlaceholder("facu").fill("facu");
+  await expect(confirmButton).toBeEnabled();
+});
+
 test("un código inválido en /mundial redirige a /prode", async ({ page }) => {
   await page.goto("/mundial?p=codigo-invalido-123");
   await page.waitForURL(/\/prode/);

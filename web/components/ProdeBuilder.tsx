@@ -301,10 +301,11 @@ export function ProdeBuilder({
 
       <section className="builder-layout">
         <aside className="builder-tools">
-          <label className="field">
-            <span>Nombre</span>
+          <label className={`field${resultsComplete && !draft.player.trim() ? " field--missing" : ""}`}>
+            <span>Nombre <em className="req-hint">· obligatorio para simular</em></span>
             <input
               value={draft.player}
+              aria-required={true}
               onChange={(event) => setDraft((currentDraft) => ({ ...currentDraft, player: event.target.value }))}
               placeholder="facu"
             />
@@ -372,15 +373,26 @@ export function ProdeBuilder({
 
           <div className="completion-card">
             <strong>{loadedCount}/72</strong>
-            <span>{resultsComplete ? "Todos los partidos tienen resultado cargado" : "partidos cargados"}</span>
-            {resultsComplete ? (
+            <span>{complete ? "Todo listo para revelar" : "partidos cargados"}</span>
+            {complete ? (
               <small>
-                {validation.player || "Sin nombre"} · {scoreSummary.exact} exactos · {scoreSummary.outcome} 1X2 contra resultados reales jugados.
+                {validation.player} · {scoreSummary.exact} exactos · {scoreSummary.outcome} 1X2 contra resultados reales jugados.
               </small>
             ) : (
-              <small>Faltan {validation.missing.length} partidos antes de revelar.</small>
+              <ul className="blockers" aria-live="polite">
+                {validation.errors.map((reason) => (
+                  <li key={reason}>{reason}</li>
+                ))}
+                {validation.missing.length > 0 ? (
+                  <li>
+                    <button type="button" className="blockers__jump" onClick={nextEmpty}>
+                      Ir al próximo vacío →
+                    </button>
+                  </li>
+                ) : null}
+              </ul>
             )}
-            <button className="button button--primary" type="button" disabled={!complete || !draft.player.trim()} onClick={confirm}>
+            <button className="button button--primary" type="button" disabled={!complete} onClick={confirm}>
               Confirmar y revelar
             </button>
           </div>
